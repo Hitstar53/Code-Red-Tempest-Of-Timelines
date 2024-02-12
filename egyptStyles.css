@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inria+Sans&family=PT+Mono&display=swap');
+
+body,html{
+    height:100vh;
+    margin: 0px;
+}
+.bg{
+    background-image: url("bg.jpg");
+    height:100%;
+    width:100vw;
+    background-repeat: no-repeat;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+.upperSection{
+    align-self:flex-start;
+    width:100vw;
+
+    display: flex;
+}
+.temp{
+    width:60vw;
+    display:flex;
+    flex-direction:column;
+}
+.temp1{
+    width: 50vw;
+    display:flex;
+    flex-direction:column;
+}
+.score{
+    align-self:flex-end;
+
+    font-family: 'Inria Sans', sans-serif;
+    font-size:25px;
+}
+.score span{
+    font-size:15px;
+}
+.level{
+    align-self:flex-end;
+
+    font-family: 'Inder', sans-serif;
+    font-size: 30px;
+    color: #3b2a1a;
+    text-shadow: 1px 0.5px #3b2a1ab9;
+}
+.info-box{
+    background-color: #c3a07790;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+}
+.bottomSection{
+    align-self:flex-end;
+    width:100vw;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+    padding-bottom:20px;
+}
+
+.time-remaining {
+    justify-self: flex-start;
+    margin-left: 2.5rem;
+    height: 50%;
+    margin-bottom: 0.75rem;
+    font-family: 'Inria Sans', sans-serif;
+    font-size: 2rem;
+    color: #f2ceac;
+
+  }
+  .time-remaining span {
+    color: white;
+    font-size: 20px;
+  }
+  .team-name {
+    justify-self: center;
+    font-family: 'PT Mono', monospace;
+    font-size: 25px;
+    letter-spacing: 1px;
+    height: 33%;
+    color: #3b2a1a;
+    margin-bottom: 1rem;
+    text-shadow: 0.75px 0px #3b2a1a;
+
+    padding-top:3%;
+    padding-bottom:4%;
+  }
+  .features {
+    height: 33%;
+    display: flex;
+    gap: 1.5rem;
+    justify-self: flex-end;
+    margin-right: 4rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+  }
+  .features div {
+    display: grid;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+  
+    border-radius: 100%;
+    background-color: #c3a07790;
+    padding: 0.5rem 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .features div span {
+    font-size: 30px;
+    transition: cursor transform ease-in-out;
+    transition-duration: 1s;
+  }
+  .features div:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
