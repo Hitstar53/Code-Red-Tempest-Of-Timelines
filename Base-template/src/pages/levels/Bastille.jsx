@@ -1,14 +1,15 @@
-import * as React from 'react'
+import * as React from "react";
 
-import styles from './Base.module.css'
+import styles from "./Bastille.module.css";
 
-import { FaRankingStar } from 'react-icons/fa6'
-import { FaRegLightbulb } from 'react-icons/fa'
-const Base = () => {
-  const level = styles.level + ' ' + styles.infoBox
-  const score = styles.score + ' ' + styles.infoBox
-  const infoTime = styles.infoBox + ' ' + styles.timeRemaining
-  const teamName = styles.infoBox + ' ' + styles.teamName
+import { FaRankingStar } from "react-icons/fa6";
+import { FaRegLightbulb } from "react-icons/fa";
+
+const Bastille = () => {
+  const level = styles.level + " " + styles.infoBox;
+  const score = styles.score + " " + styles.infoBox;
+  const infoTime = styles.infoBox + " " + styles.timeRemaining;
+  const teamName = styles.infoBox + " " + styles.teamName;
   return (
     <div className={styles.outer}>
       <section className={styles.upperSection}>
@@ -52,15 +53,25 @@ const Base = () => {
         <div className={teamName}>Team Name</div>
         <div className={styles.features}>
           <div>
-            <FaRankingStar className={styles.icon} size="2rem" />
+            <FaRankingStar
+              style={{
+                height: "40px",
+                width: "40px",
+              }}
+            />
           </div>
           <div>
-            <FaRegLightbulb className={styles.icon} size="2rem" />
+            <FaRegLightbulb
+              style={{
+                height: "40px",
+                width: "40px",
+              }}
+            />
           </div>
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Base
+export default Bastille;

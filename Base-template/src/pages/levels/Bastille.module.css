@@ -1,5 +1,5 @@
 .outer {
-  background: url('../assets/images/background-image.jpg');
+  background: url('../../assets/images/background-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
@@ -103,31 +103,19 @@
   gap: 1.5rem;
   justify-self: flex-end;
   margin-right: 4rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.45rem;
   align-items: center;
 }
 
 .features div {
   display: none;
   align-items: center;
-  height: 60px;
-  width: 60px;
-
-  border-radius: 100%;
+  border-radius: 100vw;
   background-color: #c3a07790;
-  padding: 0.5rem 1.5rem;
-  box-sizing: border-box;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.icon {
-  height: 30px;
-  aspect-ratio: 1/1;
-}
-.features div span {
-  transition: cursor transform ease-in-out;
-  transition-duration: 1s;
 }
 
 .features div:hover {
