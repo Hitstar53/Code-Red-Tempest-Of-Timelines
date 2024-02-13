@@ -1,22 +1,24 @@
-import * as React from "react";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import styles from "./Base.module.css";
+import * as React from 'react'
 
+import styles from './Base.module.css'
+
+import { FaRankingStar } from 'react-icons/fa6'
+import { FaRegLightbulb } from 'react-icons/fa'
 const Base = () => {
-  const level = styles.level + " " + styles.infoBox;
-  const score = styles.score + " " + styles.infoBox;
-  const infoTime = styles.infoBox + " " + styles.timeRemaining;
+  const level = styles.level + ' ' + styles.infoBox
+  const score = styles.score + ' ' + styles.infoBox
+  const infoTime = styles.infoBox + ' ' + styles.timeRemaining
+  const teamName = styles.infoBox + ' ' + styles.teamName
   return (
     <div className={styles.outer}>
       <section className={styles.upperSection}>
         <div className={level}>LEVEL 4</div>
         <div className={score}>
-          <span>Score:</span> 69420
+          <span>Score:</span> <article>69420</article>
         </div>
       </section>
-      <section class={styles.mainContent}>
-        <div class={styles.random}>
+      <section className={styles.mainContent}>
+        <div className={styles.random}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, est?
           Dolore, dolores. Incidunt doloremque ullam rem architecto facere
           repellendus in alias dolorem optio reprehenderit non amet est,
@@ -43,22 +45,22 @@ const Base = () => {
         </div>
       </section>
       <section className={styles.bottomSection}>
-        <div class={infoTime}>
+        <div className={infoTime}>
           <span>Time Remaining</span>
           00:00:00
         </div>
-        <div class="info-box team-name">Team Name</div>
-        <div class="features">
-          <div class="icon">
-            <Button variant="contained">Contained</Button>
+        <div className={teamName}>Team Name</div>
+        <div className={styles.features}>
+          <div>
+            <FaRankingStar className={styles.icon} size="2rem" />
           </div>
-          <div class="icon">
-            <span class="material-symbols-outlined"> lightbulb </span>
+          <div>
+            <FaRegLightbulb className={styles.icon} size="2rem" />
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Base;
+export default Base
