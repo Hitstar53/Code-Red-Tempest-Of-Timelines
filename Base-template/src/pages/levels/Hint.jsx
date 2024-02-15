@@ -47,16 +47,16 @@ export default function Hint(props) {
             className={styles.header}
             style={{ color: headerColor }}
           >
-            Hint
+            HINT
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <>
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
               sapiente ad similique exercitationem, corrupti cupiditate quasi
               repellendus eaque dolore tempore sit fugiat minus porro
               accusantium ex distinctio, vitae nesciunt laborum ipsam incidunt,
               id ea animi beatae? Quibusdam beatae deserunt neque?
-            </>
+            </p>
           </Typography>
         </Box>
       </Modal>

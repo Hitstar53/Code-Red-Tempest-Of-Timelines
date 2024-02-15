@@ -55,14 +55,14 @@ const Bastille = () => {
             <Leaderboard
               bgColor="#C3A077"
               textColor="white"
-              headerColor="#FFD9B5"
+              headerColor="black"
             ></Leaderboard>
           </div>
           <div>
             <Hint
               bgColor="#C3A077"
               textColor="white"
-              headerColor="#FFD9B5"
+              headerColor="black"
             ></Hint>
           </div>
         </div>

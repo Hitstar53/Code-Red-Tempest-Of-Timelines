@@ -1,8 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Inder&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Mono&display=swap');
 .header {
   /* display: none; */
   font-family: 'Inder', sans-serif !important;
   font-weight: 400 !important;
   font-style: normal;
   text-align: center !important;
+  font-size: 1.5rem !important;
+}
+.ranks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.team {
+  font-family: 'Inder', sans-serif;
+  font-size: 1.5rem !important;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+
+  padding: 0.7rem 0.5rem;
+  border-radius: 25px;
+  transition: cursor transform;
+  transition-duration: 1s;
+}
+.team:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+.team span {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2rem;
 }
