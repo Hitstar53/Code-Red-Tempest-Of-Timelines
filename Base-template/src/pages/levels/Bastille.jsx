@@ -1,15 +1,14 @@
-import * as React from "react";
+import * as React from 'react'
 
-import styles from "./Bastille.module.css";
-
-import { FaRankingStar } from "react-icons/fa6";
-import { FaRegLightbulb } from "react-icons/fa";
+import styles from './Bastille.module.css'
+import Leaderboard from './Leaderboard'
+import Hint from './Hint'
 
 const Bastille = () => {
-  const level = styles.level + " " + styles.infoBox;
-  const score = styles.score + " " + styles.infoBox;
-  const infoTime = styles.infoBox + " " + styles.timeRemaining;
-  const teamName = styles.infoBox + " " + styles.teamName;
+  const level = styles.level + ' ' + styles.infoBox
+  const score = styles.score + ' ' + styles.infoBox
+  const infoTime = styles.infoBox + ' ' + styles.timeRemaining
+  const teamName = styles.infoBox + ' ' + styles.teamName
   return (
     <div className={styles.outer}>
       <section className={styles.upperSection}>
@@ -53,25 +52,23 @@ const Bastille = () => {
         <div className={teamName}>Team Name</div>
         <div className={styles.features}>
           <div>
-            <FaRankingStar
-              style={{
-                height: "40px",
-                width: "40px",
-              }}
-            />
+            <Leaderboard
+              bgColor="#C3A077"
+              textColor="white"
+              headerColor="#FFD9B5"
+            ></Leaderboard>
           </div>
           <div>
-            <FaRegLightbulb
-              style={{
-                height: "40px",
-                width: "40px",
-              }}
-            />
+            <Hint
+              bgColor="#C3A077"
+              textColor="white"
+              headerColor="#FFD9B5"
+            ></Hint>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Bastille;
+export default Bastille

@@ -108,11 +108,10 @@
 }
 
 .features div {
-  display: none;
   align-items: center;
   border-radius: 100vw;
   background-color: #c3a07790;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
