@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
 
 :root {
-  --form-background: rgba(134, 203, 200, 0.85);
+  --form-background: rgba(134, 203, 200, 1);
   --form-input: #2fc2c5;
   --form-submit: rgba(134, 215, 255, 0.79);
 }
@@ -18,16 +18,26 @@ h1 {
 }
 
 body {
-  background-image: url(./public/imgs/loginImage.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+.background {
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  background-image: url(./public/imgs/loginImage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 7%;
+  object-fit: cover;
+  filter: blur(1px);
 }
 
 .login-frame {
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
   background-color: var(--form-background);
@@ -35,9 +45,35 @@ body {
   width: max(25vw, 21rem);
   padding: 1rem;
   border-radius: 0.5rem;
+  transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+  overflow: hidden;
+}
+.login-frame:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 30px 10px #78c2ea41;
+}
+
+.login-frame::before {
+  justify-self: center;
+  align-self: center;
+  content: '';
+  position: absolute;
+  top: -5em;
+  width: max(20vw, 15rem);
+  height: 150%;
+  background: linear-gradient(var(--form-submit), #d3afff);
+  animation: rotate 4s linear infinite;
+}
+.login-frame::after {
+  content: '';
+  position: absolute;
+  background: var(--form-background);
+  inset: 6px;
+  border-radius: 0.5rem;
 }
 
 form {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,6 +101,7 @@ input:focus {
 }
 
 h1 {
+  z-index: 2;
   font-size: 2.5rem;
 }
 
@@ -89,4 +126,79 @@ button:hover {
   outline: solid 1px aqua;
   color: aqua;
   background-color: rgba(134, 219, 255, 0.4);
+}
+
+.glitch {
+  position: relative;
+}
+.login-frame:hover .glitch {
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.login-frame:hover .glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.04em, -0.03em);
+  opacity: 0.75;
+}
+
+.login-frame:hover .glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .login-frame {
+    margin-bottom: 20vh;
+  }
 }
