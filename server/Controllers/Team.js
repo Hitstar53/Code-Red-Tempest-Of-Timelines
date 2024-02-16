@@ -41,7 +41,7 @@ const updateTeam = async (req, res) => {
     const updatedTeam = await Team.findByIdAndUpdate(_id, { ...team, _id }, { new: true });
 
     res.json(updatedTeam);
-}
+} 
 
 const deleteTeam = async (req, res) => {
     const { id } = req.params;
