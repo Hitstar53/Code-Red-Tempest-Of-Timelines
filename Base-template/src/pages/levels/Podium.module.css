@@ -1,0 +1,109 @@
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+:root {
+  --clr-1: #ff8911;
+  --clr-2: #994d1c;
+  --clr-3: #ffcd4b;
+  --clr-4: #c6a969;
+  --clr-5: white;
+  --clr-6: #b4b4b8;
+  --clr-7: #c7c8cc;
+  --clr-8: #2d9596;
+  --clr-9: #526d82;
+  --clr-10: #3e3232;
+  --clr-11: #d6c7ae;
+  --clr-12: #b2a59b;
+  --clr-13: #faeed1;
+}
+.card1 {
+  background: var(--clr-5);
+  position: relative;
+}
+.card1::before,
+.card1::after {
+  content: '';
+  position: absolute;
+  inset: -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-2),
+    var(--clr-4),
+    var(--clr-3)
+  );
+  border-radius: inherit;
+  animation: rotation 4s linear infinite;
+}
+
+.card1::after {
+  filter: blur(3.5rem);
+}
+
+/*styling for positition 2*/
+.card2 {
+  background: var(--clr-5);
+  position: relative;
+}
+.card2::before,
+.card2::after {
+  content: '';
+  position: absolute;
+  inset: -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-7),
+    var(--clr-9),
+    var(--clr-8),
+    var(--clr-9),
+    var(--clr-7)
+  );
+  border-radius: inherit;
+  animation: rotation 4s linear infinite;
+}
+
+.card2::after {
+  filter: blur(5.5rem);
+}
+
+/*Rank three styling*/
+
+.card3 {
+  background: var(--clr-5);
+  position: relative;
+}
+.card3::before,
+.card3::after {
+  content: '';
+  position: absolute;
+  inset: -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-12),
+    var(--clr-11),
+    var(--clr-10),
+    var(--clr-11),
+    var(--clr-12)
+  );
+  border-radius: inherit;
+  animation: rotation 4s linear infinite;
+}
+
+.card3::after {
+  filter: blur(3.5rem);
+}

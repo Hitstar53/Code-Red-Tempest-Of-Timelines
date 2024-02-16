@@ -8,24 +8,21 @@
   font-size: 1.5rem !important;
 }
 .ranks {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 .team {
   font-family: 'Inder', sans-serif;
   font-size: 1.5rem !important;
   display: grid;
-  grid-template-columns: 10% 80% 10%;
-
+  grid-template-columns: 18% 67% 15%;
+  align-items: center;
   padding: 0.7rem 0.5rem;
   border-radius: 25px;
   transition: cursor transform;
   transition-duration: 1s;
-}
-.team:hover {
-  cursor: pointer;
-  transform: scale(1.02);
 }
 .team span {
   text-align: center;

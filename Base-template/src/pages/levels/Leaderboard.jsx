@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
 import { FaRankingStar } from 'react-icons/fa6'
 import styles from './Leaderboard.module.css'
+import Podium from './Podium'
 export default function Leaderboard(props) {
   const { bgColor, headerColor } = props
 
@@ -51,15 +52,15 @@ export default function Leaderboard(props) {
           </Typography>
           <hr />
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <ul className={styles.ranks}>
-              <Team position={1} name="Team gods" score={69}></Team>
-              <Team position={2} name="Team gods" score={69}></Team>
-              <Team position={3} name="Team gods" score={69}></Team>
+            <div className={styles.ranks}>
+              <Podium position={1} name="Team gods" score={69}></Podium>
+              <Podium position={2} name="Team gods" score={69}></Podium>
+              <Podium position={3} name="Team gods" score={69}></Podium>
               <Team position={4} name="Team gods" score={69}></Team>
               <Team position={5} name="Team gods" score={69}></Team>
               <Team position={6} name="Team gods" score={69}></Team>
               <Team position={7} name="Team gods" score={69}></Team>
-            </ul>
+            </div>
           </Typography>
         </Box>
       </Modal>
@@ -71,47 +72,32 @@ const Team = (props) => {
   const { name, position, score } = props
   let positionColor = '#3b2a1a9d'
   let textColor = 'white'
-  if (position == 1) {
-    positionColor = '#FFD95A'
-
-    textColor = 'black'
-  }
-  if (position == 2) {
-    positionColor = '#C7C8CC'
-    textColor = 'black'
-  }
-  if (position == 3) {
-    positionColor = '#B67352'
-    textColor = 'black'
-  }
-  const boxShadow = '0 0 5px 2px' + positionColor
+  const boxShadow = '0 0 2px 2px' + positionColor
   const border = '3px solid ' + positionColor
   return (
-    <li
+    <div
       className={styles.team}
       style={{
         backgroundColor: positionColor,
         color: textColor,
-        // boxShadow: boxShadow,
+        boxShadow: boxShadow,
         border: border,
       }}
     >
       <Position position={position}></Position>
       <Name name={name}></Name>
       <Score score={score}></Score>
-    </li>
+    </div>
   )
 }
 const Position = ({ position }) => {
-  return <span className="position">{position}</span>
+  return <span>{position}</span>
 }
 const Name = ({ name }) => {
-  return <span className="name">{name}</span>
+  return <span>{name}</span>
 }
 const Score = ({ score }) => {
-  return (
-    <span className="score" style={{ alignSelf: 'center' }}>
-      {score}
-    </span>
-  )
+  return <span style={{ alignSelf: 'center' }}>{score}</span>
 }
+
+export { Team, Position, Name, Score }
