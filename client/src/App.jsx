@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         path: 'levels',
         children: [
           { path: 'level4', element: <Bastille /> },
-          { path: 'level2', element: <Egypt></Egypt> },
+          { path: 'level2', element: <Egypt /> },
         ],
       },
     ],
