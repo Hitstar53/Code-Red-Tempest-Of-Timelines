@@ -8,7 +8,7 @@ import { FaRankingStar } from 'react-icons/fa6'
 import styles from './Leaderboard.module.css'
 import Podium from './Podium'
 export default function Leaderboard(props) {
-  const { bgColor, headerColor } = props
+  const { bgColor, headerColor, iconColor, textColor, positionColor } = props
 
   const style = {
     position: 'absolute',
@@ -16,13 +16,14 @@ export default function Leaderboard(props) {
     left: '75%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: bgColor,
+    bgcolor: bgColor, //background color of the modal
     boxShadow: 24,
     p: 4,
     opacity: '0.6',
     maxHeight: '400px',
     overflowY: 'scroll',
     borderRadius: '25px',
+
     '&::-webkit-scrollbar': {
       width: 12.5,
     },
@@ -46,7 +47,7 @@ export default function Leaderboard(props) {
     <div>
       <FaRankingStar
         onClick={handleOpen}
-        style={{ height: '30px', width: '30px', color: 'white' }}
+        style={{ height: '30px', width: '30px', color: iconColor }}
       ></FaRankingStar>
       <Modal
         open={open}
@@ -70,10 +71,34 @@ export default function Leaderboard(props) {
               <Podium position={1} name="Team gods" score={69}></Podium>
               <Podium position={2} name="Team gods" score={69}></Podium>
               <Podium position={3} name="Team gods" score={69}></Podium>
-              <Team position={4} name="Team gods" score={69}></Team>
-              <Team position={5} name="Team gods" score={69}></Team>
-              <Team position={6} name="Team gods" score={69}></Team>
-              <Team position={7} name="Team gods" score={69}></Team>
+              <Team
+                position={4}
+                name="Team gods"
+                score={69}
+                textColor={textColor}
+                positionColor={positionColor}
+              ></Team>
+              <Team
+                position={5}
+                name="Team gods"
+                score={69}
+                textColor={textColor}
+                positionColor={positionColor}
+              ></Team>
+              <Team
+                position={6}
+                name="Team gods"
+                score={69}
+                textColor={textColor}
+                positionColor={positionColor}
+              ></Team>
+              <Team
+                position={7}
+                name="Team gods"
+                score={69}
+                textColor={textColor}
+                positionColor={positionColor}
+              ></Team>
             </div>
           </Typography>
         </Box>
@@ -83,9 +108,8 @@ export default function Leaderboard(props) {
 }
 
 const Team = (props) => {
-  const { name, position, score } = props
-  let positionColor = '#3b2a1a9d'
-  let textColor = 'white'
+  const { name, position, score, textColor, positionColor } = props
+
   const boxShadow = '0 0 2px 2px' + positionColor
   const border = '3px solid ' + positionColor
   return (

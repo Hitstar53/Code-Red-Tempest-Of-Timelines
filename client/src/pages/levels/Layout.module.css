@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inder&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Mono&display=swap');
 .outer {
-  background: url('../../assets/images/bastille.jpg');
+  /* background: url('../../assets/images/background-image.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
   display: grid;
@@ -15,7 +15,7 @@
   display: grid;
   align-items: center;
   justify-self: center;
-  background-color: #c3a07790;
+  /* background-color: #c3a07790; */
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
   text-align: center;
@@ -34,8 +34,8 @@
   grid-row: 1/2;
   font-family: 'Inder', sans-serif;
   font-size: 30px;
-  color: #3b2a1a;
-  text-shadow: 1px 0.5px #3b2a1ab9;
+  /* color: #3b2a1a; */
+  /* text-shadow: 1px 0.5px #3b2a1ab9; */
   margin-top: 0.8rem;
 }
 
@@ -78,11 +78,11 @@
   margin-bottom: 0.75rem;
   font-family: 'Inria Sans', sans-serif;
   font-size: 2rem;
-  color: #f2ceac;
+  /* color: #f2ceac; */
 }
 
 .timeRemaining span {
-  color: white;
+  /* color: white; */
   font-size: 20px;
 }
 
@@ -92,9 +92,9 @@
   font-size: 25px;
   letter-spacing: 1px;
   height: 33%;
-  color: #3b2a1a;
+  /* color: #3b2a1a; */
   margin-bottom: 1rem;
-  text-shadow: 0.75px 0px #3b2a1a;
+  /* text-shadow: 0.75px 0px #3b2a1a; */
 }
 
 .features {
@@ -111,7 +111,8 @@
 .features div {
   align-items: center;
   border-radius: 100vw;
-  background-color: #c3a07790;
+  /* background-color: #c3a07790; */
+
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -120,5 +121,5 @@
 
 .features div:hover {
   cursor: pointer;
-  transform: scale(1.03);
+  transform: scale(1.1);
 }

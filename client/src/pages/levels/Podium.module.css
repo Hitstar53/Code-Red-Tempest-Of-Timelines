@@ -107,3 +107,8 @@
 .card3::after {
   filter: blur(3.5rem);
 }
+.card1,
+.card2,
+.card3 {
+  color: black;
+}
