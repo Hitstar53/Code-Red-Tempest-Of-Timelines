@@ -29,11 +29,11 @@ const Welcome = () => {
     <div className={styles.welcomeContainer}>
       <div className={styles.openMsg}>
         <h1 className={styles.glow} data-value="CODE &nbsp RED">
-          CODE &nbsp RED
+          CODE RED
         </h1>
       </div>
       <button className={styles.startBtn} id="btn">
-        Start &nbsp Now!
+        Start Now!
       </button>
     </div>
   );
