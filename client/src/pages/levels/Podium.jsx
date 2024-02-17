@@ -1,8 +1,6 @@
 import React from 'react'
 import styles from './Podium.module.css'
 import styles2 from './Leaderboard.module.css'
-import { Team } from './Leaderboard'
-import { Position } from './Leaderboard'
 import { Score } from './Leaderboard'
 import { Name } from './Leaderboard'
 import { FaMedal } from 'react-icons/fa6'

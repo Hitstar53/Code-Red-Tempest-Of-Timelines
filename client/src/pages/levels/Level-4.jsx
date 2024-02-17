@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import styles from './Bastille.module.css'
+import styles from './Level-4.module.css'
 import Leaderboard from './Leaderboard'
 import Hint from './Hint'
 

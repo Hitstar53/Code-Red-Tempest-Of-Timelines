@@ -31,6 +31,7 @@ export default function Hint(props) {
         style={{
           height: '30px',
           width: '30px',
+          color: 'white',
         }}
       />
       <Modal

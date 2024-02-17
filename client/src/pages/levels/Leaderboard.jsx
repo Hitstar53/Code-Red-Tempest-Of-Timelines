@@ -19,9 +19,23 @@ export default function Leaderboard(props) {
     bgcolor: bgColor,
     boxShadow: 24,
     p: 4,
-
+    opacity: '0.6',
     maxHeight: '400px',
     overflowY: 'scroll',
+    borderRadius: '25px',
+    '&::-webkit-scrollbar': {
+      width: 12.5,
+    },
+    '&::-webkit-scrollbar-track': {
+      background: '#E4DEBE',
+      borderRadius: '45px',
+      marginTop: '20px',
+      marginBottom: '20px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: '#3E3232',
+      borderRadius: '45px',
+    },
   }
 
   const [open, setOpen] = React.useState(false)
@@ -32,7 +46,7 @@ export default function Leaderboard(props) {
     <div>
       <FaRankingStar
         onClick={handleOpen}
-        style={{ height: '30px', width: '30px' }}
+        style={{ height: '30px', width: '30px', color: 'white' }}
       ></FaRankingStar>
       <Modal
         open={open}
