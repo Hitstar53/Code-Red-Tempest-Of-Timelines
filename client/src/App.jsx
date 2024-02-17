@@ -5,15 +5,18 @@ import "./App.css";
 
 const router = createBrowserRouter([
   {
-    path: "/levels/",
-    children: [
-      { index: true, element: <div>Home</div> },
-      { path: "level4", element: <Bastille /> },
-    ],
-  },
-  {
     path: "/",
-    children: [{ path: "login", element: <div>Login</div> }],
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Welcome /> },
+      { path: "login", element: <Login /> },
+      {
+        path: "levels",
+        children: [
+          { path: "level4", element: <Bastille /> },
+        ],
+      },
+    ],
   },
 ]);
 
