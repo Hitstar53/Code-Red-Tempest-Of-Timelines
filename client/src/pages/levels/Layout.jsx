@@ -1,11 +1,8 @@
-import styles from './Layout.module.css'
-import Leaderboard from './Leaderboard'
-import Hint from './Hint'
-import bastille from '../../assets/images/bastille.jpg'
-import egypt from '../../assets/images/bastille.jpg'
+import styles from "./Layout.module.css";
+import Leaderboard from "./Leaderboard";
+import Hint from "./Hint";
 const Layout = (props) => {
-  const { level, name, time, score, backgroundPicURL, colors } = props
-
+  const { level, name, time, score, backgroundPicURL, colors } = props;
   /*colors={
     textColor-> color of normal text, level, time
     boxBackgroundColor-> background color of every box element on the layout
@@ -15,12 +12,19 @@ const Layout = (props) => {
     timerColor -> color of the time remaining
     timeRemainingColor ->  color of the text "Time Remaining"
   } */
-  const levelStyle = styles.level + ' ' + styles.infoBox
-  const scoreStyle = styles.score + ' ' + styles.infoBox
-  const infoTimeStyle = styles.infoBox + ' ' + styles.timeRemaining
-  const teamNameStyle = styles.infoBox + ' ' + styles.teamName
+  const levelStyle = styles.level + " " + styles.infoBox;
+  const scoreStyle = styles.score + " " + styles.infoBox;
+  const infoTimeStyle = styles.infoBox + " " + styles.timeRemaining;
+  const teamNameStyle = styles.infoBox + " " + styles.teamName;
   return (
-    <div className={styles.outer}>
+    <div
+      className={styles.outer}
+      style={{
+        backgroundImage: `url(${backgroundPicURL})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+    >
       <section className={styles.upperSection}>
         <div
           className={levelStyle}
@@ -64,7 +68,7 @@ const Layout = (props) => {
             color: colors.textColor,
           }}
         >
-          Team Name
+          {name}
         </div>
         <div className={styles.features}>
           <div style={{ backgroundColor: colors.boxBackgroundColor }}>
@@ -87,6 +91,6 @@ const Layout = (props) => {
         </div>
       </section>
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;

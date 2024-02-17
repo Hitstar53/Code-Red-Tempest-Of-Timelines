@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inder&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=PT+Mono&display=swap');
+
 .outer {
-  /* background: url('../../assets/images/background-image.jpg'); */
+  /* background: url('../../assets/images/background-image.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   display: grid;
   grid-template-rows: 15% 60% 20%;
   height: 100vh;

@@ -5,7 +5,7 @@ const Egypt = () => {
   return (
     <div
       style={{
-        background: `url(${background})`,
+        // background: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -15,6 +15,7 @@ const Egypt = () => {
         name="Team Gods"
         time="00:00:00"
         score="69420"
+        backgroundPicURL={background}
         colors={{
           textColor: '#3b2a1a',
           boxBackgroundColor: '#c3a07790',

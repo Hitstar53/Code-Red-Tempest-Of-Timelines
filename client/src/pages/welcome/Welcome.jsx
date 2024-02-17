@@ -28,7 +28,7 @@ const Welcome = () => {
   return (
     <div className={styles.welcomeContainer}>
       <div className={styles.openMsg}>
-        <h1 className={styles.glow} data-value="CODE &nbsp RED">
+        <h1 className={styles.glow} data-value="CODE RED">
           CODE RED
         </h1>
       </div>
