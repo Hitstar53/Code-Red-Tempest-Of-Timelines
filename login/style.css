@@ -23,6 +23,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
+
 .background {
   position: absolute;
   width: 105%;
@@ -48,6 +49,7 @@ body {
   transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
   overflow: hidden;
 }
+
 .login-frame:hover {
   transform: scale(1.01);
   box-shadow: 0 0 30px 10px #78c2ea41;
@@ -64,6 +66,7 @@ body {
   background: linear-gradient(var(--form-submit), #d3afff);
   animation: rotate 4s linear infinite;
 }
+
 .login-frame::after {
   content: '';
   position: absolute;
@@ -94,6 +97,7 @@ input {
   font-size: 1.5rem;
   transition: outline-color 300ms ease-in-out, filter 300ms ease-in-out;
 }
+
 input:hover,
 input:focus {
   outline: whitesmoke solid 1px;
@@ -121,6 +125,7 @@ button {
   cursor: pointer;
   transition: filter 300ms ease-in-out;
 }
+
 button:hover {
   filter: drop-shadow(0 0 0.5rem aqua);
   outline: solid 1px aqua;
@@ -131,6 +136,7 @@ button:hover {
 .glitch {
   position: relative;
 }
+
 .login-frame:hover .glitch {
   text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
     0.025em 0.04em 0 #fffc00;
@@ -162,26 +168,32 @@ button:hover {
     text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
       0.025em 0.04em 0 #fffc00;
   }
+
   15% {
     text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
       0.025em 0.04em 0 #fffc00;
   }
+
   16% {
     text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
       -0.05em -0.05em 0 #fffc00;
   }
+
   49% {
     text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
       -0.05em -0.05em 0 #fffc00;
   }
+
   50% {
     text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
       0 -0.04em 0 #fffc00;
   }
+
   99% {
     text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
       0 -0.04em 0 #fffc00;
   }
+
   100% {
     text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
       -0.04em -0.025em 0 #fffc00;
@@ -192,6 +204,7 @@ button:hover {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
