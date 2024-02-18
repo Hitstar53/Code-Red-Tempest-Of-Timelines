@@ -61,7 +61,6 @@ export const Right= () => {
     return (
         <React.Fragment>
             <div className="textBox">
-                <button onClick={typewriter}>START</button>
                 <div className="typedtext"></div>
                 <div className="buttons">
                     <button className="replay" onClick={rePlay}><i className="material-symbols-outlined">replay</i> Replay</button>
