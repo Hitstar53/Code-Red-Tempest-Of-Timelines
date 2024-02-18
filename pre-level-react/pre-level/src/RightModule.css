@@ -1,0 +1,74 @@
+.buttons {
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-between;
+}
+button:hover {
+    transform: scale(1.3);
+}
+i {
+    padding: 5px;
+}
+
+.material-symbols-outlined {
+    transition: transform 450ms ease-in-out;
+  }
+  
+.replay:hover .material-symbols-outlined {
+    transform: rotate(-60deg);
+}
+
+.textBox {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    margin-right: 5vw;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .typedtext {
+    color: #39ff14;
+    margin: 5vh 2vw;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .typedtext::after {
+    content: '';
+    width: 13px;
+    height: 2px;
+    left: 0px;
+    background: #39ff14;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: baseline;
+    animation: cursor-blink 1s step-end infinite;
+}
+  @keyframes cursor-blink {
+    from,
+    to {
+      background: transparent;
+    }
+    50% {
+      background: #39ff14;
+    }
+}
+
+button {
+    margin: 2vh 2vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+    color: #39ff14;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+  }
