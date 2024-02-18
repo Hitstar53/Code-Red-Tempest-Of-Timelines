@@ -15,6 +15,7 @@ function typewriter(){
     contents =  ' ';
     var destination = document.getElementById("typedtext");
     destination.innerHTML = contents + text[index].substring(0, textPos);
+    
     if ( textPos++ == length ) {
         setTimeout("showButtons()", 1000);
     } else {
@@ -35,13 +36,15 @@ function nextText(){
         dontShowButtons();
         typewriter();
     }
-    if (index==text.length) {
-        document.getElementById("replay").setAttribute("onclick", "window.location.reload()");
-        // document.getElementById("next").onclick = "";
-    }
 }
 function rePlay(){
     textPos = 0;
+    if (index==text.length-1) {
+        window.location.reload();
+        //document.getElementById("replay").setAttribute("onclick", "window.location.reload()");
+        // document.getElementById("next").onclick = "";
+    }
     typewriter();
+    dontShowButtons();
 }
 typewriter();
