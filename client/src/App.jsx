@@ -5,6 +5,8 @@ import Welcome from './pages/welcome/Welcome'
 import Bastille from './pages/levels/Level-4'
 import Egypt from './pages/levels/Level-2'
 import './App.css'
+import Area51 from './pages/levels/Level-6'
+import KimJongUn from './pages/levels/Level-7'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
         children: [
           { path: 'level4', element: <Bastille /> },
           { path: 'level2', element: <Egypt /> },
+          { path: 'level6', element: <Area51 /> },
+          { path: 'level7', element: <KimJongUn /> },
         ],
       },
     ],

@@ -1,8 +1,9 @@
-import styles from "./Layout.module.css";
-import Leaderboard from "./Leaderboard";
-import Hint from "./Hint";
+import styles from './Layout.module.css'
+import Leaderboard from './Leaderboard'
+import Hint from './Hint'
+import { FiTarget } from 'react-icons/fi'
 const Layout = (props) => {
-  const { level, name, time, score, backgroundPicURL, colors } = props;
+  const { level, name, time, score, backgroundPicURL, colors } = props
   /*colors={
     textColor-> color of normal text, level, time
     boxBackgroundColor-> background color of every box element on the layout
@@ -12,17 +13,17 @@ const Layout = (props) => {
     timerColor -> color of the time remaining
     timeRemainingColor ->  color of the text "Time Remaining"
   } */
-  const levelStyle = styles.level + " " + styles.infoBox;
-  const scoreStyle = styles.score + " " + styles.infoBox;
-  const infoTimeStyle = styles.infoBox + " " + styles.timeRemaining;
-  const teamNameStyle = styles.infoBox + " " + styles.teamName;
+  const levelStyle = styles.level + ' ' + styles.infoBox
+  const scoreStyle = styles.score + ' ' + styles.infoBox
+  const infoTimeStyle = styles.infoBox + ' ' + styles.timeRemaining
+  const teamNameStyle = styles.infoBox + ' ' + styles.teamName
   return (
     <div
       className={styles.outer}
       style={{
         backgroundImage: `url(${backgroundPicURL})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
     >
       <section className={styles.upperSection}>
@@ -33,7 +34,7 @@ const Layout = (props) => {
             color: colors.textColor,
           }}
         >
-          LEVEL {level}
+          Level {level}
         </div>
         <div
           className={scoreStyle}
@@ -42,7 +43,9 @@ const Layout = (props) => {
             color: colors.textColor,
           }}
         >
-          <span>Score:</span> <article>{score}</article>
+          <span>
+            <FiTarget style={{ height: '35px', width: '35px' }} /> {score}
+          </span>
         </div>
       </section>
       <section className={styles.mainContent}>
@@ -83,7 +86,7 @@ const Layout = (props) => {
           <div style={{ backgroundColor: colors.boxBackgroundColor }}>
             <Hint
               bgColor={colors.boxBackgroundColor}
-              textColor={colors.textColor}
+              textColor={colors.hintTextColor}
               headerColor={colors.leaderboardHeaderColor}
               iconColor={colors.iconColor}
             ></Hint>
@@ -91,6 +94,6 @@ const Layout = (props) => {
         </div>
       </section>
     </div>
-  );
-};
-export default Layout;
+  )
+}
+export default Layout

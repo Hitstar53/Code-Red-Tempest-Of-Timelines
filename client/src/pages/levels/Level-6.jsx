@@ -1,6 +1,7 @@
+import * as React from 'react'
 import Layout from './Layout'
-import background from '../../assets/images/bastille.jpg'
-const Egypt = () => {
+import background from '../../assets/images/area51.jpeg'
+const Area51 = () => {
   return (
     <div
       style={{
@@ -10,24 +11,24 @@ const Egypt = () => {
       }}
     >
       <Layout
-        level={2}
+        level={6}
         name="Team Gods"
         time="00:00:00"
         score="69420"
         backgroundPicURL={background}
         colors={{
-          textColor: '#3b2a1a',
-          boxBackgroundColor: '#c3a07790',
+          textColor: 'white',
+          boxBackgroundColor: '#04364A',
           leaderboardHeaderColor: 'black',
           iconColor: 'white',
           leaderboardPositionColor: 'brown',
-          timerColor: '#503C3C',
-          timeRemainingColor: '#503C3C',
-          hintTextClor: 'white',
+          timerColor: 'white',
+          timeRemainingColor: 'white',
+          hintTextColor: 'white',
         }}
       ></Layout>
     </div>
   )
 }
 
-export default Egypt
+export default Area51
