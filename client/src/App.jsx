@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Welcome from "./pages/welcome/Welcome";
+import Prelevel1 from "./pages/prelevels/Prelevel1";
 import Level1 from "./pages/levels/Level1";
 import Level2 from "./pages/levels/Level2";
 import Level3 from "./pages/levels/Level3";
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: "levels",
         children: [
+          { index: true, element: <Prelevel1 /> },
           { path: "level1", element: <Level1 /> },
           { path: "level2", element: <Level2 /> },
           { path: "level3", element: <Level3 /> },

@@ -1,5 +1,5 @@
 import React from "react";
-import welcomescreen from "../../assets/images/welcomescreen.jpg";
+import { Link } from "react-router-dom";
 import styles from "./Welcome.module.css";
 
 const Welcome = () => {
@@ -32,9 +32,9 @@ const Welcome = () => {
           CODE RED
         </h1>
       </div>
-      <button className={styles.startBtn} id="btn">
+      <Link to="/levels" className={styles.startBtn} id="btn">
         Start Now!
-      </button>
+      </Link>
     </div>
   );
 };
