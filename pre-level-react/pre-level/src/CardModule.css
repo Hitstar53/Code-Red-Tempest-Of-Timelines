@@ -9,6 +9,6 @@
     transition: box-shadow 300ms ease-in-out
 }
 
-card:hover {
-    box-shadow: 0 0 40px 20px #39ff14;
+.card:hover {
+    box-shadow: 0 0 30px 15px #39ff14;
   }

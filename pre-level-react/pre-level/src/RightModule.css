@@ -38,3 +38,37 @@ i {
     font-weight: bold;
     font-size: 1.6rem;
   }
+
+  .typedtext::after {
+    content: '';
+    width: 13px;
+    height: 2px;
+    left: 0px;
+    background: #39ff14;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: baseline;
+    animation: cursor-blink 1s step-end infinite;
+}
+  @keyframes cursor-blink {
+    from,
+    to {
+      background: transparent;
+    }
+    50% {
+      background: #39ff14;
+    }
+}
+
+button {
+    margin: 2vh 2vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+    color: #39ff14;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: none;
+  }

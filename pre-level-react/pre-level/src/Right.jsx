@@ -2,6 +2,7 @@ import React from "react";
 import './RightModule.css'
 
 //Callbacks
+
 var text = new Array(
     "This is Agent C from the future.\nSomething has been into the systems of TPA (Temporal Protection Authority).", 
     "We still don't know if it's a deed of a person or something else. All we have is this code: \nu005400520024",
@@ -38,7 +39,7 @@ function nextText(){
 }
 function typewriter(){
     contents =  ' ';
-    var destination = document.getElementById("typedtext");
+    var destination = document.querySelector(".typedtext");
     destination.innerHTML = contents + text[index].substring(0, textPos);
     
     if ( textPos++ === length ) {
@@ -48,10 +49,10 @@ function typewriter(){
     }
 }
 function showButtons(){
-    document.getElementById("buttons").style.display = "flex";
+    document.querySelector(".buttons").style.display = "flex";
 }
 function dontShowButtons(){
-    document.getElementById("buttons").style.display = "none";
+    document.querySelector(".buttons").style.display = "none";
 }
 
 
@@ -60,7 +61,8 @@ export const Right= () => {
     
     return (
         <React.Fragment>
-            <div className="textBox">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"></link>
+            <div className="textBox" onMouseOver={typewriter}>
                 <div className="typedtext"></div>
                 <div className="buttons">
                     <button className="replay" onClick={rePlay}><i className="material-symbols-outlined">replay</i> Replay</button>
