@@ -47,7 +47,7 @@ img {
 }
 #typedtext {
   color: #39ff14;
-  margin: 5vh 5vw;
+  margin: 5vh 2vw;
   width: 80%;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
@@ -57,7 +57,7 @@ img {
   content: '';
   width: 13px;
   height: 2px;
-  margin-left: 5px;
+  left: 0px;
   background: #39ff14;
   display: inline-flex;
   align-items: baseline;
@@ -75,7 +75,7 @@ img {
 }
 #name {
   position: absolute;
-  top: 90%;
+  top: 87%;
   left: 5%;
 }
 #code,
@@ -85,7 +85,7 @@ img {
   width: 80%;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 2rem;
   text-shadow: 0 0 10px #000;
 }
 #code {
@@ -108,11 +108,12 @@ button:hover {
 }
 #buttons {
   position: absolute;
+  display: none;
   bottom: 0px;
   width: 100%;
-  display: none;
   justify-content: space-between;
 }
+
 i {
   padding: 5px;
 }
