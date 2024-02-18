@@ -1,11 +1,11 @@
 import * as React from 'react'
 import Layout from './Layout'
-import background from '../../assets/images/kimjongun.jpg'
-const KimJongUn = () => {
+import background from '../../assets/images/area51.jpeg'
+
+const Level6 = () => {
   return (
     <div
       style={{
-        // background: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -18,13 +18,12 @@ const KimJongUn = () => {
         backgroundPicURL={background}
         colors={{
           textColor: 'white',
-          boxBackgroundColor: '#76453B',
+          boxBackgroundColor: '#04364A',
           leaderboardHeaderColor: 'white',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-
           hintTextColor: 'white',
-          leaderboardColor: '#76453B',
+          leaderboardColor: '#04364A',
           leaderboardTextColor: 'black',
         }}
       ></Layout>
@@ -32,4 +31,4 @@ const KimJongUn = () => {
   )
 }
 
-export default KimJongUn
+export default Level6

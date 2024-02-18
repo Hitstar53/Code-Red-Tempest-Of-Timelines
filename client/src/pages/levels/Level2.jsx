@@ -1,30 +1,29 @@
 import * as React from 'react'
 import Layout from './Layout'
-import background from '../../assets/images/area51.jpeg'
-const Area51 = () => {
+import background from '../../assets/images/egypt.jpg'
+
+const Level2 = () => {
   return (
     <div
       style={{
-        // background: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
     >
       <Layout
-        level={6}
+        level={2}
         name="Team Gods"
         time="00:00:00"
         score="69420"
         backgroundPicURL={background}
         colors={{
-          textColor: 'white',
-          boxBackgroundColor: '#04364A',
-          leaderboardHeaderColor: 'white',
+          textColor: '#3b2a1a',
+          boxBackgroundColor: '#c3a077',
+          leaderboardHeaderColor: 'black',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-
           hintTextColor: 'white',
-          leaderboardColor: '#04364A',
+          leaderboardColor: '#c3a077',
           leaderboardTextColor: 'black',
         }}
       ></Layout>
@@ -32,4 +31,4 @@ const Area51 = () => {
   )
 }
 
-export default Area51
+export default Level2

@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 import Layout from './Layout'
-import background from '../../assets/images/egypt.jpg'
-const Egypt = () => {
+import background from '../../assets/images/bastille.jpg'
+
+const Level4 = () => {
   return (
     <div
       style={{
-        // background: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
       }}
@@ -22,7 +22,6 @@ const Egypt = () => {
           leaderboardHeaderColor: 'black',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-
           hintTextColor: 'white',
           leaderboardColor: '#c3a077',
           leaderboardTextColor: 'black',
@@ -32,4 +31,4 @@ const Egypt = () => {
   )
 }
 
-export default Egypt
+export default Level4

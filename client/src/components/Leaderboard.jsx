@@ -1,27 +1,26 @@
-import * as React from 'react'
+import * as React from "react";
+import { FaRankingStar } from "react-icons/fa6";
+import { styled, useTheme } from "@mui/material/styles";
+import Drawer from "@mui/material/Drawer";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import Podium from "./Podium";
+import styles from "./Leaderboard.module.css";
 
-import { FaRankingStar } from 'react-icons/fa6'
-import styles from './Leaderboard.module.css'
-import Podium from './Podium'
-import { styled, useTheme } from '@mui/material/styles'
-import Drawer from '@mui/material/Drawer'
-import Divider from '@mui/material/Divider'
-import IconButton from '@mui/material/IconButton'
-
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-const drawerWidth = 400
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
+const drawerWidth = 400;
+const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
 
-    transition: theme.transitions.create('margin', {
+    transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
 
     ...(open && {
-      transition: theme.transitions.create('margin', {
+      transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
@@ -33,27 +32,27 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
      * those that appear earlier. Since the Drawer comes after the Main content, this adjustment ensures
      * proper interaction with the underlying content.
      */
-    position: 'relative',
+    position: "relative",
   })
-)
+);
 export default function Leaderboard(props) {
-  const { bgColor, headerColor, iconColor, textColor, positionColor } = props
+  const { bgColor, headerColor, iconColor, textColor, positionColor } = props;
 
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
-  const theme = useTheme()
+  const theme = useTheme();
   const handleDrawerOpen = () => {
-    setOpen(!open)
-  }
+    setOpen(!open);
+  };
 
   const handleDrawerClose = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
-    <div style={{ width: '30px' }}>
+    <div style={{ width: "30px" }}>
       <FaRankingStar
-        style={{ height: '30px', width: '30px', color: iconColor }}
+        style={{ height: "30px", width: "30px", color: iconColor }}
         aria-label="open drawer"
         edge="end"
         onClick={handleDrawerOpen}
@@ -65,7 +64,7 @@ export default function Leaderboard(props) {
           sx={{
             width: drawerWidth,
             flexShrink: 0,
-            '& .MuiDrawer-paper': {
+            "& .MuiDrawer-paper": {
               width: drawerWidth,
               backgroundColor: bgColor,
               opacity: 0.85,
@@ -75,15 +74,17 @@ export default function Leaderboard(props) {
           anchor="right"
           open={open}
         >
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
           <Divider />
-          <div className="Leader">
+          <div className="leader">
+            <IconButton onClick={handleDrawerClose}>
+              <ChevronRightIcon
+                style={{
+                  color: headerColor,
+                  width: "40px",
+                  height: "40px",
+                }}
+              />
+            </IconButton>
             <h1 className={styles.header} style={{ color: headerColor }}>
               Leaderboard
             </h1>
@@ -125,14 +126,14 @@ export default function Leaderboard(props) {
         </Drawer>
       </div>
     </div>
-  )
+  );
 }
 
 const Team = (props) => {
-  const { name, position, score, textColor, positionColor } = props
+  const { name, position, score, textColor, positionColor } = props;
 
-  const boxShadow = '0 0 2px 2px' + positionColor
-  const border = '3px solid ' + positionColor
+  const boxShadow = "0 0 2px 2px" + positionColor;
+  const border = "3px solid " + positionColor;
   return (
     <div
       className={styles.team}
@@ -147,16 +148,16 @@ const Team = (props) => {
       <Name name={name}></Name>
       <Score score={score}></Score>
     </div>
-  )
-}
+  );
+};
 const Position = ({ position }) => {
-  return <span>{position}</span>
-}
+  return <span>{position}</span>;
+};
 const Name = ({ name }) => {
-  return <span>{name}</span>
-}
+  return <span>{name}</span>;
+};
 const Score = ({ score }) => {
-  return <span style={{ alignSelf: 'center' }}>{score}</span>
-}
+  return <span style={{ alignSelf: "center" }}>{score}</span>;
+};
 
-export { Team, Position, Name, Score }
+export { Team, Position, Name, Score };

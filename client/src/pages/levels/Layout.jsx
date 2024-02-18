@@ -1,10 +1,11 @@
-import styles from './Layout.module.css'
-import Leaderboard from './Leaderboard'
-import Hint from './Hint'
-import { FiTarget } from 'react-icons/fi'
-import { Padding } from '@mui/icons-material'
+import styles from "./Layout.module.css";
+import Leaderboard from "../../components/Leaderboard";
+import Hint from "../../components/Hint";
+import { FiTarget } from "react-icons/fi";
+import { Padding } from "@mui/icons-material";
+
 const Layout = (props) => {
-  const { level, name, time, score, backgroundPicURL, colors } = props
+  const { level, name, time, score, backgroundPicURL, colors } = props;
   /*colors={
     textColor-> color of normal text, level, time
     boxBackgroundColor-> background color of every box element on the layout
@@ -16,17 +17,17 @@ const Layout = (props) => {
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
 
   } */
-  const levelStyle = styles.level + ' ' + styles.infoBox
-  const scoreStyle = styles.score + ' ' + styles.infoBox
-  const infoTimeStyle = styles.infoBox + ' ' + styles.timeRemaining
-  const teamNameStyle = styles.infoBox + ' ' + styles.teamName
+  const levelStyle = styles.level + " " + styles.infoBox;
+  const scoreStyle = styles.score + " " + styles.infoBox;
+  const infoTimeStyle = styles.infoBox + " " + styles.timeRemaining;
+  const teamNameStyle = styles.infoBox + " " + styles.teamName;
   return (
     <div
       className={styles.outer}
       style={{
         backgroundImage: `url(${backgroundPicURL})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       <section className={styles.upperSection}>
@@ -49,7 +50,7 @@ const Layout = (props) => {
           }}
         >
           <span>
-            <FiTarget style={{ height: '35px', width: '35px' }} /> {score}
+            <FiTarget style={{ height: "35px", width: "35px" }} /> {score}
           </span>
         </div>
       </section>
@@ -82,8 +83,8 @@ const Layout = (props) => {
           <div
             style={{
               backgroundColor: colors.boxBackgroundColor,
-              padding: '1rem',
-              borderRadius: '100vw',
+              padding: "1rem",
+              borderRadius: "100vw",
               boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             }}
           >
@@ -98,8 +99,8 @@ const Layout = (props) => {
           <div
             style={{
               backgroundColor: colors.boxBackgroundColor,
-              padding: '1rem',
-              borderRadius: '100vw',
+              padding: "1rem",
+              borderRadius: "100vw",
               boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             }}
           >
@@ -113,6 +114,6 @@ const Layout = (props) => {
         </div>
       </section>
     </div>
-  )
-}
-export default Layout
+  );
+};
+export default Layout;

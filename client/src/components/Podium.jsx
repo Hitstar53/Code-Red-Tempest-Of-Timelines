@@ -1,11 +1,12 @@
 import React from 'react'
-import styles from './Podium.module.css'
-import styles2 from './Leaderboard.module.css'
-import { Score } from './Leaderboard'
-import { Name } from './Leaderboard'
 import { PiNumberCircleOneFill } from 'react-icons/pi'
 import { PiNumberCircleTwoFill } from 'react-icons/pi'
 import { PiNumberCircleThreeFill } from 'react-icons/pi'
+import { Score } from './Leaderboard'
+import { Name } from './Leaderboard'
+import styles from './Podium.module.css'
+import styles2 from './Leaderboard.module.css'
+
 const Podium = (props) => {
   const rankOneStyle = styles.card1 + ' ' + styles2.team
   const rankTwoStyle = styles.card2 + ' ' + styles2.team
