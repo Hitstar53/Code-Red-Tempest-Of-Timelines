@@ -36,13 +36,14 @@ function nextText(){
         dontShowButtons();
         typewriter();
     }
+    if (index>=text.length-1) {
+        // document.getElementById("next").onclick = "";
+    }
 }
 function rePlay(){
     textPos = 0;
-    if (index==text.length-1) {
+    if (index>=text.length-1) {
         window.location.reload();
-        //document.getElementById("replay").setAttribute("onclick", "window.location.reload()");
-        // document.getElementById("next").onclick = "";
     }
     typewriter();
     dontShowButtons();
