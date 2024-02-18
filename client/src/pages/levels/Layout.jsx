@@ -2,6 +2,7 @@ import styles from './Layout.module.css'
 import Leaderboard from './Leaderboard'
 import Hint from './Hint'
 import { FiTarget } from 'react-icons/fi'
+import { Padding } from '@mui/icons-material'
 const Layout = (props) => {
   const { level, name, time, score, backgroundPicURL, colors } = props
   /*colors={
@@ -12,6 +13,9 @@ const Layout = (props) => {
     leaderboardPositionColor-> color of the background of the teams in the leaderboard outside the top3
     timerColor -> color of the time remaining
     timeRemainingColor ->  color of the text "Time Remaining"
+    leaderboardColor-> color of the leaderboard background
+    leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
+
   } */
   const levelStyle = styles.level + ' ' + styles.infoBox
   const scoreStyle = styles.score + ' ' + styles.infoBox
@@ -74,16 +78,28 @@ const Layout = (props) => {
           {name}
         </div>
         <div className={styles.features}>
-          <div style={{ backgroundColor: colors.boxBackgroundColor }}>
+          <div
+            style={{
+              backgroundColor: colors.boxBackgroundColor,
+              padding: '1rem',
+              borderRadius: '100vw',
+            }}
+          >
             <Leaderboard
-              bgColor={colors.boxBackgroundColor}
-              textColor={colors.textColor}
+              bgColor={colors.leaderboardColor}
+              textColor={colors.leaderboardTextColor}
               headerColor={colors.leaderboardHeaderColor}
               iconColor={colors.iconColor}
               positionColor={colors.leaderboardPositionColor}
             ></Leaderboard>
           </div>
-          <div style={{ backgroundColor: colors.boxBackgroundColor }}>
+          <div
+            style={{
+              backgroundColor: colors.boxBackgroundColor,
+              padding: '1rem',
+              borderRadius: '100vw',
+            }}
+          >
             <Hint
               bgColor={colors.boxBackgroundColor}
               textColor={colors.hintTextColor}

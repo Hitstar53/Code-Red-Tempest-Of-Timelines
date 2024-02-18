@@ -19,12 +19,14 @@ const KimJongUn = () => {
         colors={{
           textColor: 'white',
           boxBackgroundColor: '#76453B',
-          leaderboardHeaderColor: 'black',
+          leaderboardHeaderColor: 'white',
           iconColor: 'white',
-          leaderboardPositionColor: 'brown',
+          leaderboardPositionColor: '#CCD3CA',
           timerColor: 'white',
           timeRemainingColor: 'white',
           hintTextColor: 'white',
+          leaderboardColor: '#76453B',
+          leaderboardTextColor: 'black',
         }}
       ></Layout>
     </div>

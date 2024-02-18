@@ -19,12 +19,14 @@ const Area51 = () => {
         colors={{
           textColor: 'white',
           boxBackgroundColor: '#04364A',
-          leaderboardHeaderColor: 'black',
+          leaderboardHeaderColor: 'white',
           iconColor: 'white',
-          leaderboardPositionColor: 'brown',
+          leaderboardPositionColor: '#CCD3CA',
           timerColor: 'white',
           timeRemainingColor: 'white',
           hintTextColor: 'white',
+          leaderboardColor: '#04364A',
+          leaderboardTextColor: 'black',
         }}
       ></Layout>
     </div>
