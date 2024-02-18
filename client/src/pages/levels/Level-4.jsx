@@ -21,8 +21,7 @@ const Egypt = () => {
           leaderboardHeaderColor: 'black',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-          timerColor: '#503C3C',
-          timeRemainingColor: '#503C3C',
+
           hintTextColor: 'white',
           leaderboardColor: '#c3a077',
           leaderboardTextColor: 'black',

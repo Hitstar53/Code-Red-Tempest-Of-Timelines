@@ -22,8 +22,7 @@ const Area51 = () => {
           leaderboardHeaderColor: 'white',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-          timerColor: 'white',
-          timeRemainingColor: 'white',
+
           hintTextColor: 'white',
           leaderboardColor: '#04364A',
           leaderboardTextColor: 'black',

@@ -11,8 +11,7 @@ const Layout = (props) => {
     leaderboardHeaderColor-> color of "leaderboard" in the leaderboard modal
     iconColor-> color of the icons
     leaderboardPositionColor-> color of the background of the teams in the leaderboard outside the top3
-    timerColor -> color of the time remaining
-    timeRemainingColor ->  color of the text "Time Remaining"
+    
     leaderboardColor-> color of the leaderboard background
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
 
@@ -36,6 +35,7 @@ const Layout = (props) => {
           style={{
             backgroundColor: colors.boxBackgroundColor,
             color: colors.textColor,
+            boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
           }}
         >
           Level {level}
@@ -45,6 +45,7 @@ const Layout = (props) => {
           style={{
             backgroundColor: colors.boxBackgroundColor,
             color: colors.textColor,
+            boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
           }}
         >
           <span>
@@ -60,12 +61,11 @@ const Layout = (props) => {
           className={infoTimeStyle}
           style={{
             backgroundColor: colors.boxBackgroundColor,
-            color: colors.timerColor,
+            color: colors.textColor,
+            boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
           }}
         >
-          <span style={{ color: colors.timeRemainingColor }}>
-            Time Remaining
-          </span>
+          <span>Time Remaining</span>
           {time}
         </div>
         <div
@@ -73,6 +73,7 @@ const Layout = (props) => {
           style={{
             backgroundColor: colors.boxBackgroundColor,
             color: colors.textColor,
+            boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
           }}
         >
           {name}
@@ -83,6 +84,7 @@ const Layout = (props) => {
               backgroundColor: colors.boxBackgroundColor,
               padding: '1rem',
               borderRadius: '100vw',
+              boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             }}
           >
             <Leaderboard
@@ -98,6 +100,7 @@ const Layout = (props) => {
               backgroundColor: colors.boxBackgroundColor,
               padding: '1rem',
               borderRadius: '100vw',
+              boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             }}
           >
             <Hint

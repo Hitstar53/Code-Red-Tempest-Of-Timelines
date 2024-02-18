@@ -16,7 +16,7 @@ const Podium = (props) => {
     return (
       <div className={rankOneStyle} style={{ fontWeight: 'bold' }}>
         <PiNumberCircleOneFill
-          style={{ justifySelf: 'center', fontSize: '25px' }}
+          style={{ justifySelf: 'center', fontSize: '25px', color: '#FFB000' }}
         />
         <Name name={name}></Name>
         <Score score={score}></Score>
@@ -27,7 +27,7 @@ const Podium = (props) => {
     return (
       <div className={rankTwoStyle} style={{ fontWeight: 'bold' }}>
         <PiNumberCircleTwoFill
-          style={{ justifySelf: 'center', fontSize: '25px' }}
+          style={{ justifySelf: 'center', fontSize: '25px', color: '#7D7C7C' }}
         />
         <Name name={name}></Name>
         <Score score={score}></Score>
@@ -38,7 +38,7 @@ const Podium = (props) => {
     return (
       <div className={rankThreeStyle} style={{ fontWeight: 'bold' }}>
         <PiNumberCircleThreeFill
-          style={{ justifySelf: 'center', fontSize: '25px' }}
+          style={{ justifySelf: 'center', fontSize: '25px', color: '#A87C7C' }}
         />
         <Name name={name}></Name>
         <Score score={score}></Score>

@@ -22,8 +22,7 @@ const KimJongUn = () => {
           leaderboardHeaderColor: 'white',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',
-          timerColor: 'white',
-          timeRemainingColor: 'white',
+
           hintTextColor: 'white',
           leaderboardColor: '#76453B',
           leaderboardTextColor: 'black',
