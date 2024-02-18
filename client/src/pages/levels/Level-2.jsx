@@ -18,7 +18,7 @@ const Egypt = () => {
         backgroundPicURL={background}
         colors={{
           textColor: '#3b2a1a',
-          boxBackgroundColor: '#c3a07790',
+          boxBackgroundColor: '#c3a077',
           leaderboardHeaderColor: 'black',
           iconColor: 'white',
           leaderboardPositionColor: '#CCD3CA',

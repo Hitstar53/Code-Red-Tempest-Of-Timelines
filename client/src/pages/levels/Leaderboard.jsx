@@ -7,9 +7,7 @@ import { styled, useTheme } from '@mui/material/styles'
 import Drawer from '@mui/material/Drawer'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
-import { RiNumber1 } from 'react-icons/ri'
-import { RiNumber2 } from 'react-icons/ri'
-import { RiNumber3 } from 'react-icons/ri'
+
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import ChevronRightIcon from '@mui/icons-material/ChevronRight'
 const drawerWidth = 400
