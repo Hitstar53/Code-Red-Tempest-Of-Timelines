@@ -62,13 +62,13 @@ export const Right= () => {
     return (
         <React.Fragment>
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined"></link>
-            <div className="textBox" onMouseOver={typewriter}>
+            <div className="textBox" onDoubleClick={typewriter}>
                 <div className="typedtext"></div>
                 <div className="buttons">
                     <button className="replay" onClick={rePlay}><i className="material-symbols-outlined">replay</i> Replay</button>
                     <button className="next" onClick={nextText} >Next<i className="material-symbols-outlined">navigate_next</i></button>
                 </div>
-        </div>
+            </div>
         </React.Fragment>
     );
 };
