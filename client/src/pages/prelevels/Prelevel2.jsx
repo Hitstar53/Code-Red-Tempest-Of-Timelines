@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "./Layout";
 
-const Prelevel1 = () => {
+const Prelevel2 = () => {
   const text = [
     "This is Agent C from the future.\nSomething has been into the systems of TPA (Temporal Protection Authority).",
     "We still don't know if it's a deed of a person or something else. All we have is this code: \nu005400520024",
@@ -11,9 +11,9 @@ const Prelevel1 = () => {
   ];
   return (
     <div>
-      <Layout text={text} speed={50} lvl={1} />
+      <Layout text={text} speed={50} lvl={2} />
     </div>
   );
 };
 
-export default Prelevel1;
+export default Prelevel2;

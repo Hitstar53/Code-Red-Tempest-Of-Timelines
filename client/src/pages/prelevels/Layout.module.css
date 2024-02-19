@@ -22,19 +22,16 @@
 }
 
 .image {
-    position: relative;
     width: 40%;
     height: 80%;
-    margin: auto;
-    margin-left: 5vw;
-    display: inline-block;
-}
-
-.image img {
-    width: 80%;
-    height: 100%;
+    margin: auto 5vw;
     border-radius: 10px;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('../../assets/images/detective.avif');
+    background-size: cover;
+    background-position: center;
 }
 
 .textBox {
@@ -81,15 +78,7 @@
 }
 
 .caption {
-    position: absolute;
-    top: 87%;
-    left: 5%;
-}
-
-.caption {
     color: #39ff14;
-    margin: 2vh 5vw;
-    width: 80%;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 2rem;
@@ -123,12 +112,9 @@
 
 .buttons i {
     padding: 5px;
-}
-
-.symbol {
     transition: transform 450ms ease-in-out;
 }
 
-.replay:hover .symbol {
+.replay:hover i {
     transform: rotate(-60deg);
 }
