@@ -32,7 +32,7 @@ const Welcome = () => {
           CODE RED
         </h1>
       </div>
-      <Link to="/levels" className={styles.startBtn} id="btn">
+      <Link to="/levels/prelevel1" className={styles.startBtn} id="btn">
         Start Now!
       </Link>
     </div>

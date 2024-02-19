@@ -4,6 +4,11 @@ import ErrorPage from "./pages/ErrorPage";
 import Welcome from "./pages/welcome/Welcome";
 import Prelevel1 from "./pages/prelevels/Prelevel1";
 import Prelevel2 from './pages/prelevels/Prelevel2';
+import Prelevel3 from './pages/prelevels/Prelevel3';
+import Prelevel4 from './pages/prelevels/Prelevel4';
+import Prelevel5 from './pages/prelevels/Prelevel5';
+import Prelevel6 from './pages/prelevels/Prelevel6';
+import Prelevel7 from './pages/prelevels/Prelevel7';
 import Level1 from "./pages/levels/Level1";
 import Level2 from "./pages/levels/Level2";
 import Level3 from "./pages/levels/Level3";
@@ -29,10 +34,15 @@ const router = createBrowserRouter([
           { path: "level1", element: <Level1 /> },
           { path: "prelevel2", element: <Prelevel2 /> },
           { path: "level2", element: <Level2 /> },
+          { path: "prelevel3", element: <Prelevel3 /> },
           { path: "level3", element: <Level3 /> },
+          { path: "prelevel4", element: <Prelevel4 /> },
           { path: "level4", element: <Level4 /> },
+          { path: "prelevel5", element: <Prelevel5 /> },
           { path: "level5", element: <Level5 /> },
+          { path: "prelevel6", element: <Prelevel6 /> },
           { path: "level6", element: <Level6 /> },
+          { path: "prelevel7", element: <Prelevel7 /> },
           { path: "level7", element: <Level7 /> },
           { path: "level8", element: <Level8 /> },
         ],

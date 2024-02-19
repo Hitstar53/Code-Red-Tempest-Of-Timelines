@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import BgAudio from "../../assets/audio/cyber-town-simcity-style-music-22907.mp3";
 import styles from "./Layout.module.css";
 
 const Layout = (props) => {
@@ -26,7 +27,7 @@ const Layout = (props) => {
       dontShowButtons();
       typewriter();
     }
-    if (index >= text.length - 1) {
+    if (index > text.length - 1) {
       navigate(`/levels/level${props.lvl}`);
     }
   };
@@ -46,9 +47,22 @@ const Layout = (props) => {
   const dontShowButtons = () => {
     document.querySelector("#buttons").style.display = "none";
   };
-  window.onload = typewriter;
+  const audioRef = useRef(null);
+  useEffect(() => {
+    const audioElement = audioRef.current;
+    audioElement.volume = 0.2;
+    audioElement.play();
+    audioElement.loop = true;
+    typewriter();
+    return () => {
+      audioElement.pause();
+    };
+  }, []);
   return (
     <div className={styles.container}>
+      <audio ref={audioRef} src={BgAudio} controls={false} preload="auto">
+        Your browser does not support the audio element.
+      </audio>
       <div className={styles.card}>
         <div className={styles.image}>
           <p className={styles.caption}>Agent C</p>
@@ -60,8 +74,7 @@ const Layout = (props) => {
               <i className="material-symbols-outlined">replay</i> Replay
             </button>
             <button className={styles.next} onClick={nextText}>
-              Next<i className="material-symbols-outlined">
-                navigate_next</i>
+              Next<i className="material-symbols-outlined">navigate_next</i>
             </button>
           </div>
         </div>

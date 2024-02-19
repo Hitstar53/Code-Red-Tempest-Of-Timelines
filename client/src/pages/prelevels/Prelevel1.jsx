@@ -3,15 +3,14 @@ import Layout from "./Layout";
 
 const Prelevel1 = () => {
   const text = [
-    "This is Agent C from the future.\nSomething has been into the systems of TPA (Temporal Protection Authority).",
-    "We still don't know if it's a deed of a person or something else. All we have is this code: \nu005400520024",
-    "But this is horrifying. The thing is trying to change major historical events.",
-    "And also, don't get surprised if you don't find the history as you know it, because it is not as you know it.",
-    "It is not as you know it. . .",
+    "This is Agent C, reaching out from the depths of time. Our Temporal Protection Authority systems have been breached. It's a Code Red and the implications can be grave.",
+    "All we have is the code u0054u0052u0024. Something, a mysterious existence, is meddling with the very fabric of time itself.",
+    "This unknown force is weaving its own threads into the narrative, altering crucial junctures in history.",
+    "The past, as you've known it...\nis fading...\nfading into obscurity before our very eyes.",
   ];
   return (
     <div>
-      <Layout text={text} speed={50} lvl={1} />
+      <Layout text={text} speed={90} lvl={1} />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const Level7 = () => {
       }}
     >
       <Layout
-        level={6}
+        level={7}
         name="Team Gods"
         time="00:00:00"
         score="69420"

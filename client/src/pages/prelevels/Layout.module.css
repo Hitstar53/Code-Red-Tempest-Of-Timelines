@@ -4,21 +4,26 @@
     align-items: center;
     justify-content: center;
     background-image: url('../../assets/images/code.jpg');
+    animation: bg-move 7.5s infinite;
+    background-position: 0% 0%;
 }
 
 .card {
     width: 70vw;
     height: 80vh;
     margin: 10vh auto;
-    background-color: #436850;
     display: flex;
     border-radius: 30px;
+    background-color: #436850;
     box-shadow: 0 0 20px 10px #39ff14;
+    /* background-color: #b42828; */
+    /* box-shadow: 0 0 30px 15px #ff6e14; */
     transition: box-shadow 300ms ease-in-out;
 }
 
 .card:hover {
     box-shadow: 0 0 30px 15px #39ff14;
+    /* box-shadow: 0 0 40px 20px #ac4302; */
 }
 
 .image {
@@ -34,6 +39,34 @@
     background-position: center;
 }
 
+@keyframes bg-move {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes bg-size {
+    0% {
+        background-size: 100% 200%;
+    }
+
+    50% {
+        background-size: 100% 150%;
+    }
+
+    100% {
+        background-size: 100% 200%;
+    }
+}
+
 .textBox {
     position: relative;
     width: 60%;
@@ -45,12 +78,13 @@
 }
 
 .typedtext {
-    color: #39ff14;
+    /* color: #ffb514; */
+    color: #11c7e3;
     margin: 5vh 2vw;
     width: 80%;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 1.6rem;
+    font-size: 1.25rem;
 }
 
 .typedtext::after {
@@ -101,13 +135,14 @@
     background: inherit;
     color: #39ff14;
     font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-weight: thin;
+    font-size: 1.25rem;
     border: none;
 }
 
 .buttons button:hover {
-    transform: scale(1.3);
+    color: #11c7e3;
+    font-weight: bold;
 }
 
 .buttons i {
