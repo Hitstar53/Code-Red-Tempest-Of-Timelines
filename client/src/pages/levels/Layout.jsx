@@ -19,7 +19,7 @@ const Layout = (props) => {
   } */
   const levelStyle = styles.level + " " + styles.infoBox;
   const scoreStyle = styles.score + " " + styles.infoBox;
-  const infoTimeStyle = styles.infoBox + " " + styles.timeRemaining;
+  const infoTimeStyle = styles.timeBox + " " + styles.timeRemaining;
   const teamNameStyle = styles.infoBox + " " + styles.teamName;
   return (
     <div
@@ -54,9 +54,7 @@ const Layout = (props) => {
           </span>
         </div>
       </section>
-      <section className={styles.mainContent}>
-        <div className={styles.random}></div>
-      </section>
+      <section className={styles.mainContent}>{props.children}</section>
       <section className={styles.bottomSection}>
         <div
           className={infoTimeStyle}

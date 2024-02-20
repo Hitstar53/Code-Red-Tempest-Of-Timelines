@@ -1,0 +1,48 @@
+.level1 {
+    overflow: hidden;
+    position: relative;
+}
+
+.l1Vid {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.searchBar {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50rem;
+    display: flex;
+    align-items: center;
+}
+
+.searchBar input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    color: #fff;
+    border-radius: 2rem;
+    background-color: #04364A;
+    box-shadow: 0 0 35px 5px rgba(255, 255, 255, 1);
+    position: relative;
+}
+
+.searchBar button {
+    position: absolute;
+    right: 2rem;
+}
+
+.searchBar i {
+    color: #fff;
+    font-size: 2rem;
+}
