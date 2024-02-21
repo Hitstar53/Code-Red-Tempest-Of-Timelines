@@ -13,8 +13,8 @@ main {
 
 .container {
   position: relative;
-  height: 95vh;
-  width: 80vw;
+  height: 95%;
+  width: 80%;
   background: url("../../assets/images/laptop-with-hand.png") no-repeat center
     center/cover;
   transition: all 0.3s ease-in;
@@ -29,7 +29,7 @@ main {
   width: 48vw;
   top: 9%;
   left: 20%;
-  background-color: #212529;
+  background-color: #202020;
   border-radius: 10px;
 }
 
@@ -38,6 +38,7 @@ main {
   width: 100%;
   background: url("../../assets/images/hacker.jpg") no-repeat center
     center/cover;
+  border-radius: 10px 0 0 10px;
 }
 
 .card .content {
@@ -53,8 +54,7 @@ main {
   font-size: 1.8rem;
   color: #39ff14;
   margin-bottom: 20px;
-  width: 100%;
-  text-align: center;
+  width: 90%;
 }
 
 .formContainer {
@@ -62,16 +62,15 @@ main {
   justify-content: center;
   flex-direction: column;
   gap: 15px;
-  width: 100%;
+  width: 90%;
 }
 
 .formContainer input {
-  background-color: #343a40;
+  background-color: transparent;
   padding: 10px;
   font-size: 20px;
   border: none;
   outline: none;
-  width: 100%;
   color: #39ff14;
   border-radius: 10px;
 }
@@ -80,15 +79,21 @@ main {
   color: #868e96;
 }
 
-.formContainer button {
-  padding: 10px;
+.formContainer p {
+  color: #868e96;
   font-size: 20px;
-  font-weight: bold;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  background-color: #39ff14;
-  color: #000;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.formGroup span {
+  font-size: 25px;
+  color: #39ff14;
 }
