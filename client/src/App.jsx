@@ -1,14 +1,13 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Welcome from "./pages/welcome/Welcome";
 import Prelevel1 from "./pages/prelevels/Prelevel1";
-import Prelevel2 from './pages/prelevels/Prelevel2';
-import Prelevel3 from './pages/prelevels/Prelevel3';
-import Prelevel4 from './pages/prelevels/Prelevel4';
-import Prelevel5 from './pages/prelevels/Prelevel5';
-import Prelevel6 from './pages/prelevels/Prelevel6';
-import Prelevel7 from './pages/prelevels/Prelevel7';
+import Prelevel2 from "./pages/prelevels/Prelevel2";
+import Prelevel3 from "./pages/prelevels/Prelevel3";
+import Prelevel4 from "./pages/prelevels/Prelevel4";
+import Prelevel5 from "./pages/prelevels/Prelevel5";
+import Prelevel6 from "./pages/prelevels/Prelevel6";
+import Prelevel7 from "./pages/prelevels/Prelevel7";
 import Level1 from "./pages/levels/Level1";
 import Level2 from "./pages/levels/Level2";
 import Level3 from "./pages/levels/Level3";
@@ -19,6 +18,7 @@ import Level7 from "./pages/levels/Level7";
 import Level8 from "./pages/levels/Level8";
 // import Level9 from './pages/levels/Level9'
 import "./App.css";
+import LoginPage from "./pages/Login/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Welcome /> },
-      // { path: "login", element: <Login /> },
+      { path: "login", element: <LoginPage /> },
       {
         path: "levels",
         children: [
