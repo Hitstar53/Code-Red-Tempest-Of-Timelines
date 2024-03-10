@@ -1,9 +1,11 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import background from "../../assets/images/egypt.jpg";
 import "./Level2.css";
 
 const Level2 = () => {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -33,7 +35,13 @@ const Level2 = () => {
           <form action="#" className="login-form-container">
             <input type="text" placeholder="Enter Co-ordinates" />
             <input type="password" placeholder="Enter Year" />
-            <button type="submit">Login</button>
+            <button
+              onClick={() => navigate("/levels/prelevel3")}
+              className="level2btn"
+              type="submit"
+            >
+              Login
+            </button>
           </form>
         </div>
       </Layout>

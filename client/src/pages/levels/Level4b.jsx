@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/bastille.jpg'
 
-const Level4 = () => {
+const Level4b = () => {
   return (
     <div
       style={{
@@ -31,4 +31,4 @@ const Level4 = () => {
   )
 }
 
-export default Level4
+export default Level4b

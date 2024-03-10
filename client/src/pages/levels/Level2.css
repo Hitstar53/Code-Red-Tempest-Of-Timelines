@@ -64,14 +64,14 @@
     ;
 }
 
-button {
+.level2btn {
     cursor: pointer;
     background: #F29492;
     color: white;
     transition: 0.5s;
 }
 
-button:hover {
+.level2btn:hover {
     background: #114357;
 }
 

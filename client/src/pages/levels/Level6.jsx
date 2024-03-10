@@ -26,14 +26,7 @@ const Level6 = () => {
           leaderboardColor: "#04364A",
           leaderboardTextColor: "black",
         }}
-      >
-        <div class="search-bar">
-          <input type="text" placeholder="Search..." />
-          <button>
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </Layout>
+      ></Layout>
     </div>
   );
 };

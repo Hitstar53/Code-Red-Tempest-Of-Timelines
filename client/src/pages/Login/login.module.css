@@ -1,22 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
-main {
+.main {
   font-family: "Source Code Pro", monospace;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/images/hacking-background.jpg") no-repeat center
-    center/cover;
+  background: url("../../assets/images/hacking-background.jpg") no-repeat center center/cover;
 }
 
 .container {
   position: relative;
   height: 95%;
   width: 80%;
-  background: url("../../assets/images/laptop-with-hand.png") no-repeat center
-    center/cover;
+  background: url("../../assets/images/laptop-with-hand.png") no-repeat center center/cover;
   transition: all 0.3s ease-in;
 }
 
@@ -36,8 +34,7 @@ main {
 .card .hackerImage {
   height: 100%;
   width: 100%;
-  background: url("../../assets/images/hacker.jpg") no-repeat center
-    center/cover;
+  background: url("../../assets/images/hacker.jpg") no-repeat center center/cover;
   border-radius: 10px 0 0 10px;
 }
 

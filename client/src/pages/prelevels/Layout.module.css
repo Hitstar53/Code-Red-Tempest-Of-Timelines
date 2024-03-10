@@ -127,7 +127,8 @@
     justify-content: space-between;
 }
 
-.buttons button {
+.next,
+.replay {
     margin: 2vh 2vw;
     display: inline-flex;
     justify-content: center;
@@ -140,7 +141,8 @@
     border: none;
 }
 
-.buttons button:hover {
+.next:hover,
+.replay:hover {
     color: #11c7e3;
     font-weight: bold;
 }
