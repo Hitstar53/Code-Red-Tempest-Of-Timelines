@@ -3,8 +3,8 @@ import React, { useRef, useEffect, useState} from 'react';
 
 function Win(){
 
-    const src = "src/assets/background.mov"
-    const image = "src/assets/agent.jpg"
+    const src = "src/assets/animations/background.mov"
+    const image = "src/assets/images/agent.jpg"
 
     const videoRef = useRef(null);
 
