@@ -8,17 +8,13 @@
   --screen-text: #ff558f;
 }
 
-html,
-body {
-  margin: 0;
-  height: 100%;
-}
-
-body {
+.main {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./wepik-export-20240309064031UdkG.png);
+  background-image: url('../../assets/images/wepik-export-20240309064031UdkG.png');
   background-size: contain;
   background-position: center;
 }

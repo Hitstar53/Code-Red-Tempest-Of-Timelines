@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './Level8_1.css'
+import styles from './Level8_1.module.css' // Assuming you have your CSS module file in the same directory
 
 const Keypad = () => {
   const [inputs, setInputs] = useState([])
@@ -65,7 +65,11 @@ const Keypad = () => {
     const numericKeys = []
     for (let i = 9; i > 0; i--) {
       numericKeys.push(
-        <div key={i} className="key" onClick={() => handleKeyClick(String(i))}>
+        <div
+          key={i}
+          className={`${styles.key} ${styles.keyNumeric}`}
+          onClick={() => handleKeyClick(String(i))}
+        >
           {i}
         </div>
       )
@@ -76,29 +80,35 @@ const Keypad = () => {
   const addLastRow = () => {
     return (
       <>
-        <div className="key clear" onClick={() => handleKeyClick('clear')}>
+        <div
+          className={`${styles.key} ${styles.keyClear}`}
+          onClick={() => handleKeyClick('clear')}
+        >
           clear
         </div>
-        <div className="key" onClick={() => handleKeyClick('0')}>
+        <div
+          className={`${styles.key} ${styles.keyNumeric}`}
+          onClick={() => handleKeyClick('0')}
+        >
           0
         </div>
         <div
-          className="key backspace"
+          className={`${styles.key} ${styles.keyBackspace}`}
           onClick={() => handleKeyClick('backspace')}
         >
-          <i className="fa-solid fa-delete-left"></i>
+          <i className={`${styles.icon} ${styles.iconBackspace}`}></i>
         </div>
       </>
     )
   }
 
   return (
-    <main>
-      <div className="keypad">
-        <div className="screen">
+    <main className={`${styles.main}`}>
+      <div className={styles.keypad}>
+        <div className={styles.screen}>
           <p>{message}</p>
         </div>
-        <div className="keys">
+        <div className={styles.keys}>
           {addNumericKeys()}
           {addLastRow()}
         </div>
