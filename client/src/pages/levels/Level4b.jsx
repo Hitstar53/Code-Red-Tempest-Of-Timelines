@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useRef} from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/bastille.jpg'
 
@@ -26,7 +26,9 @@ const Level4b = () => {
           leaderboardColor: '#c3a077',
           leaderboardTextColor: 'black',
         }}
-      ></Layout>
+      >
+
+      </Layout>
     </div>
   )
 }

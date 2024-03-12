@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import Welcome from "./pages/welcome/Welcome";
-import LoginPage from "./pages/login/LoginPage";
+import LoginPage from "./pages/Login/LoginPage";
 import Prelevel1 from "./pages/prelevels/Prelevel1";
 import Prelevel2 from "./pages/prelevels/Prelevel2";
 import Prelevel3 from "./pages/prelevels/Prelevel3";
