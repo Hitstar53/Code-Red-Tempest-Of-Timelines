@@ -1,0 +1,90 @@
+p, span{
+  color:azure;
+  font-family: 'Space Mono', monospace;
+  display:inline-block;
+  font-size:21px;
+}
+body{
+  margin:0;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, #f4a460, #955721);
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+.lp{
+  flex:1;
+}
+.container{
+  background-color:rgb(31, 31, 31);
+  width:80vw;
+  height: 75vh;
+  border-radius:2rem;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 3px solid rgb(156, 116, 14);
+  padding:1rem; 
+}
+.inner-container{
+  width:70vw;
+  height:65vh;
+  background-color:black;
+  border-radius: 2rem;
+  padding:1rem;
+
+  display:flex;
+  flex-wrap: wrap;
+}
+.q2 {
+  margin-left:25%;
+}
+.q4{
+  margin-left:29%;
+}
+.answer-textbox{
+  width:30%;
+  height:5%;
+  font-family: "Space Mono",monospace;
+  border-radius: .5rem;
+}
+.answer-textbox, .entry, .wrong-answer{
+  align-self: flex-end;
+  margin-bottom: 3%;
+  margin-left:3%;
+
+}
+.answer-textbox.wrong{
+  border:2px solid red;
+}
+.wrong-answer{
+  color:red;
+  font-size:15px;
+  margin-right:0.5rem;
+  display:none;
+}
+.btn{
+  margin-left: 1rem;
+  margin-bottom: 3%;
+  height:5%;
+  align-self:flex-end;
+  font-size: 20px;
+  font-family:"Space Mono",monospace;
+  padding-bottom:3%;
+  background-color:rgb(53, 48, 48);
+  text-align: center;
+  color:#b18d09
+}
+
+.btn:hover{
+  color:#e0b92c
+}
+
+.btn:active{
+  background-color:rgb(80, 76, 76);
+}
