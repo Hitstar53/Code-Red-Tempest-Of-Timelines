@@ -1,0 +1,13 @@
+.travelbtn {
+    width: 250px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fce35d;
+    background-color: #000;
+}
+
+.travelbtn:hover {
+    background-color: #fce35d;
+    color: #000;
+}
