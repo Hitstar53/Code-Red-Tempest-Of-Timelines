@@ -29,7 +29,7 @@ function Wrong_choice_ending() {
   }, [navigate])
 
   return (
-    <div className={style.bg}>
+    <div className={style.body}>
       <div className={style.img}></div>
     </div>
   )
