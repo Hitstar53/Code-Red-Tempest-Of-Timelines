@@ -8,6 +8,7 @@
   margin: 0;
   text-align: center;
 }
+<<<<<<< HEAD
 .h1 {
   font-family: 'Monomaniac One', sans-serif;
 }
@@ -15,12 +16,25 @@
   height: 100vh;
   width: 100vw;
   background-image: url(./assets/peakpx.jpg);
+=======
+.heading-path {
+  font-family: 'Monomaniac One', sans-serif;
+}
+.body {
+  background-image: url(./assets/code-shit.jpg);
+>>>>>>> f0549d8d11f129e795d6563a392d32a2cf82bf2b
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-size: contain;
+<<<<<<< HEAD
   flex-direction: column;
   gap: 2rem;
+=======
+  height: 100vh;
+  width: 100vw;
+>>>>>>> f0549d8d11f129e795d6563a392d32a2cf82bf2b
 }
 
 .options {
@@ -30,7 +44,11 @@
   justify-content: space-evenly;
 }
 
+<<<<<<< HEAD
 .img {
+=======
+.choose-img {
+>>>>>>> f0549d8d11f129e795d6563a392d32a2cf82bf2b
   height: 20rem;
   width: 20rem;
   object-fit: cover;

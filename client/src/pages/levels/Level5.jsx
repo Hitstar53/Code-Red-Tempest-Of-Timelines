@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
+import LockIcon from "@mui/icons-material/Lock";
 import background from "../../assets/images/tm.jpg";
 import "./Level5.css";
 
@@ -44,8 +45,18 @@ const Level5 = () => {
             backgroundColor: "#475c79",
             borderRight: "none",
             boxShadow: "0px 0px 10px 2px #000",
+            position: "relative",
           }}
         >
+          <div className="locked">
+            <p>Time Machine Is Locked</p>
+            <LockIcon
+              style={{
+                fontSize: "100px",
+                color: "#fce35d",
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",

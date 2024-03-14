@@ -18,7 +18,7 @@ function redirect() {
 function App() {
   return (
     <div className="body">
-      <h1 className="h1">Choose your path</h1>
+      <h1 className="heading-path">Choose your path</h1>
       <section className="options">
         {options.map((option, index) => {
           return <Option key={option.id} {...option} number={index} />
@@ -30,5 +30,4 @@ function App() {
     </div>
   )
 }
-
 export default App
