@@ -1,45 +1,39 @@
-import React, { useState } from 'react'
-import Layout from './Layout'
-import background from '../../assets/images/bastille.jpg'
-<<<<<<< HEAD
-import TextFieldImage from '../../assets/images/old-computer.jpg';
-import styles from './Level4a.module.css';
-=======
-import TextFieldImage from '../../assets/images/old-computer.jpg'
-import './Level4a.css'
->>>>>>> cc7e23592b66ba3070a88d184e59ca83fed1dc42
+import { useState } from "react";
+import Layout from "./Layout";
+import TextFieldImage from "../../assets/images/old-computer.jpg";
+import styles from "./Level4a.module.css";
 
 const Level4a = () => {
-  const [inputValue, setInputValue] = useState('')
-  const [message, setMessage] = useState('')
+  const [inputValue, setInputValue] = useState("");
+  const [message, setMessage] = useState("");
   // const button = document.querySelector('.check-button');
   // const proceed = document.querySelector('.proceed-button');
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value)
-  }
+    setInputValue(e.target.value);
+  };
 
   const handleButtonClick = () => {
-    if (message === 'Congratulations') {
-      window.location.href = 'level4-2'
+    if (message === "Congratulations") {
+      window.location.href = "level4-2";
     } else {
-      setMessage('Pls enter the correct code')
-      setMessage('Enter Answer')
+      setMessage("Pls enter the correct code");
+      setMessage("Enter Answer");
     }
-  }
+  };
   const handleCheckClick = () => {
-    if (inputValue.trim() === 'Storming of Bastille') {
-      setMessage('Congratulations')
+    if (inputValue.trim() === "Storming of Bastille") {
+      setMessage("Congratulations");
     } else {
-      setMessage('Error')
+      setMessage("Error");
     }
-  }
+  };
 
   return (
     <div
       style={{
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
       <Layout
@@ -49,111 +43,107 @@ const Level4a = () => {
         score="69420"
         backgroundPicURL={TextFieldImage}
         colors={{
-          textColor: '#3b2a1a',
-          boxBackgroundColor: '#c3a077',
-          leaderboardHeaderColor: 'black',
-          iconColor: 'white',
-          leaderboardPositionColor: '#CCD3CA',
-          hintTextColor: 'white',
-          leaderboardColor: '#c3a077',
-          leaderboardTextColor: 'black',
+          textColor: "#3b2a1a",
+          boxBackgroundColor: "#c3a077",
+          leaderboardHeaderColor: "black",
+          iconColor: "white",
+          leaderboardPositionColor: "#CCD3CA",
+          hintTextColor: "white",
+          leaderboardColor: "#c3a077",
+          leaderboardTextColor: "black",
         }}
       >
-<<<<<<< HEAD
-        <div className={styles.rectangle-vertical} style={{ backgroundImage: `url(${TextFieldImage})`, backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '20px', borderRadius: '10px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', height: '450px', width: '37rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '38rem' }}>
-=======
         <div
           className="rectangle-vertical"
           style={{
             backgroundImage: `url(${TextFieldImage})`,
-            backgroundColor: 'rgba(255, 255, 255, 0.7)',
-            padding: '20px',
-            borderRadius: '10px',
-            textAlign: 'center',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            height: '450px',
-            width: '37rem',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            marginLeft: '38rem',
+            backgroundColor: "rgba(255, 255, 255, 0.7)",
+            padding: "20px",
+            borderRadius: "10px",
+            textAlign: "center",
+            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            height: "450px",
+            width: "37rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginLeft: "38rem",
           }}
         >
->>>>>>> cc7e23592b66ba3070a88d184e59ca83fed1dc42
           <input
             type="text"
             placeholder="Decode by Add/Sub"
             value={inputValue}
             onChange={handleInputChange}
             style={{
-              width: '34%',
-              padding: '10px',
-              marginBottom: '10px',
-              border: '1px solid #ccc',
-              borderRadius: '5px',
-              marginTop: '5rem',
-              fontSize: '16px', // Font size for input field
-              textAlign: 'center', // Center text in input field
+              width: "34%",
+              padding: "10px",
+              marginBottom: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              marginTop: "5rem",
+              fontSize: "16px", // Font size for input field
+              textAlign: "center", // Center text in input field
             }}
           />
           <p
             className={styles.result}
             style={{
-              fontWeight: 'bold',
-              marginTop: '20px', // Adjust vertical alignment
-              color: message === 'Congratulations' ? '#00ff00' : '#ff0000',
-              fontSize: '23px', // Font size
+              fontWeight: "bold",
+              marginTop: "20px", // Adjust vertical alignment
+              color: message === "Congratulations" ? "#00ff00" : "#ff0000",
+              fontSize: "23px", // Font size
             }}
           >
             {message}
           </p>
           <button
-            className={styles.check-button}
+            className={styles.checkButton}
             style={{
-              backgroundColor: 'red',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
-              width: '120px', // Increase button width
-              height: '40px', // Increase button height
-              color: 'white', // Text color
-              fontSize: '16px', // Font size
-              fontWeight: 'bold', // Font weight
-              borderRadius: '5px', // Button border radius
-              marginTop: '8rem', // Add spacing between input and button
+              backgroundColor: "red",
+              border: "none",
+              cursor: "pointer",
+              transition: "background-color 0.3s",
+              width: "120px", // Increase button width
+              height: "40px", // Increase button height
+              color: "white", // Text color
+              fontSize: "16px", // Font size
+              fontWeight: "bold", // Font weight
+              borderRadius: "5px", // Button border radius
+              marginTop: "8rem", // Add spacing between input and button
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'darkred'
+              e.target.style.backgroundColor = "darkred";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'red'
+              e.target.style.backgroundColor = "red";
             }}
             onClick={handleCheckClick}
           >
             CHECK
           </button>
           <button
-            className={styles.proceed-button}
+            className={styles.proceedButton}
             onClick={handleButtonClick}
             style={{
-              backgroundColor: 'blue',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
-              width: '120px', // Increase button width
-              height: '40px', // Increase button height
-              color: 'white', // Text color
-              fontSize: '16px', // Font size
-              fontWeight: 'bold', // Font weight
-              borderRadius: '5px', // Button border radius
+              backgroundColor: "blue",
+              border: "none",
+              cursor: "pointer",
+              transition: "background-color 0.3s",
+              width: "120px", // Increase button width
+              height: "40px", // Increase button height
+              color: "white", // Text color
+              fontSize: "16px", // Font size
+              fontWeight: "bold", // Font weight
+              borderRadius: "5px", // Button border radius
               // marginTop: '200px', // Add spacing between input and button
-              marginLeft: '800px',
+              marginLeft: "800px",
             }}
             onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'darkblue'
+              e.target.style.backgroundColor = "darkblue";
             }}
             onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'blue'
+              e.target.style.backgroundColor = "blue";
             }}
           >
             PROCEED NEXT
@@ -161,7 +151,7 @@ const Level4a = () => {
         </div>
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default Level4a
+export default Level4a;

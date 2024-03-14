@@ -5,14 +5,14 @@
   height: 100vh;
 }
 
-.check-button {
+.checkButton {
   background-color: rgba(255, 255, 255, 0.7);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.check-button:hover {
+.checkButton:hover {
   background-color: #e0ffe0;
 }
 
@@ -46,14 +46,14 @@ input {
   border-radius: 5px;
 }
 
-.check-button {
+.checkButton {
   background-color: rgba(255, 255, 255, 0.7);
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.check-button:hover {
+.checkButton:hover {
   background-color: #e0ffe0;
 }
 
@@ -61,6 +61,6 @@ input {
   font-weight: bold;
   margin-top: 10px;
   font-size: 200%; /* Enlarge the font size to 3 times the original */
-  font-family: 'Arial', sans-serif; /* Apply a different font style */
+  font-family: "Arial", sans-serif; /* Apply a different font style */
   /*transition: font-size 5s; /* Add a 1-second transition animation */
 }
