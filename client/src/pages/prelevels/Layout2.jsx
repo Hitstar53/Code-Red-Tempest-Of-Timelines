@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import BgAudio from "../../assets/audio/let-the-mystery-unfold.mp3";
-import styles from "./Layout.module.css";
+import styles from "./Layout2.module.css";
 
 const Layout = (props) => {
   const navigate = useNavigate();
