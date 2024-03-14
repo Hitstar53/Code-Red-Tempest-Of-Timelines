@@ -6,7 +6,7 @@ import styles from './Hint.module.css'
 import { FaRegLightbulb } from 'react-icons/fa'
 
 export default function Hint(props) {
-  const { bgColor, textColor, headerColor, iconColor } = props
+  const { bgColor, textColor, headerColor, iconColor, hintText } = props
   const style = {
     position: 'absolute',
     top: '70%',
@@ -51,13 +51,7 @@ export default function Hint(props) {
             HINT
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <p style={{ color: textColor }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
-              sapiente ad similique exercitationem, corrupti cupiditate quasi
-              repellendus eaque dolore tempore sit fugiat minus porro
-              accusantium ex distinctio, vitae nesciunt laborum ipsam incidunt,
-              id ea animi beatae? Quibusdam beatae deserunt neque?
-            </p>
+            <p style={{ color: textColor }}>{hintText}</p>
           </Typography>
         </Box>
       </Modal>
