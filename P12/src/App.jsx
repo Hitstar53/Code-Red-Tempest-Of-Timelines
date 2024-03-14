@@ -17,8 +17,8 @@ function redirect() {
 }
 function App() {
   return (
-    <>
-      <h1>Choose your path</h1>
+    <div className="body">
+      <h1 className="heading-path">Choose your path</h1>
       <section className="options">
         {options.map((option, index) => {
           return <Option key={option.id} {...option} number={index} />;
@@ -27,7 +27,7 @@ function App() {
       <button onClick={redirect} className="continue disabled">
         Continue
       </button>
-    </>
+    </div>
   );
 }
 

@@ -4,10 +4,10 @@ const getSelectedOption = () => {
 };
 const selectOption = (element, id) => {
   selectedOption = id;
-  if (element.nodeName != 'OPTION') {
+  if (element.nodeName != 'DIV') {
     element = element.parentNode;
   }
-  const options = document.querySelectorAll('option');
+  const options = document.querySelectorAll('.option');
   Array.from(options).forEach((option) => {
     option.classList.remove('selected');
   });
