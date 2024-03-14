@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import './Wrong_choice_ending.css'
+import './Wrong_choice_ending_styles.css'
 import { useNavigate } from 'react-router-dom'
 function Wrong_choice_ending() {
   const navigate = useNavigate()
@@ -24,14 +24,14 @@ function Wrong_choice_ending() {
       document.querySelector('.img').style.opacity = 0.0
     }, 15000)
     setTimeout(() => {
-      navigate('/level1')
+      navigate('/levels/level1')
     }, 18000)
   }, [navigate])
 
   return (
-    <>
+    <div className="body">
       <div className="img"></div>
-    </>
+    </div>
   )
 }
 

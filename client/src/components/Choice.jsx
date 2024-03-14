@@ -1,4 +1,4 @@
-import './App.css'
+import './Choice.css'
 import Option from './Option.jsx'
 import options from './options'
 import { getSelectedOption } from './selectOptionDOM.js'
@@ -15,7 +15,7 @@ function redirect() {
     }
   }
 }
-function App() {
+function Choice() {
   return (
     <div className="body">
       <h1 className="h1">Choose your path</h1>
@@ -24,11 +24,11 @@ function App() {
           return <Option key={option.id} {...option} number={index} />
         })}
       </section>
-      <button onClick={redirect} className="continue disabled button">
+      <button onClick={redirect} className="continue disabled">
         Continue
       </button>
     </div>
   )
 }
 
-export default App
+export default Choice

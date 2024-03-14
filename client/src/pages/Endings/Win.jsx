@@ -1,10 +1,8 @@
 import './win.css'
 import React, { useRef, useEffect, useState } from 'react'
-
+import image from '../../assets/images/agent.jpg'
+import src from '../../assets/animations/background.mov'
 function Win() {
-  const src = 'src/assets/animations/background.mov'
-  const image = 'src/assets/images/agent.jpg'
-
   const videoRef = useRef(null)
 
   useEffect(() => {

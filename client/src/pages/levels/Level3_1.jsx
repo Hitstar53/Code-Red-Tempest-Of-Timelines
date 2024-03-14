@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import './App.css'
+import './Level3_1.css'
 
-function App() {
+function Level3_1() {
   const check = () => {
     document.querySelector('.answer-textbox').classList.remove('wrong')
     document.querySelector('.wrong-answer').style.display = 'none'
@@ -82,4 +82,4 @@ function App() {
   )
 }
 
-export default App
+export default Level3_1

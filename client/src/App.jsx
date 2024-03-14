@@ -28,7 +28,9 @@ import Level8_1 from './pages/levels/Level8_1'
 import './App.css'
 import Prelevel8_2 from './pages/prelevels/Prelevel8.2'
 import Prelevel8_3 from './pages/prelevels/Prelevel8.3'
-
+import Win from './pages/Endings/Win'
+import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
+import Level3_1 from './pages/levels/Level3_1'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -77,6 +79,18 @@ const router = createBrowserRouter([
           {
             path: 'prelevel8_3',
             element: <Prelevel8_3 />,
+          },
+          {
+            path: 'win',
+            element: <Win />,
+          },
+          {
+            path: 'wrong',
+            element: <Wrong_choice_ending />,
+          },
+          {
+            path: 'level3_1',
+            element: <Level3_1 />,
           },
         ],
       },
