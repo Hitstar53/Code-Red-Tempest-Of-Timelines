@@ -1,5 +1,5 @@
-import path1 from './assets/detectiveblue.jpg'
-import path2 from './assets/scientistnoirblue.jpg'
+import path1 from './assets/detectiveblue.jpg';
+import path2 from './assets/scientistnoirblue.jpg';
 
 const options = [
   {
@@ -12,6 +12,6 @@ const options = [
     img: path2,
     id: 2,
   },
-]
+];
 
-export default options
+export default options;
