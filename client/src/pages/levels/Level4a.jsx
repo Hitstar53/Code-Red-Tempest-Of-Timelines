@@ -1,34 +1,34 @@
 import React, { useState } from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/bastille.jpg'
-import TextFieldImage from '../../assets/images/old-computer.jpg';
-import './Level4a.css';
+import TextFieldImage from '../../assets/images/old-computer.jpg'
+import './Level4a.css'
 
 const Level4a = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [message, setMessage] = useState('');
+  const [inputValue, setInputValue] = useState('')
+  const [message, setMessage] = useState('')
   // const button = document.querySelector('.check-button');
   // const proceed = document.querySelector('.proceed-button');
 
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+    setInputValue(e.target.value)
+  }
 
   const handleButtonClick = () => {
     if (message === 'Congratulations') {
-      window.location.href = 'level4-2';
+      window.location.href = 'level4-2'
     } else {
-      setMessage('Pls enter the correct code');
-      setMessage('Enter Answer');
+      setMessage('Pls enter the correct code')
+      setMessage('Enter Answer')
     }
-  };
+  }
   const handleCheckClick = () => {
     if (inputValue.trim() === 'Storming of Bastille') {
-      setMessage('Congratulations');
+      setMessage('Congratulations')
     } else {
-      setMessage('Error');
+      setMessage('Error')
     }
-  };
+  }
 
   return (
     <div
@@ -42,7 +42,7 @@ const Level4a = () => {
         name="Team Gods"
         time="00:00:00"
         score="69420"
-        backgroundPicURL={background}
+        backgroundPicURL={TextFieldImage}
         colors={{
           textColor: '#3b2a1a',
           boxBackgroundColor: '#c3a077',
@@ -54,7 +54,23 @@ const Level4a = () => {
           leaderboardTextColor: 'black',
         }}
       >
-        <div className="rectangle-vertical" style={{ backgroundImage: `url(${TextFieldImage})`, backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '20px', borderRadius: '10px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', height: '450px', width: '37rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '38rem' }}>
+        <div
+          className="rectangle-vertical"
+          style={{
+            backgroundImage: `url(${TextFieldImage})`,
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            padding: '20px',
+            borderRadius: '10px',
+            textAlign: 'center',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            height: '450px',
+            width: '37rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginLeft: '38rem',
+          }}
+        >
           <input
             type="text"
             placeholder="Decode by Add/Sub"
@@ -85,7 +101,7 @@ const Level4a = () => {
           <button
             className="check-button"
             style={{
-              backgroundColor: 'red', 
+              backgroundColor: 'red',
               border: 'none',
               cursor: 'pointer',
               transition: 'background-color 0.3s',
@@ -97,8 +113,12 @@ const Level4a = () => {
               borderRadius: '5px', // Button border radius
               marginTop: '8rem', // Add spacing between input and button
             }}
-            onMouseEnter={(e) => { e.target.style.backgroundColor = 'darkred' }}
-            onMouseLeave={(e) => { e.target.style.backgroundColor = 'red' }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = 'darkred'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'red'
+            }}
             onClick={handleCheckClick}
           >
             CHECK
@@ -107,7 +127,7 @@ const Level4a = () => {
             className="proceed-button"
             onClick={handleButtonClick}
             style={{
-              backgroundColor: 'blue', 
+              backgroundColor: 'blue',
               border: 'none',
               cursor: 'pointer',
               transition: 'background-color 0.3s',
@@ -119,10 +139,13 @@ const Level4a = () => {
               borderRadius: '5px', // Button border radius
               // marginTop: '200px', // Add spacing between input and button
               marginLeft: '800px',
-
             }}
-            onMouseEnter={(e) => { e.target.style.backgroundColor = 'darkblue' }}
-            onMouseLeave={(e) => { e.target.style.backgroundColor = 'blue' }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = 'darkblue'
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'blue'
+            }}
           >
             PROCEED NEXT
           </button>
