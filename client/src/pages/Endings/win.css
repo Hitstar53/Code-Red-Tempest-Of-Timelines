@@ -11,10 +11,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 50px;
+  font-weight: bold;
 }
 
-.card-container {
+.cardContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,21 +41,21 @@
   justify-content: center;
 }
 
-.card-image {
+.cardImage {
   width: 150px;
   height: 100px;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
-.card-content {
+.cardContent {
   font-family: Arial, sans-serif;
   color: hsl(165, 7%, 89%);
   font-size: 13px;
   text-align: left;
 }
 
-.background-video-container {
+.backgroundVideoContainer {
   position: fixed;
   top: 0;
   left: 0;
@@ -64,7 +65,7 @@
   z-index: -1;
 }
 
-.background-video {
+.backgroundVideo {
   min-width: 100%;
   min-height: 100%;
   width: auto;
