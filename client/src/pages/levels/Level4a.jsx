@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/bastille.jpg'
 import TextFieldImage from '../../assets/images/old-computer.jpg';
-import './Level4a.css';
+import styles from './Level4a.module.css';
 
 const Level4a = () => {
   const [inputValue, setInputValue] = useState('');
@@ -54,7 +54,7 @@ const Level4a = () => {
           leaderboardTextColor: 'black',
         }}
       >
-        <div className="rectangle-vertical" style={{ backgroundImage: `url(${TextFieldImage})`, backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '20px', borderRadius: '10px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', height: '450px', width: '37rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '38rem' }}>
+        <div className={styles.rectangle-vertical} style={{ backgroundImage: `url(${TextFieldImage})`, backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '20px', borderRadius: '10px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', height: '450px', width: '37rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '38rem' }}>
           <input
             type="text"
             placeholder="Decode by Add/Sub"
@@ -72,7 +72,7 @@ const Level4a = () => {
             }}
           />
           <p
-            className="result"
+            className={styles.result}
             style={{
               fontWeight: 'bold',
               marginTop: '20px', // Adjust vertical alignment
@@ -83,7 +83,7 @@ const Level4a = () => {
             {message}
           </p>
           <button
-            className="check-button"
+            className={styles.check-button}
             style={{
               backgroundColor: 'red', 
               border: 'none',
@@ -104,7 +104,7 @@ const Level4a = () => {
             CHECK
           </button>
           <button
-            className="proceed-button"
+            className={styles.proceed-button}
             onClick={handleButtonClick}
             style={{
               backgroundColor: 'blue', 
