@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import './Wrong_choice_ending_styles.css'
+import style from './Wrong_choice_ending_styles.module.css'
 import { useNavigate } from 'react-router-dom'
 function Wrong_choice_ending() {
   const navigate = useNavigate()
