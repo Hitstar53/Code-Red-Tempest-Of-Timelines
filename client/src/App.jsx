@@ -48,7 +48,14 @@ const router = createBrowserRouter([
           { path: 'prelevel2', element: <Prelevel2 /> },
           { path: 'level2', element: <Level2 /> },
           { path: 'prelevel3', element: <Prelevel3 /> },
-          { path: 'level3', element: <Level3 /> },
+          {
+            path: 'level3_1',
+            element: <Level3_1 />,
+          },
+          // {
+          //   path: 'level3_2',
+          //   element: <Level3_1 />,
+          // },
           { path: 'prelevel3-2', element: <Prelevel3b /> },
           { path: 'level3-2', element: <Level3b /> },
           { path: 'prelevel4', element: <Prelevel4 /> },
@@ -96,10 +103,6 @@ const router = createBrowserRouter([
           {
             path: 'levelwrong',
             element: <Wrong_choice_ending />,
-          },
-          {
-            path: 'level3_1',
-            element: <Level3_1 />,
           },
         ],
       },
