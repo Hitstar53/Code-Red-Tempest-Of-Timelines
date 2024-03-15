@@ -18,7 +18,7 @@
 }
 .lp0,
 .lp1,
-.l2,
+.lp2,
 .lp3 {
   flex: 1;
   color: white;
@@ -57,7 +57,6 @@
   height: 5%;
   font-family: 'Space Mono', monospace;
   border-radius: 0.5rem;
-  color: white;
 }
 .answerTextbox,
 .entry,
