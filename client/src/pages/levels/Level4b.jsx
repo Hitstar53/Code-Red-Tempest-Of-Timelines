@@ -17,6 +17,8 @@ import { CustomizationProvider } from '../../contexts/Customization'
 //Changing color
 const Level4b = () => {
   const ref = useRef()
+  const hintText =
+    'It requires a password, perhaps try the one number that changed the history of the land. An icon was born, mayhaps short in stature, but his accomplishments lengthy.The colors that represent the land, can they be the answer?'
 
   return (
     <CustomizationProvider>
@@ -42,6 +44,7 @@ const Level4b = () => {
             leaderboardColor: '#c3a077',
             leaderboardTextColor: 'black',
           }}
+          hintText={hintText}
         >
           <Canvas style={{ touchAction: 'none' }}>
             <Helper4b />
