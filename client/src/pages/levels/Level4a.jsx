@@ -25,7 +25,8 @@ const Level4a = () => {
       setMessage('Error')
     }
   }
-
+  const hintText =
+    "The clue is to move back a few, or move forward a lot, and maybe the sum of the steps you'll take gets you to an important number in the Language."
   return (
     <div
       style={{
@@ -49,6 +50,7 @@ const Level4a = () => {
           leaderboardColor: '#c3a077',
           leaderboardTextColor: 'black',
         }}
+        hintText={hintText}
       >
         <div className="container__outer">
           <input

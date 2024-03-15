@@ -1,10 +1,10 @@
-p,
+/* p,
 span {
   color: azure;
   font-family: 'Space Mono', monospace;
   display: inline-block;
   font-size: 21px;
-}
+} */
 .body {
   margin: 0;
   height: 100vh;
