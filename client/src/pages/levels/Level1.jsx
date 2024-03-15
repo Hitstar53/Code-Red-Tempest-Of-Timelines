@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CodeRainVid from "../../assets/animations/stock-footage-computer-binary-matrix-digital-rain-information-flow-high-tech-digital-matrix-binary-code-falling (online-video-cutter.com).mp4";
 import Layout from "./Layout";
@@ -54,7 +54,11 @@ const Level1 = () => {
         }}
       >
         <div className={styles.searchBar}>
-          <input type="text" placeholder="Search TPA Archives..." onChange={(e) => setSearch(e.target.value)} />
+          <input
+            type="text"
+            placeholder="Search TPA Archives..."
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <button onClick={handleSearch}>
             <i className="fas fa-search"></i>
           </button>

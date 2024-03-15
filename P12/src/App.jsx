@@ -1,4 +1,4 @@
-import './App.css';
+import AppCSS from './App.module.css';
 import Option from './Option.jsx';
 import options from './options';
 import { getSelectedOption } from './selectOptionDOM.js';
@@ -17,18 +17,20 @@ function redirect() {
 }
 function App() {
   return (
-    <>
-      <h1>Choose your path</h1>
-      <section className="options">
+    <div className={AppCSS.body}>
+      <h1 className={AppCSS.headingPath}>Choose your path</h1>
+      <section className={AppCSS.options}>
         {options.map((option, index) => {
           return <Option key={option.id} {...option} number={index} />;
         })}
       </section>
-      <button onClick={redirect} className="continue disabled">
+      <button
+        onClick={redirect}
+        className={`${AppCSS.continue} ${AppCSS.disabled}`}
+      >
         Continue
       </button>
-    </>
+    </div>
   );
 }
-
 export default App;

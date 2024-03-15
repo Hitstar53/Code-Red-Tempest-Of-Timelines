@@ -1,15 +1,21 @@
 /* eslint-disable react/prop-types */
 import { selectOption } from './selectOptionDOM';
+import AppCSS from './App.module.css';
 const Option = ({ title, img, number }) => {
   return (
-    <option
+    <div
+      className={AppCSS.option}
       onClick={(e) => {
         selectOption(e.target, number);
       }}
     >
-      <img src={img} alt={`Path ${number} image`} />
+      <img
+        className={AppCSS.chooseImg}
+        src={img}
+        alt={`Path ${number} image`}
+      />
       <h1>{title}</h1>
-    </option>
+    </div>
   );
 };
 export default Option;

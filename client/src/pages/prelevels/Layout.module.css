@@ -92,7 +92,7 @@
     width: 13px;
     height: 2px;
     left: 0px;
-    background: #39ff14;
+    background: #11c7e3;
     display: inline-flex;
     align-items: baseline;
     justify-content: baseline;
@@ -107,7 +107,7 @@
     }
 
     50% {
-        background: #39ff14;
+        background: #11c7e3;
     }
 }
 

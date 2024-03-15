@@ -2,9 +2,12 @@ import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import background from "../../assets/images/egypt.jpg";
-import "./Level2.css";
+import styles from "./Level2.module.css";
 
 const Level2 = () => {
+  const text =
+    "Pyramid of Giza, 2550 BCE Conspiracies surround this structure, by means of beings superior or beings inferior, a monolith it seems, but built by much smaller things. The next mystery, a 'morse'l of food perhaps, for your hunger to reach the end.";
+
   const navigate = useNavigate();
   return (
     <div
@@ -15,6 +18,7 @@ const Level2 = () => {
     >
       <Layout
         level={2}
+        hintText={text}
         name="Team Gods"
         time="00:00:00"
         score="69420"
@@ -30,14 +34,14 @@ const Level2 = () => {
           leaderboardTextColor: "black",
         }}
       >
-        <div class="login-form">
+        <div className={styles.login - form}>
           {/* <h1>Glass</h1> */}
-          <form action="#" className="login-form-container">
+          <form action="#" className={styles.login - form - container}>
             <input type="text" placeholder="Enter Co-ordinates" />
             <input type="password" placeholder="Enter Year" />
             <button
               onClick={() => navigate("/levels/prelevel3")}
-              className="level2btn"
+              className={styles.level2btn}
               type="submit"
             >
               Login

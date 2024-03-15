@@ -1,19 +1,19 @@
-let selectedOption = null;
+let selectedOption = null
 const getSelectedOption = () => {
-  return selectedOption;
-};
+  return selectedOption
+}
 const selectOption = (element, id) => {
-  selectedOption = id;
-  if (element.nodeName != 'OPTION') {
-    element = element.parentNode;
+  selectedOption = id
+  if (element.nodeName != 'DIV') {
+    element = element.parentNode
   }
-  const options = document.querySelectorAll('option');
+  const options = document.querySelectorAll('.option')
   Array.from(options).forEach((option) => {
-    option.classList.remove('selected');
-  });
-  element.classList.add('selected');
-  const continueButton = document.querySelector('.continue');
-  continueButton.classList.remove('disabled');
-};
+    option.classList.remove('selected')
+  })
+  element.classList.add('selected')
+  const continueButton = document.querySelector('.continue')
+  continueButton.classList.remove('disabled')
+}
 
-export { selectOption, getSelectedOption };
+export { selectOption, getSelectedOption }

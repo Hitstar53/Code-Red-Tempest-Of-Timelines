@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-#root {
+:root {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,15 +8,23 @@
   margin: 0;
   text-align: center;
 }
-h1 {
-  font-family: 'Monomaniac One', sans-serif;
+
+.headingPath {
+  font-family: 'Monomaniac One', sans-serif !important;
+  font-size: 3rem;
+  margin-bottom: 0.8rem !important;
+  margin-top: 0;
 }
-body {
-  background-image: url(./assets/peakpx.jpg);
+.body {
+  height: 100%;
+  width: 100vw;
+  background-image: url(./assets/code-shit.jpg);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-size: contain;
+  background-size: cover;
+  gap: 2rem;
 }
 
 .options {
@@ -26,13 +34,13 @@ body {
   justify-content: space-evenly;
 }
 
-img {
+.chooseImg {
   height: 20rem;
   width: 20rem;
   object-fit: cover;
   border-radius: 5%;
 }
-option {
+.option {
   cursor: pointer;
   outline: 2px transparent white;
   border-radius: 10px;
@@ -41,23 +49,25 @@ option {
   transition: transform 300ms ease-in-out, filter 300ms ease-in-out,
     background 300ms ease-in-out;
 }
-option:hover {
+.option:hover {
   filter: brightness(0.8);
   background-color: rgba(124, 194, 228, 0.8);
   transform: translateY(-4px);
   outline: 2px dashed white;
 }
 
-option > h1 {
+.option > h1 {
   font-family: 'Monomaniac One', sans-serif;
-  font-weight: 400;
+  font-weight: 400 !important;
   font-style: normal;
-  font-size: 2.3rem;
+  font-size: 2.3rem !important;
 }
 
 .continue {
+  border: none;
+  padding: 10px 20px;
   font-family: 'Monomaniac One', sans-serif;
-  margin-top: 1.8rem;
+  margin-top: 0.5rem;
   font-size: 1.3rem;
   border-radius: 0.5rem;
   transform: translateX(-7%);
@@ -77,4 +87,41 @@ option > h1 {
 .disabled {
   cursor: not-allowed;
   background-color: rgba(255, 255, 255, 0.747) !important;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  height: 100vh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+.a:hover {
+  color: #535bf2;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  .a:hover {
+    color: #747bff;
+  }
+  .button {
+    background-color: #f9f9f9;
+  }
 }

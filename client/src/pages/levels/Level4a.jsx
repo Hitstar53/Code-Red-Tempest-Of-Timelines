@@ -22,7 +22,7 @@ const Level4a = () => {
     if (inputValue.trim() === 'Storming of Bastille') {
       setMessage('Success');
     } else {
-      setMessage('Error');
+      setMessage("Error");
     }
   };
 
@@ -40,14 +40,14 @@ const Level4a = () => {
         score="69420"
         backgroundPicURL={OldComputer}
         colors={{
-          textColor: '#3b2a1a',
-          boxBackgroundColor: '#c3a077',
-          leaderboardHeaderColor: 'black',
-          iconColor: 'white',
-          leaderboardPositionColor: '#CCD3CA',
-          hintTextColor: 'white',
-          leaderboardColor: '#c3a077',
-          leaderboardTextColor: 'black',
+          textColor: "#3b2a1a",
+          boxBackgroundColor: "#c3a077",
+          leaderboardHeaderColor: "black",
+          iconColor: "white",
+          leaderboardPositionColor: "#CCD3CA",
+          hintTextColor: "white",
+          leaderboardColor: "#c3a077",
+          leaderboardTextColor: "black",
         }}
       >
         <div className='container__outer'>
@@ -167,7 +167,7 @@ const Level4a = () => {
 
       </Layout>
     </div>
-  )
-}
+  );
+};
 
-export default Level4a
+export default Level4a;

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import LockIcon from "@mui/icons-material/Lock";
 import background from "../../assets/images/tm.jpg";
-import "./Level5.css";
+import styles from "./Level5.module.css";
 
 const Level5 = () => {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const Level5 = () => {
             position: "relative",
           }}
         >
-          <div className="locked">
+          <div className={styles.locked}>
             <p>Time Machine Is Locked</p>
             <LockIcon
               style={{
@@ -98,7 +98,7 @@ const Level5 = () => {
             />
             <button
               onClick={() => navigate("/levels/prelevel6")}
-              className="travelbtn"
+              className={styles.travelbtn}
             >
               Travel to Destination
             </button>

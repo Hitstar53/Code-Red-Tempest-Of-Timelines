@@ -1,24 +1,40 @@
-import { useEffect } from 'react';
-import './Wrong_choice_ending.css'
-
+import { useEffect, useRef } from 'react'
+import style from './Wrong_choice_ending_styles.module.css'
+import { useNavigate } from 'react-router-dom'
 function Wrong_choice_ending() {
-  
-  useEffect(()=>{
-    console.log("hi")
+  const navigate = useNavigate()
+  const opacityIMG = useRef(null)
+  useEffect(() => {
+    console.log('hi')
     // document.addEventListener("click",()=>{
     //   document.querySelector('.img').classList.add('removing');
     // })
-    setTimeout(()=>{document.querySelector('.img').style.opacity= 0.8},3000);
-    setTimeout(()=>{document.querySelector('.img').style.opacity= 0.6},6000);
-    setTimeout(()=>{document.querySelector('.img').style.opacity= 0.4},9000);
-    setTimeout(()=>{document.querySelector('.img').style.opacity= 0.2},12000);
-    setTimeout(()=>{document.querySelector('.img').style.opacity= 0.0},15000);
-  },[]);
+    console.log(opacityIMG)
+    setTimeout(() => {
+      opacityIMG.current.style.opacity = 0.8
+    }, 3000)
+    setTimeout(() => {
+      opacityIMG.current.style.opacity = 0.6
+    }, 6000)
+    setTimeout(() => {
+      opacityIMG.current.style.opacity = 0.4
+    }, 9000)
+    setTimeout(() => {
+      opacityIMG.current.style.opacity = 0.2
+    }, 12000)
+    setTimeout(() => {
+      opacityIMG.current.style.opacity = 0.0
+    }, 15000)
+    setTimeout(() => {
+      navigate('/levels/level1')
+    }, 18000)
+  }, [navigate])
 
-  return (<>
-            <div className='img'>
-            </div>
-        </>);
+  return (
+    <div className={style.body}>
+      <div className={style.img} ref={opacityIMG}></div>
+    </div>
+  )
 }
 
 export default Wrong_choice_ending
