@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
 .header {
   /* display: none; */
 
@@ -12,9 +14,10 @@
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  color: aqua;
+  color: black !important;
   justify-content: center;
   align-items: center;
+  font-family: 'Inter Tight', sans-serif !important;
 }
 .team {
   font-size: 1.5rem !important;

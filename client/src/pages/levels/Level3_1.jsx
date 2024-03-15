@@ -1,46 +1,46 @@
-import { useEffect } from "react";
-import styles from "./Level3_1.module.css";
+import { useEffect } from 'react'
+import styles from './Level3_1.module.css'
 
 function Level3_1() {
   const check = () => {
-    document.querySelector(".answer-textbox").classList.remove("wrong");
-    document.querySelector(".wrong-answer").style.display = "none";
-    console.log(document.querySelector(".answer-textbox").value);
-    var x = document.querySelector(".answer-textbox").value;
-    if (x.toUpperCase() != "HTML") {
-      document.querySelector(".answer-textbox").classList.add("wrong");
-      document.querySelector(".wrong-answer").style.display = "inline";
+    document.querySelector('.answer-textbox').classList.remove('wrong')
+    document.querySelector('.wrong-answer').style.display = 'none'
+    console.log(document.querySelector('.answer-textbox').value)
+    var x = document.querySelector('.answer-textbox').value
+    if (x.toUpperCase() != 'HTML') {
+      document.querySelector('.answer-textbox').classList.add('wrong')
+      document.querySelector('.wrong-answer').style.display = 'inline'
     }
-  };
+  }
 
   useEffect(() => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     setInterval(() => {
-      document.querySelector(".lp0").innerText = document
-        .querySelector(".lp0")
-        .innerText.split("")
+      document.querySelector('.lp0').innerText = document
+        .querySelector('.lp0')
+        .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join("");
+        .join('')
 
-      document.querySelector(".lp1").innerText = document
-        .querySelector(".lp1")
-        .innerText.split("")
+      document.querySelector('.lp1').innerText = document
+        .querySelector('.lp1')
+        .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join("");
+        .join('')
 
-      document.querySelector(".lp2").innerText = document
-        .querySelector(".lp2")
-        .innerText.split("")
+      document.querySelector('.lp2').innerText = document
+        .querySelector('.lp2')
+        .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join("");
+        .join('')
 
-      document.querySelector(".lp3").innerText = document
-        .querySelector(".lp3")
-        .innerText.split("")
+      document.querySelector('.lp3').innerText = document
+        .querySelector('.lp3')
+        .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join("");
-    }, 60);
-  }, []);
+        .join('')
+    }, 60)
+  }, [])
 
   return (
     <div className={styles.body}>
@@ -51,7 +51,7 @@ function Level3_1() {
         rel="stylesheet"
       ></link>
       <div className={styles.container}>
-        <div className={styles.inner - container}>
+        <div className={styles.inner - styles.container}>
           <p className={styles.q1}>
             <span className={styles.lp}>youtube.com/watch?v=Sag7hLly0qg</span>
           </p>
@@ -69,17 +69,19 @@ function Level3_1() {
           </span>
           <input
             placeholder="Enter your answer"
-            className={styles.answer-textbox}
+            className={styles.answer - styles.textbox}
             type="text"
           />
-          <span className={styles.wrong-answer}>Wrong answer. Retry</span>
+          <span className={styles.wrong - styles.answer}>
+            Wrong answer. Retry
+          </span>
           <button className={styles.btn} type="button" onClick={check}>
             ENTER
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Level3_1;
+export default Level3_1

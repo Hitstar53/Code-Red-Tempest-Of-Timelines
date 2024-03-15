@@ -1,5 +1,5 @@
-p,
-span {
+.p,
+.span {
   color: azure;
   font-family: 'Space Mono', monospace;
   display: inline-block;
