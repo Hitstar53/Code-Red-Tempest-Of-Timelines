@@ -7,7 +7,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Environment } from '@react-three/drei'
 // import Bomb from '../../../public/Bomb'
-
+import './Level4b.css'
 import { BoxGeometry } from 'three'
 import Helper4b from './Helper4b'
 import Configurator from './Configurator'
