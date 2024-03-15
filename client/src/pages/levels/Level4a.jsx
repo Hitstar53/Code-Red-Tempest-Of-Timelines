@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import Layout from './Layout'
+<<<<<<< HEAD
 import OldComputer from '../../assets/images/Designer1.png'
 import styles from './Level4a.module.css'
+=======
+import OldComputer from '../../assets/images/old_computer.png';
+import './Level4a.css';
+>>>>>>> afe10b8e98e4a536adea3b057dd51fdff0df71ce
 
 const Level4a = () => {
   const [inputValue, setInputValue] = useState('')
