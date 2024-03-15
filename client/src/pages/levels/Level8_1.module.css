@@ -8,24 +8,17 @@
   --screen-text: #ff558f;
 }
 
-.main {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../../assets/images/wepik-export-20240309064031UdkG.png');
-  background-size: contain;
-  background-position: center;
-}
-
 .keypad {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--keypad-background);
-  width: max(26vw, 300px);
-  height: max(75vh, 500px);
+  width: max(24vw, 300px);
+  height: max(70vh, 470px);
   border-radius: 0.5rem;
 }
 
@@ -80,8 +73,11 @@
 .key:active {
   transform: translateY(3px);
 }
-.clear {
+.keyClear {
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+.keyBackspace {
+  font-size: 1.8rem;
 }
