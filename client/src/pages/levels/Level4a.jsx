@@ -1,30 +1,26 @@
 import React, { useState } from 'react'
 import Layout from './Layout'
-import background from '../../assets/images/bastille.jpg'
-import TextFieldImage from '../../assets/images/old-computer.jpg';
+import OldComputer from '../../assets/images/Designer1.png';
 import './Level4a.css';
 
 const Level4a = () => {
   const [inputValue, setInputValue] = useState('');
   const [message, setMessage] = useState('');
-  // const button = document.querySelector('.check-button');
-  // const proceed = document.querySelector('.proceed-button');
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const handleButtonClick = () => {
-    if (message === 'Congratulations') {
+  const handleProceed = () => {
+    if (message === 'Success') {
       window.location.href = 'level4-2';
     } else {
-      setMessage('Pls enter the correct code');
-      setMessage('Enter Answer');
+      setMessage('Error');
     }
   };
-  const handleCheckClick = () => {
+  const handleCheck = () => {
     if (inputValue.trim() === 'Storming of Bastille') {
-      setMessage('Congratulations');
+      setMessage('Success');
     } else {
       setMessage('Error');
     }
@@ -34,7 +30,7 @@ const Level4a = () => {
     <div
       style={{
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
       }}
     >
       <Layout
@@ -42,7 +38,7 @@ const Level4a = () => {
         name="Team Gods"
         time="00:00:00"
         score="69420"
-        backgroundPicURL={background}
+        backgroundPicURL={OldComputer}
         colors={{
           textColor: '#3b2a1a',
           boxBackgroundColor: '#c3a077',
@@ -54,79 +50,121 @@ const Level4a = () => {
           leaderboardTextColor: 'black',
         }}
       >
-        <div className="rectangle-vertical" style={{ backgroundImage: `url(${TextFieldImage})`, backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '20px', borderRadius: '10px', textAlign: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', height: '450px', width: '37rem', display: 'flex', flexDirection: 'column', alignItems: 'center', marginLeft: '38rem' }}>
+        <div className='container__outer'>
           <input
             type="text"
-            placeholder="Decode by Add/Sub"
-            value={inputValue}
             onChange={handleInputChange}
             style={{
-              width: '34%',
+              width: '100%',
+              fontFamily: 'monospace',
+              fontSize: '2em',
+              fontWeight: 'bold',
+              border: '4px solid #c3a077',
+              borderRadius: '10px',
               padding: '10px',
-              marginBottom: '10px',
-              border: '1px solid #ccc',
-              borderRadius: '5px',
-              marginTop: '5rem',
-              fontSize: '16px', // Font size for input field
-              textAlign: 'center', // Center text in input field
+              outline: 'none',
+              boxShadow: '0 0 10px #c3a077',
+              transition: 'box-shadow 0.5s ease',
+              textAlign: 'center',
+              color: '#CD7F32',
+              ':focus': {
+                boxShadow: '0 0 20px #c3a077',
+              },
             }}
           />
-          <p
-            className="result"
+          <div
             style={{
-              fontWeight: 'bold',
-              marginTop: '20px', // Adjust vertical alignment
-              color: message === 'Congratulations' ? '#00ff00' : '#ff0000',
-              fontSize: '23px', // Font size
+              marginTop: '26vh',
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '100%',
             }}
           >
-            {message}
-          </p>
-          <button
-            className="check-button"
-            style={{
-              backgroundColor: 'red', 
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
-              width: '120px', // Increase button width
-              height: '40px', // Increase button height
-              color: 'white', // Text color
-              fontSize: '16px', // Font size
-              fontWeight: 'bold', // Font weight
-              borderRadius: '5px', // Button border radius
-              marginTop: '8rem', // Add spacing between input and button
-            }}
-            onMouseEnter={(e) => { e.target.style.backgroundColor = 'darkred' }}
-            onMouseLeave={(e) => { e.target.style.backgroundColor = 'red' }}
-            onClick={handleCheckClick}
-          >
-            CHECK
-          </button>
-          <button
-            className="proceed-button"
-            onClick={handleButtonClick}
-            style={{
-              backgroundColor: 'blue', 
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'background-color 0.3s',
-              width: '120px', // Increase button width
-              height: '40px', // Increase button height
-              color: 'white', // Text color
-              fontSize: '16px', // Font size
-              fontWeight: 'bold', // Font weight
-              borderRadius: '5px', // Button border radius
-              // marginTop: '200px', // Add spacing between input and button
-              marginLeft: '800px',
-
-            }}
-            onMouseEnter={(e) => { e.target.style.backgroundColor = 'darkblue' }}
-            onMouseLeave={(e) => { e.target.style.backgroundColor = 'blue' }}
-          >
-            PROCEED NEXT
-          </button>
+            <div style={{
+              border: '4px solid #c3a077',
+              borderRadius: '5px',
+              padding: '10px'
+            }}>
+              {message === 'Success' ? (
+                <button style={{
+                  backgroundColor: '#ccffcc',
+                  fontFamily: 'monospace',
+                  fontSize: '1.3em',
+                  fontWeight: 'bold',
+                  width: '7vw',
+                  border: '2px solid #c3a077',
+                  borderRadius: '5px',
+                  padding: '5px',
+                  marginLeft: '10px',
+                  textShadow: '1px 1px #b87333',
+                  textAlign: 'center',
+                }}>
+                  ✅ Success
+                </button>
+              ) : (
+                <button style={{
+                  fontFamily: 'monospace',
+                  display: 'block',
+                  background: inputValue ? 'white' : 'silver',
+                  border: '2px solid #c3a077',
+                  borderRadius: '5px',
+                  padding: '5px',
+                  marginLeft: '10px',
+                  fontSize: '1.3em',
+                  width: '8vw',
+                  fontWeight: 'bold',
+                  textShadow: '1px 1px #b87333'
+                }}
+                  disabled={!inputValue}
+                  onClick={handleCheck}
+                >
+                  Check
+                </button>
+              )}
+            </div>
+            <div style={{
+              border: '4px solid #c3a077',
+              borderRadius: '5px',
+              padding: '10px'
+            }}>
+              {message === 'Success' ? (
+                <button style={{
+                  fontFamily: 'monospace',
+                  background: 'white',
+                  border: '2px solid #c3a077',
+                  borderRadius: '5px',
+                  padding: '5px',
+                  marginLeft: '10px',
+                  width: '15vw',
+                  fontSize: '1.3em',
+                  fontWeight: 'bold',
+                  textShadow: '1px 1px #b87333'
+                }}
+                  onClick={handleProceed}
+                >
+                  Proceed
+                </button>
+              ) : (
+                <button style={{
+                  backgroundColor: message === '' ? '#ffffb3' : '#ffb3b3',
+                  fontFamily: 'monospace',
+                  fontSize: '1.3em',
+                  fontWeight: 'bold',
+                  width: '15vw',
+                  border: '2px solid #c3a077',
+                  borderRadius: '5px',
+                  padding: '5px',
+                  marginLeft: '10px',
+                  textShadow: '1px 1px #b87333',
+                  textAlign: 'center',
+                }}>
+                  {message === '' ? '😔 Not answered' : '❌ Wrong Password'}
+                </button>
+              )}
+            </div>
+          </div>
         </div>
+
       </Layout>
     </div>
   )
