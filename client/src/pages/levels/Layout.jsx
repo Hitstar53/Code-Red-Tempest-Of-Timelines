@@ -62,6 +62,7 @@ const Layout = (props) => {
             backgroundColor: colors.boxBackgroundColor,
             color: colors.textColor,
             boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
+            zIndex: 5,
           }}
         >
           <span>Time Remaining</span>
@@ -84,6 +85,7 @@ const Layout = (props) => {
               padding: '1rem',
               borderRadius: '100vw',
               boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
+              zIndex: 10,
             }}
           >
             <Leaderboard
@@ -100,6 +102,7 @@ const Layout = (props) => {
               padding: '1rem',
               borderRadius: '100vw',
               boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
+              zIndex: 10,
             }}
           >
             <Hint

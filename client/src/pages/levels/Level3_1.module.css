@@ -6,10 +6,13 @@
   font-size: 19px;
 }
 .body {
+  position: absolute;
+  top: 0;
+  right: 0;
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(to bottom right, #f4a460, #955721);
+  /* background-image: linear-gradient(to bottom right, #f4a460, #955721); */
   overflow: hidden;
 
   display: flex;
@@ -75,14 +78,14 @@
   display: none;
 }
 .btn {
-  margin-left: 1rem;
+  margin-left: 1rem !important;
   margin-bottom: 3%;
   height: 5%;
-  align-self: flex-end;
-  font-size: 20px;
+  align-self: flex-end !important;
+  font-size: 20px !important;
   font-family: 'Space Mono', monospace;
-  padding-bottom: 3%;
-  background-color: rgb(53, 48, 48);
+  padding-bottom: 3% !important;
+  background-color: rgb(53, 48, 48) !important;
   text-align: center;
   color: #b18d09;
 }
