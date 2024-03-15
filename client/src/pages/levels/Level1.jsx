@@ -23,7 +23,7 @@ const Level1 = () => {
   }, [search, navigate])
 
   const handleSearch = () => {
-    if (search === 'TP$') {
+    if (search === 'TR$') {
       navigate('/levels/prelevel2')
     }
   }
