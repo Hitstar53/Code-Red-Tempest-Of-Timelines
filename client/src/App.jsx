@@ -31,6 +31,8 @@ import Prelevel8_3 from './pages/prelevels/Prelevel8c'
 import Win from './pages/Endings/Win'
 import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
 import Level3_1 from './pages/levels/Level3_1'
+import Prelose1 from './pages/prelevels/Prelose1'
+import Prelose2 from './pages/prelevels/Prelose2'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -81,11 +83,19 @@ const router = createBrowserRouter([
             element: <Prelevel8_3 />,
           },
           {
+            path: 'prelose1',
+            element: <Prelose1 />,
+          },
+          {
+            path: 'prelose2',
+            element: <Prelose2 />,
+          },
+          {
             path: 'win',
             element: <Win />,
           },
           {
-            path: 'wrong',
+            path: 'levelwrong',
             element: <Wrong_choice_ending />,
           },
           {

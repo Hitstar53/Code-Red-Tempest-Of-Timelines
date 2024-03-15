@@ -26,7 +26,7 @@ function Wrong_choice_ending() {
       opacityIMG.current.style.opacity = 0.0
     }, 15000)
     setTimeout(() => {
-      navigate('/levels/level1')
+      navigate('/levels/prelose2')
     }, 18000)
   }, [navigate])
 
