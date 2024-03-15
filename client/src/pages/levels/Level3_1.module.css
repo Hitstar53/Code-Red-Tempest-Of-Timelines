@@ -16,8 +16,12 @@
   justify-content: center;
   align-items: center;
 }
-.lp {
+.lp0,
+.lp1,
+.l2,
+.lp3 {
   flex: 1;
+  color: white;
 }
 .container {
   background-color: rgb(31, 31, 31);
@@ -32,7 +36,7 @@
   border: 3px solid rgb(156, 116, 14);
   padding: 1rem;
 }
-.inner-container {
+.innerContainer {
   width: 70vw;
   height: 65vh;
   background-color: black;
@@ -48,23 +52,24 @@
 .q4 {
   margin-left: 29%;
 }
-.answer-textbox {
+.answerTextbox {
   width: 30%;
   height: 5%;
   font-family: 'Space Mono', monospace;
   border-radius: 0.5rem;
+  color: white;
 }
-.answer-textbox,
+.answerTextbox,
 .entry,
-.wrong-answer {
+.wrongAnswer {
   align-self: flex-end;
   margin-bottom: 3%;
   margin-left: 3%;
 }
-.answer-textbox.wrong {
+.answerTextbox.wrong {
   border: 2px solid red;
 }
-.wrong-answer {
+.wrongAnswer {
   color: red;
   font-size: 15px;
   margin-right: 0.5rem;

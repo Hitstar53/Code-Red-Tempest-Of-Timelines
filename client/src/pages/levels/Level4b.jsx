@@ -7,7 +7,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { Environment } from '@react-three/drei'
 // import Bomb from '../../../public/Bomb'
-import styles from './Level4b.module.css'
+
 import { BoxGeometry } from 'three'
 import Helper4b from './Helper4b'
 import Configurator from './Configurator'
@@ -16,7 +16,7 @@ import { CustomizationProvider } from '../../contexts/Customization'
 
 //Changing color
 const Level4b = () => {
-  const ref = useRef();
+  const ref = useRef()
 
   return (
     <CustomizationProvider>
