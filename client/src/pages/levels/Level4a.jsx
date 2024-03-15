@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Layout from './Layout'
-import OldComputer from '../../assets/images/Designer1.png';
+import OldComputer from '../../assets/images/old_computer.png';
 import './Level4a.css';
 
 const Level4a = () => {
