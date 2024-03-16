@@ -23,6 +23,7 @@ import Level5 from './pages/levels/Level5'
 import Level6 from './pages/levels/Level6'
 import Level7 from './pages/levels/Level7'
 import Level8_1 from './pages/levels/Level8_1'
+import Level8_2 from './pages/levels/Level8_2'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
 import Prelevel8_3 from './pages/prelevels/Prelevel8c'
@@ -74,6 +75,7 @@ const router = createBrowserRouter([
           { path: 'prelevel8-1', element: <Prelevel8_1 /> },
           { path: 'level8-1', element: <Level8_1 /> },
           { path: 'prelevel8-2', element: <Prelevel8_2 /> },
+          { path: 'level8-2', element: <Level8_2 /> },
           { path: 'prelevel8-3', element: <Prelevel8_3 /> },
           { path: 'prelose1', element: <Prelose1 /> },
           { path: 'prelose2', element: <Prelose2 /> },
