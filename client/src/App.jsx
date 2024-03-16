@@ -14,14 +14,12 @@ import Prelevel6 from './pages/prelevels/Prelevel6'
 import Prelevel7 from './pages/prelevels/Prelevel7'
 import Level1 from './pages/levels/Level1'
 import Level2 from './pages/levels/Level2'
-import Level3 from './pages/levels/Level3'
 import Level3b from './pages/levels/Level3b'
 import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'
 import Level5 from './pages/levels/Level5'
 import Level6 from './pages/levels/Level6'
 import Level7 from './pages/levels/Level7'
-import Level8 from './pages/levels/Level8'
 import Level8_1 from './pages/levels/Level8_1'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
@@ -32,7 +30,8 @@ import Level3_1 from './pages/levels/Level3_1'
 import Prelose1 from './pages/prelevels/Prelose1'
 import Prelose2 from './pages/prelevels/Prelose2'
 import './App.css'
-
+import { store } from './contexts/store'
+import { Provider } from 'react-redux'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -113,7 +112,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </div>
   )
 }
