@@ -68,27 +68,65 @@ const deactivateTeam = async (req, res) => {
 
 
 const updateLevelTime = async (req, res) => {
-    const {id} = req.params;
+    console.log("updateLevelTime");
+    try {
+        const {id} = req.params;
     const team = await Team.findOne({id});
     if(!team){
         return res.status(404).json({message: "Team not found"});
     }
     const start_time = team.start_time;
     const current_time = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
-    const time = new Date(current_time) - new Date(start_time);
+    console.log(start_time);
+    console.log(current_time);
+    console.log(new Date(current_time).getTime());
+    console.log(new Date(start_time).getTime());
+    var time = new Date(current_time).getTime() - new Date(start_time).getTime();
+
+    // convert time to seconds 
+    time = time/1000000;
+    console.log(time);
     if(team.levels_time.length === 0){
         team.levels_time.push(time);
+        await team.save();
+        return res.status(200).json({team,message: "Time updated successfully"});
     }
     else{
         const sum = team.levels_time.reduce((a,b) => a+b, 0);
         team.levels_time.push(time - sum);
+        await team.save();
+        return res.status(200).json({team,message: "Time updated successfully"});
+    }
+        
+    } catch (error) {
+        console.log(error); 
+        return res.status(500).json({message: "Internal server error"});
+        
     }
 
+}
+
+const getTeamScore = async (req, res) => {
+    const {id} = req.params;
+    try {
+        const team = await Team.findOne({id});
+        if(!team){
+            return res.status(404).json({message: "Team not found"});
+        }
+        const score = team.level_score.reduce((a,b) => a+b, 0);
+        return res.status(200).json({score});
+        
+    } catch (error) {
+
+        return res.status(500).json({message: "Internal server error"});
+        
+    }
 }
 
 
 
 const calculateLevelScore = async (req, res) => {
+    console.log("calculateLevelScore");
     const {id} = req.params;
     try {
         const team = await Team.findOne({id});
@@ -99,6 +137,7 @@ const calculateLevelScore = async (req, res) => {
     const time = team.levels_time[level-1];
     const score = 100 + 10*(900-time);
     team.level_score.push(score);
+    team.currentLevel += 1;
     await team.save();
     return res.status(200).json({team,message: "Score updated successfully"});
 
@@ -109,11 +148,26 @@ const calculateLevelScore = async (req, res) => {
 
 }
 
+const getCurrentLevel = async (req, res) => {
+    const {id} = req.params;
+    try {
+        const team = await Team.findOne({id});
+        if(!team){
+            return res.status(404).json({message: "Team not found"});
+        }
+        return res.status(200).json({level: team.currentLevel});
+    }catch (error) {
+        return res.status(500).json({message: "Internal server error"});
+    }
+}
+
 export {
     createTeam,
     getTeam,
     activateTeam,
     deactivateTeam,
     updateLevelTime,
-    calculateLevelScore
+    calculateLevelScore,
+    getTeamScore,
+    getCurrentLevel
 }
