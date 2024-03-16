@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { TerminalContextProvider } from 'react-terminal'
+import { Provider } from 'react-redux'
 import ErrorPage from './pages/ErrorPage'
 import Welcome from './pages/welcome/Welcome'
 import LoginPage from './pages/Login/LoginPage'
@@ -14,7 +15,11 @@ import Prelevel6 from './pages/prelevels/Prelevel6'
 import Prelevel7 from './pages/prelevels/Prelevel7'
 import Level1 from './pages/levels/Level1'
 import Level2 from './pages/levels/Level2'
+<<<<<<< HEAD
 // import Level3 from './pages/levels/Level3'
+=======
+import Level3_1 from './pages/levels/Level3_1'
+>>>>>>> 23fd4c6a593bf1fbbc76f462b4f8ae023877aab5
 import Level3b from './pages/levels/Level3b'
 import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'
@@ -26,14 +31,13 @@ import Level8_1 from './pages/levels/Level8_1'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
 import Prelevel8_3 from './pages/prelevels/Prelevel8c'
-import Win from './pages/Endings/Win'
-import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
-import Level3_1 from './pages/levels/Level3_1'
 import Prelose1 from './pages/prelevels/Prelose1'
 import Prelose2 from './pages/prelevels/Prelose2'
-import './App.css'
+import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
+import Win from './pages/Endings/Win'
 import { store } from './contexts/store'
-import { Provider } from 'react-redux'
+import './App.css'
+
 const router = createBrowserRouter([
   {
     path: '/',
