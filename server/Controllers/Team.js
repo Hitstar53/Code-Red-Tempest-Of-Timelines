@@ -1,11 +1,11 @@
 import Team from "../Models/Team.js";
 
 const createTeam = async (req, res) => {
-    const {name,teamMembers} = req.body;
+    const {name,teamMembers,teamLeaderName,agentName} = req.body;
     try {
         const id = (await Team.find()).length + 1;
         console.log(id);
-        const team = await Team.create({id, name, teamMembers});
+        const team = await Team.create({id, name, teamMembers,teamLeaderName,agentName});
         return res.status(201).json({team,message: "Team created successfully"});
 
         

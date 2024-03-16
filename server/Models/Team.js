@@ -35,6 +35,9 @@ const teamSchema = new mongoose.Schema({
     level_score:{
         type: [Number],
         default: []
+    },
+    agent_name:{
+        type: String,
     }
 });
 
