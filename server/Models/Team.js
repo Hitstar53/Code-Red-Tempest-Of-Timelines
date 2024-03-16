@@ -21,32 +21,25 @@ const teamSchema = new mongoose.Schema({
         type: Number,
         default: 1,
     },
-    timeElapsed:{
-        type: Number,
-        default: 0,
+    levels_time:{
+        type: [Number],
+        default: []
     },
     active:{
         type: Boolean,
         default: false,
     },
+    start_time:{
+        type: Date,
+    },
+    level_score:{
+        type: [Number],
+        default: []
+    }
 });
 
 
 const Team = mongoose.model("Team", teamSchema);
 
-
-const updateTimeElapsed = async () => {
-    try {
-        const activeTeams = await Team.find({ active: true });
-        for (const team of activeTeams) {
-            team.timeElapsed += 10;
-            await team.save();
-        }
-    } catch (error) {
-        console.error("Error updating timeElapsed:", error);
-    }
-};
-
-setInterval(updateTimeElapsed, 10000);
 
 export default Team;
