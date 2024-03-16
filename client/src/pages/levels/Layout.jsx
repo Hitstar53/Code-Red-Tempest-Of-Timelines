@@ -13,7 +13,7 @@ const Layout = (props) => {
   const currentLevel = useSelector((state) => state.level.value.level)
   const currentScore = useSelector((state) => state.score.value.score)
   const isLoggedIn = useSelector((state) => state.login.value.login)
-  // console.log("currentLevel", currentLevel);
+  console.log("currentLevel", currentLevel);
   // console.log("currentScore", currentScore);
   // console.log("isLoggedIn", isLoggedIn);
 
