@@ -15,7 +15,7 @@ const Prelevel8a = () => {
   ];
   return (
     <div>
-      <Layout text={text} speed={90} lvl={'8_1'} />
+      <Layout text={text} speed={90} lvl={'8-1'} />
     </div>
   );
 };

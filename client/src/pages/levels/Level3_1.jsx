@@ -1,7 +1,7 @@
 import Layout from './Layout'
 import { useEffect } from 'react'
 import styles from './Level3_1.module.css'
-
+import backgroundURL from '../../assets/images/3_1-background.jpg'
 function Level3_1() {
   const check = () => {
     document
@@ -48,17 +48,27 @@ function Level3_1() {
   }, [])
 
   return (
-    <div className={styles.body}>
-      <Layout level={3} name="Team Gods" time="2:29:59" score="12345" colors={{
-          textColor: 'white',
-          boxBackgroundColor: '#975E2C',
-          leaderboardHeaderColor: 'white',
-          iconColor: 'white',
-          leaderboardPositionColor: '#CCD3CA',
-          hintTextColor: 'white',
-          leaderboardColor: '#F6C499',
-          leaderboardTextColor: 'black',
-        }} >
+    <Layout
+      level={3}
+      name="Team Gods"
+      time="2:29:59"
+      score="12345"
+      colors={{
+        textColor: 'white',
+        boxBackgroundColor: '#975E2C',
+        leaderboardHeaderColor: 'white',
+        iconColor: 'white',
+        leaderboardPositionColor: '#CCD3CA',
+        hintTextColor: 'white',
+        leaderboardColor: '#F6C499',
+        leaderboardTextColor: 'black',
+      }}
+      hintText="Four scrambled phrases, simply a bunch of nonsense… or not? 
+Click away on the right path, and look behind the scenes to find more than just text.
+"
+      backgroundPicURL={backgroundURL}
+    >
+      <div className={styles.body}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
@@ -68,18 +78,27 @@ function Level3_1() {
         <div className={styles.container}>
           <div className={styles.innerContainer}>
             <p className={styles.q1 + ' ' + styles.p}>
-              <span className={styles.lp0}>youtube.com/watch?v=Sag7hLly0qg</span>
+              <span className={styles.lp0}>
+                youtube.com/watch?v=Sag7hLly0qg
+              </span>
             </p>
             <p className={styles.q2 + ' ' + styles.p}>
-              <span className={styles.lp1}>youtube.com/watch?v=A9dPtRFSfjg</span>
+              <span className={styles.lp1}>
+                youtube.com/watch?v=A9dPtRFSfjg
+              </span>
             </p>
             <p className={styles.q3 + ' ' + styles.p}>
               <span className={styles.lp2}>https://youtu.be/68HrmbZiwaI</span>
             </p>
             <p className={styles.q4 + ' ' + styles.p}>
-              <span className={styles.lp3}>youtube.com/watch?v=iEmIJ3b-hvI</span>
+              <span className={styles.lp3}>
+                youtube.com/watch?v=iEmIJ3b-hvI
+              </span>
             </p>
-            <span className={styles.entry + ' ' + styles.span} style={{display:"inline"}}>
+            <span
+              className={styles.entry + ' ' + styles.span}
+              style={{ display: 'inline' }}
+            >
               <b>Enter your answer:</b>
             </span>
             <input
@@ -95,8 +114,8 @@ function Level3_1() {
             </button>
           </div>
         </div>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   )
 }
 
