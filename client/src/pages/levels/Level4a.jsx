@@ -13,7 +13,7 @@ const Level4a = () => {
 
   const handleProceed = () => {
     if (message === 'Success') {
-      window.location.href = 'level4-2'
+      window.location.href = 'prelevel4-2'
     } else {
       setMessage('Error')
     }
