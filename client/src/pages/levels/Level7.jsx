@@ -1,4 +1,4 @@
-import * as React from 'react'
+// import * as React from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/kimjongun.jpg'
 import { useState, useEffect } from 'react'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './Level7.module.css'
 //import correct report and not correct report from documents from assets
-import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
+// import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
 import notCorrectReport from '../../assets/documents/thisisnotthecorrectreport.pdf'
 
 const Level7 = () => {
