@@ -3,8 +3,16 @@ import Leaderboard from '../../components/Leaderboard'
 import Hint from '../../components/Hint'
 import { FiTarget } from 'react-icons/fi'
 import { Padding } from '@mui/icons-material'
-
+import { loginUser, logoutUser } from '../../contexts/store'
+import { scoreUpdate } from '../../contexts/store'
+import { nextLevel } from '../../contexts/store'
+import { useDispatch, useSelector } from 'react-redux'
 const Layout = (props) => {
+  const dispatch = useDispatch()
+  const currentLevel = useSelector((state) => state.level.value.level)
+  const currentScore = useSelector((state) => state.score.value.score)
+  const isLoggedIn = useSelector((state) => state.login.value.login)
+
   const { level, name, time, score, backgroundPicURL, colors, hintText } = props
   /*colors={
     textColor-> color of normal text, level, time
@@ -17,6 +25,7 @@ const Layout = (props) => {
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
 
   } */
+
   const levelStyle = styles.level + ' ' + styles.infoBox
   const scoreStyle = styles.score + ' ' + styles.infoBox
   const infoTimeStyle = styles.timeBox + ' ' + styles.timeRemaining
