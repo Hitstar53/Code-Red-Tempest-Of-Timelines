@@ -1,7 +1,10 @@
 import * as React from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/kimjongun.jpg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+// import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+
 
 import styles from './Level7.module.css'
 //import correct report and not correct report from documents from assets
@@ -9,11 +12,31 @@ import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
 import notCorrectReport from '../../assets/documents/thisisnotthecorrectreport.pdf'
 
 const Level7 = () => {
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
-  };
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Enter') {
+        if (inputValue === 'Sunan') {
+          navigate('/levels/prelevel8')
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyPress)
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+    }
+  }
+  , [inputValue, navigate])
+
+  const handleChange = () => {
+    if (inputValue === 'Sunan') {
+      navigate('/levels/prelevel8')
+    }
+  }
+
+  const hintText = "There is one file, there are two files, or however many there are… just observe the files and escape patterns carefully. Kim Jong Un’s final destination lies in plain sight.Also, before submitting just remember: “Are we in North Korea or are we in New Delhi?”"
 
   return (
     <div
@@ -38,7 +61,7 @@ const Level7 = () => {
           leaderboardColor: '#76453B',
           leaderboardTextColor: 'black',
         }}
-        hintText="There is one file, there are two files, or however many there are… just observe the files and escape patterns carefully. Kim Jong Un’s final destination lies in plain sight.Also, before submitting just remember: “Are we in North Korea or are we in New Delhi?”"
+        hintText={hintText}
       >
       <div className={styles.mapContainer}>
       <iframe
@@ -81,6 +104,7 @@ const Level7 = () => {
       <input
         type="text"
         style={{
+          position: 'relative',
           color: 'white',
           backgroundColor: '#76453B',
           padding: '0.5rem 1rem',
