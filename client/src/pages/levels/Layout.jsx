@@ -29,7 +29,7 @@ const Layout = (props) => {
     return isLoggedIn ? true : false
   }
   const levelValidator = () => {
-    return currentLevel > level ? true : false
+    return
   }
   const Display = () => {
     const levelStyle = styles.level + ' ' + styles.infoBox
@@ -134,7 +134,7 @@ const Layout = (props) => {
     )
   }
 
-  return <>{logInValidator && levelValidator ? <Display /> : <ErrorPage />}</>
+  return <>{isLoggedIn ? <Display {...props} /> : <ErrorPage />}</>
 }
 
 export default Layout
