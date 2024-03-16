@@ -4,7 +4,10 @@ import styles from './Level3_1.module.css'
 import backgroundURL from '../../assets/images/3_1-background.jpg'
 
 function Level3_1() {
-  const lp0Ref = useRef('youtube.com/watch?v=Sag7hLly0qg')
+  const lp0Ref = useRef('')
+  const lp1Ref = useRef('')
+  const lp2Ref = useRef('')
+  const lp3Ref = useRef('')
   const check = () => {
     document
       .querySelector(`.${styles.answerTextbox}`)
@@ -23,23 +26,34 @@ function Level3_1() {
   useEffect(() => {
     console.log(lp0Ref)
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    console.log(document.querySelectorAll(`.${styles.movingEffect}`))
     setInterval(() => {
-      if (
-        document
-          .querySelector(`.${styles.lp0}`)
-          .classList.contains(`.${styles.movingEffect}`)
-      ) {
-        clearInterval()
-
-        lp0Ref.current.innerText = 'youtube.com/watch?v=Sag7hLly0qg'
-      }
       document.querySelector(`.${styles.lp0}`).innerText = document
         .querySelector(`.${styles.lp0}`)
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 5000)
-
+    }, 500)
+    setInterval(() => {
+      if (lp0Ref.current.classList.length == 0) {
+        lp0Ref.current.innerText = 'https://www.youtube.com/watch?v=V-_O7nl0Ii0'
+      }
+    }, 500)
+    setInterval(() => {
+      if (lp1Ref.current.classList.length == 0) {
+        lp1Ref.current.innerText = 'https://www.youtube.com/watch?v=EE-xtCF3T94'
+      }
+    }, 500)
+    setInterval(() => {
+      if (lp2Ref.current.classList.length == 0) {
+        lp2Ref.current.innerText = 'https://youtu.be/68HrmbZiwaI'
+      }
+    }, 500)
+    setInterval(() => {
+      if (lp3Ref.current.classList.length == 0) {
+        lp3Ref.current.innerText = 'https://youtu.be/UtPZcwPnvkw?feature=shared'
+      }
+    }, 500)
     setInterval(() => {
       if (
         !document
@@ -53,7 +67,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 5000)
+    }, 500)
     setInterval(() => {
       if (
         !document
@@ -67,7 +81,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 5000)
+    }, 500)
     setInterval(() => {
       if (
         !document
@@ -81,7 +95,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 5000)
+    }, 500)
   }, [])
 
   return (
@@ -123,17 +137,26 @@ Click away on the right path, and look behind the scenes to find more than just 
               </span>
             </p>
             <p className={styles.q2 + ' ' + styles.p}>
-              <span className={styles.lp1 + ' ' + styles.movingEffect}>
+              <span
+                className={styles.lp1 + ' ' + styles.movingEffect}
+                ref={lp1Ref}
+              >
                 youtube.com/watch?v=A9dPtRFSfjg
               </span>
             </p>
             <p className={styles.q3 + ' ' + styles.p}>
-              <span className={styles.lp2 + ' ' + styles.movingEffect}>
+              <span
+                className={styles.lp2 + ' ' + styles.movingEffect}
+                ref={lp2Ref}
+              >
                 https://youtu.be/68HrmbZiwaI
               </span>
             </p>
             <p className={styles.q4 + ' ' + styles.p}>
-              <span className={styles.lp3 + ' ' + styles.movingEffect}>
+              <span
+                className={styles.lp3 + ' ' + styles.movingEffect}
+                ref={lp3Ref}
+              >
                 youtube.com/watch?v=iEmIJ3b-hvI
               </span>
             </p>
