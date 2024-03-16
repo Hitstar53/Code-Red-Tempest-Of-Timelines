@@ -1,10 +1,20 @@
 import * as React from 'react'
 import Layout from './Layout'
 import background from '../../assets/images/kimjongun.jpg'
+import { useState } from 'react'
 
 import styles from './Level7.module.css'
+//import correct report and not correct report from documents from assets
+import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
+import notCorrectReport from '../../assets/documents/thisisnotthecorrectreport.pdf'
 
 const Level7 = () => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
     <div
       style={{
@@ -48,13 +58,47 @@ const Level7 = () => {
               borderRadius: '100vw',
               boxShadow: `0px 0px 6px 2px white`,
               zIndex: 10,
+              width: 'fit-content',
+              margin: '24rem auto 0',
+              fontFamily: 'Inter Tight',
+              fontWeight: '700',
+              fontSize: '1.2rem',
             }}>
       <a
-        href="https://drive.google.com/uc?export=download&id=1e9q2w0w1V3C4g5f6h7i8j9k0l1m2n3o4"
+        href={notCorrectReport}
         download
+        
       >
-        <button>Download</button>
+        <button style={{
+          color: 'white'
+        }}>Download</button>
       </a>
+    </div>
+    <div style={{
+      margin: '0 auto',
+      width: 'fit-content',
+    }}>
+      <input
+        type="text"
+        style={{
+          color: 'white',
+          backgroundColor: '#76453B',
+          padding: '0.5rem 1rem',
+          borderRadius: '100vw',
+          boxShadow: '0px 0px 6px 2px white',
+          zIndex: 10,
+          width: 'fit-content',
+          fontFamily: 'Inter Tight',
+          fontWeight: '700',
+          fontSize: '1.2rem',
+          margin: '0.5rem auto 0',
+          border: 'none', // Adding this to remove default input border
+          outline: 'none', // Adding this to remove default input outline
+        }}
+        value={inputValue}
+        onChange={handleChange}
+        placeholder="Final Escape Location"
+      />
     </div>
       </Layout>
     </div>
