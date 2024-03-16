@@ -5,9 +5,7 @@ import { nextLevel } from '../../contexts/store'
 import CodeRainVid from '../../assets/animations/stock-footage-computer-binary-matrix-digital-rain-information-flow-high-tech-digital-matrix-binary-code-falling (online-video-cutter.com).mp4'
 import Layout from './Layout'
 import styles from './Level1.module.css'
-import { nextLevel } from '../../contexts/store'
-import { useDispatch } from 'react-redux'
-import { UseSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 const Level1 = () => {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
