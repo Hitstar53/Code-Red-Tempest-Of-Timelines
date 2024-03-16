@@ -15,11 +15,7 @@ import Prelevel6 from './pages/prelevels/Prelevel6'
 import Prelevel7 from './pages/prelevels/Prelevel7'
 import Level1 from './pages/levels/Level1'
 import Level2 from './pages/levels/Level2'
-<<<<<<< HEAD
-// import Level3 from './pages/levels/Level3'
-=======
 import Level3_1 from './pages/levels/Level3_1'
->>>>>>> 23fd4c6a593bf1fbbc76f462b4f8ae023877aab5
 import Level3b from './pages/levels/Level3b'
 import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'

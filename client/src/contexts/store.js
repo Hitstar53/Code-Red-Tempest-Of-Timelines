@@ -1,10 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
-<<<<<<< HEAD
 // import { PayloadAction } from '@reduxjs/toolkit'
 const initialLevelState = { value: { level: 0 } }
-=======
-const initialState = { value: { level: 0 } }
->>>>>>> 23fd4c6a593bf1fbbc76f462b4f8ae023877aab5
 
 const levelSlice = createSlice({
   name: 'level',
@@ -25,7 +21,7 @@ const scoreLevelSlice = createSlice({
     },
   },
 })
-const initialLoginState = { value: { login: false } }
+const initialLoginState = { value: { login: true } }
 const loginSlice = createSlice({
   name: 'login',
   initialState: initialLoginState,
