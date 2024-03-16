@@ -546,8 +546,8 @@ class c4_game extends React.Component {
         </div>
         <div className="game__connect4">
           <h1 className="header" style={{
-            marginTop: '8vh',
-            fontSize: '100px',
+            marginTop: '10vh',
+            fontSize: '50px',
             textAlign: 'center',
             color: 'greenyellow',
             textShadow : '1px 1px #000, 2px 2px #000, 3px 3px #000',
@@ -564,7 +564,7 @@ class c4_game extends React.Component {
                   : " inactivePlayer__connect4")
               }
               style={{
-                marginRight: '2vw',
+                marginRight: '1vw',
               }}
             >
 
@@ -577,7 +577,7 @@ class c4_game extends React.Component {
                   : " inactivePlayer__connect4")
               }
               style={{
-                marginLeft: '2vw',
+                marginLeft: '1vw',
               }}
             >
 
@@ -585,9 +585,10 @@ class c4_game extends React.Component {
           </div>
           <table style={{
             margin: '0 auto',
+            height: '30vh',
+            width: '25vw',
             borderSpacing: '0px 0px',
           }}>
-            <thead></thead>
             <tbody style={{
               border: '8px ridge #50c8ff',
               borderRadius: '50px',

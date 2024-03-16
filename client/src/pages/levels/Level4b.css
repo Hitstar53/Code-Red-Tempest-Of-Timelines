@@ -9,13 +9,15 @@
 
 .configurator {
   font-family: "Poppins", sans-serif;
+  background-color: rgba(0,0,0,0.60);
   position: fixed;
   right: 24px;
-  bottom: 17vh;
-  width: 360px;
-  padding: 24px;
+  bottom: 16vh;
+  width: 24vw;
+  padding: 22px;
   display: flex;
   flex-direction: column;
+  border: 3px solid red;
   gap: 32px;
   gap: 16px;
   -webkit-touch-callout: none; /* iOS Safari */
@@ -28,6 +30,7 @@
 }
 
 .configurator__section__title {
+  font-size: 15px;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -36,21 +39,21 @@
 .configurator__section__values {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 28px;
+  margin-top: 1.5vh;
   flex-wrap: wrap;
 }
 
 .item__label {
-  font-weight: bold;
-  font-size: 16px;
+  /* font-weight: bold; */
+  font-size: 13px;
   color: rgb(142, 223, 172);
   transition: 0.4s color;
 }
 
 .item__dot {
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
   border: solid 2px #999999;
 }
