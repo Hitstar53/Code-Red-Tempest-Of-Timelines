@@ -33,27 +33,27 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (lp0Ref.current.classList.length == 0) {
         lp0Ref.current.innerText = 'https://www.youtube.com/watch?v=V-_O7nl0Ii0'
       }
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (lp1Ref.current.classList.length == 0) {
         lp1Ref.current.innerText = 'https://www.youtube.com/watch?v=EE-xtCF3T94'
       }
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (lp2Ref.current.classList.length == 0) {
         lp2Ref.current.innerText = 'https://youtu.be/68HrmbZiwaI'
       }
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (lp3Ref.current.classList.length == 0) {
         lp3Ref.current.innerText = 'https://youtu.be/UtPZcwPnvkw?feature=shared'
       }
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (
         !document
@@ -67,7 +67,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (
         !document
@@ -81,7 +81,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 500)
+    }, 100)
     setInterval(() => {
       if (
         !document
@@ -95,7 +95,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 500)
+    }, 100)
   }, [])
 
   return (
