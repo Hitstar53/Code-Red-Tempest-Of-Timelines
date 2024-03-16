@@ -110,7 +110,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+])
 
 const App = () => {
   return (
@@ -119,7 +119,7 @@ const App = () => {
         <RouterProvider router={router} />
       </Provider>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

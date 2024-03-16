@@ -1,8 +1,10 @@
 import Layout from './Layout'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import styles from './Level3_1.module.css'
 import backgroundURL from '../../assets/images/3_1-background.jpg'
+
 function Level3_1() {
+  const lp0Ref = useRef('youtube.com/watch?v=Sag7hLly0qg')
   const check = () => {
     document
       .querySelector(`.${styles.answerTextbox}`)
@@ -21,24 +23,58 @@ function Level3_1() {
   useEffect(() => {
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     setInterval(() => {
+      if (
+        document
+          .querySelector(`.${styles.lp0}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval()
+        console.log('gugugaga')
+        lp0Ref.current.innerText = 'youtube.com/watch?v=Sag7hLly0qg'
+      }
       document.querySelector(`.${styles.lp0}`).innerText = document
         .querySelector(`.${styles.lp0}`)
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
+    }, 100)
 
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp1}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval()
+      }
       document.querySelector(`.${styles.lp1}`).innerText = document
         .querySelector(`.${styles.lp1}`)
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-
+    }, 100)
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp2}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval()
+      }
       document.querySelector(`.${styles.lp2}`).innerText = document
         .querySelector(`.${styles.lp2}`)
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-
+    }, 100)
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp3}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval()
+      }
       document.querySelector(`.${styles.lp3}`).innerText = document
         .querySelector(`.${styles.lp3}`)
         .innerText.split('')
@@ -77,21 +113,23 @@ Click away on the right path, and look behind the scenes to find more than just 
         ></link>
         <div className={styles.container}>
           <div className={styles.innerContainer}>
-            <p className={styles.q1 + ' ' + styles.p}>
-              <span className={styles.lp0}>
+            <p ref={lp0Ref} className={styles.q1 + ' ' + styles.p}>
+              <span className={styles.lp0 + ' ' + styles.movingEffect}>
                 youtube.com/watch?v=Sag7hLly0qg
               </span>
             </p>
             <p className={styles.q2 + ' ' + styles.p}>
-              <span className={styles.lp1}>
+              <span className={styles.lp1 + ' ' + styles.movingEffect}>
                 youtube.com/watch?v=A9dPtRFSfjg
               </span>
             </p>
             <p className={styles.q3 + ' ' + styles.p}>
-              <span className={styles.lp2}>https://youtu.be/68HrmbZiwaI</span>
+              <span className={styles.lp2 + ' ' + styles.movingEffect}>
+                https://youtu.be/68HrmbZiwaI
+              </span>
             </p>
             <p className={styles.q4 + ' ' + styles.p}>
-              <span className={styles.lp3}>
+              <span className={styles.lp3 + ' ' + styles.movingEffect}>
                 youtube.com/watch?v=iEmIJ3b-hvI
               </span>
             </p>
