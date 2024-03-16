@@ -14,12 +14,20 @@ import Prelevel6 from './pages/prelevels/Prelevel6'
 import Prelevel7 from './pages/prelevels/Prelevel7'
 import Level1 from './pages/levels/Level1'
 import Level2 from './pages/levels/Level2'
+<<<<<<< HEAD
+=======
+// import Level3 from './pages/levels/Level3'
+>>>>>>> 57c61c4b0b6eb33f317506c7fb3ab444cf74fde1
 import Level3b from './pages/levels/Level3b'
 import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'
 import Level5 from './pages/levels/Level5'
 import Level6 from './pages/levels/Level6'
 import Level7 from './pages/levels/Level7'
+<<<<<<< HEAD
+=======
+// import Level8 from './pages/levels/Level8'
+>>>>>>> 57c61c4b0b6eb33f317506c7fb3ab444cf74fde1
 import Level8_1 from './pages/levels/Level8_1'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
