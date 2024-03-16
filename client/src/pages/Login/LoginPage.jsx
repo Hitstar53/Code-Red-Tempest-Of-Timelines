@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 
 const LoginPage = () => {
   const [teamCode, setTeamCode] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   useEffect(function () {
     function handleKeyPress(e) {
@@ -27,6 +29,7 @@ const LoginPage = () => {
 
     setTeamCode("");
     setPassword("");
+    navigate("/levels/prelevel1");
   }
 
   return (
