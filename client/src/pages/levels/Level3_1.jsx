@@ -21,6 +21,7 @@ function Level3_1() {
   }
 
   useEffect(() => {
+    console.log(lp0Ref)
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     setInterval(() => {
       if (
@@ -29,7 +30,7 @@ function Level3_1() {
           .classList.contains(`.${styles.movingEffect}`)
       ) {
         clearInterval()
-        console.log('gugugaga')
+
         lp0Ref.current.innerText = 'youtube.com/watch?v=Sag7hLly0qg'
       }
       document.querySelector(`.${styles.lp0}`).innerText = document
@@ -37,7 +38,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 100)
+    }, 5000)
 
     setInterval(() => {
       if (
@@ -52,7 +53,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 100)
+    }, 5000)
     setInterval(() => {
       if (
         !document
@@ -66,7 +67,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 100)
+    }, 5000)
     setInterval(() => {
       if (
         !document
@@ -80,7 +81,7 @@ function Level3_1() {
         .innerText.split('')
         .map((letter) => letters[Math.floor(Math.random() * 52)])
         .join('')
-    }, 100)
+    }, 5000)
   }, [])
 
   return (
@@ -113,8 +114,11 @@ Click away on the right path, and look behind the scenes to find more than just 
         ></link>
         <div className={styles.container}>
           <div className={styles.innerContainer}>
-            <p ref={lp0Ref} className={styles.q1 + ' ' + styles.p}>
-              <span className={styles.lp0 + ' ' + styles.movingEffect}>
+            <p className={styles.q1 + ' ' + styles.p}>
+              <span
+                className={styles.lp0 + ' ' + styles.movingEffect}
+                ref={lp0Ref}
+              >
                 youtube.com/watch?v=Sag7hLly0qg
               </span>
             </p>

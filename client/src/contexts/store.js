@@ -1,10 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit'
 // import { PayloadAction } from '@reduxjs/toolkit'
-<<<<<<< HEAD
 const initialLevelState = { value: { level: 10 } }
-=======
-const initialLevelState = { value: { level: 8 } }
->>>>>>> ab49b10425dc3d041d2513bad77e7e018715d68e
 
 const levelSlice = createSlice({
   name: 'level',
