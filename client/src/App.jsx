@@ -1,37 +1,37 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { TerminalContextProvider } from 'react-terminal'
-import ErrorPage from './pages/ErrorPage'
-import Welcome from './pages/welcome/Welcome'
-import LoginPage from './pages/login/LoginPage'
-import Prelevel1 from './pages/prelevels/Prelevel1'
-import Prelevel2 from './pages/prelevels/Prelevel2'
-import Prelevel3 from './pages/prelevels/Prelevel3'
-import Prelevel3b from './pages/prelevels/Prelevel3b'
-import Prelevel4 from './pages/prelevels/Prelevel4'
-import Prelevel4b from './pages/prelevels/Prelevel4b'
-import Prelevel5 from './pages/prelevels/Prelevel5'
-import Prelevel6 from './pages/prelevels/Prelevel6'
-import Prelevel7 from './pages/prelevels/Prelevel7'
-import Level1 from './pages/levels/Level1'
-import Level2 from './pages/levels/Level2'
-import Level3 from './pages/levels/Level3'
-import Level3b from './pages/levels/Level3b'
-import Level4a from './pages/levels/Level4a'
-import Level4b from './pages/levels/Level4b'
-import Level5 from './pages/levels/Level5'
-import Level6 from './pages/levels/Level6'
-import Level7 from './pages/levels/Level7'
-import Level8 from './pages/levels/Level8'
-import Level8_1 from './pages/levels/Level8_1'
-import Prelevel8_1 from './pages/prelevels/Prelevel8a'
-import Prelevel8_2 from './pages/prelevels/Prelevel8b'
-import Prelevel8_3 from './pages/prelevels/Prelevel8c'
-import Win from './pages/Endings/Win'
-import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
-import Level3_1 from './pages/levels/Level3_1'
-import Prelose1 from './pages/prelevels/Prelose1'
-import Prelose2 from './pages/prelevels/Prelose2'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { TerminalContextProvider } from 'react-terminal';
+import ErrorPage from './pages/ErrorPage';
+import Welcome from './pages/welcome/Welcome';
+import LoginPage from './pages/Login/LoginPage';
+import Prelevel1 from './pages/prelevels/Prelevel1';
+import Prelevel2 from './pages/prelevels/Prelevel2';
+import Prelevel3 from './pages/prelevels/Prelevel3';
+import Prelevel3b from './pages/prelevels/Prelevel3b';
+import Prelevel4 from './pages/prelevels/Prelevel4';
+import Prelevel4b from './pages/prelevels/Prelevel4b';
+import Prelevel5 from './pages/prelevels/Prelevel5';
+import Prelevel6 from './pages/prelevels/Prelevel6';
+import Prelevel7 from './pages/prelevels/Prelevel7';
+import Level1 from './pages/levels/Level1';
+import Level2 from './pages/levels/Level2';
+import Level3 from './pages/levels/Level3';
+import Level3b from './pages/levels/Level3b';
+import Level4a from './pages/levels/Level4a';
+import Level4b from './pages/levels/Level4b';
+import Level5 from './pages/levels/Level5';
+import Level6 from './pages/levels/Level6';
+import Level7 from './pages/levels/Level7';
+import Level8 from './pages/levels/Level8';
+import Level8_1 from './pages/levels/Level8_1';
+import Prelevel8_1 from './pages/prelevels/Prelevel8a';
+import Prelevel8_2 from './pages/prelevels/Prelevel8b';
+import Prelevel8_3 from './pages/prelevels/Prelevel8c';
+import Win from './pages/Endings/Win';
+import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending';
+import Level3_1 from './pages/levels/Level3_1';
+import Prelose1 from './pages/prelevels/Prelose1';
+import Prelose2 from './pages/prelevels/Prelose2';
+import './App.css';
 
 const router = createBrowserRouter([
   {
@@ -106,14 +106,14 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
 const App = () => {
   return (
     <div>
       <RouterProvider router={router} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
