@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useDebugValue, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -6,6 +7,16 @@ import CodeRainVid from '../../assets/animations/stock-footage-computer-binary-m
 import Layout from './Layout'
 import styles from './Level1.module.css'
 import { useSelector } from 'react-redux'
+=======
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { nextLevel } from "../../contexts/store";
+import CodeRainVid from "../../assets/animations/stock-footage-computer-binary-matrix-digital-rain-information-flow-high-tech-digital-matrix-binary-code-falling (online-video-cutter.com).mp4";
+import Layout from "./Layout";
+import styles from "./Level1.module.css";
+
+>>>>>>> ab49b10425dc3d041d2513bad77e7e018715d68e
 const Level1 = () => {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
@@ -21,9 +32,15 @@ const Level1 = () => {
     }
     window.addEventListener('keydown', handleKeyPress)
     return () => {
+<<<<<<< HEAD
       window.removeEventListener('keydown', handleKeyPress)
     }
   }, [search, navigate])
+=======
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+>>>>>>> ab49b10425dc3d041d2513bad77e7e018715d68e
 
   const handleSearch = () => {
     if (search === 'TR$') {

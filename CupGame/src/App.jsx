@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
   const [history, setHistory] = useState([
@@ -7,7 +7,10 @@ function App() {
       { x: 150, y: 100, hasBall: false },
       { x: 300, y: 100, hasBall: false },
       { x: 450, y: 100, hasBall: false },
-    ]
+      { x: 150, y: 300, hasBall: false },
+      { x: 300, y: 300, hasBall: false },
+      { x: 450, y: 300, hasBall: false },
+    ],
   ]);
   const [numMovesLimitLocked, setNumMovesLimitLocked] = useState(3);
   const [numMovesLimit, setNumMovesLimit] = useState(20);
@@ -21,7 +24,7 @@ function App() {
   }
 
   function isStarted() {
-    return history[0].some(shell => shell.hasBall);
+    return history[0].some((shell) => shell.hasBall);
   }
 
   function isBallVisible() {
@@ -72,24 +75,23 @@ function App() {
 
     function isShellOverlap(acc, newPos) {
       return acc.some(({ x, y }) => {
-        const overlapX = (newPos.x >= x - shellSize) && (newPos.x <= x + shellSize);
-        const overlapY = (newPos.y >= y - shellSize) && (newPos.y <= y + shellSize);
+        const overlapX = newPos.x >= x - shellSize && newPos.x <= x + shellSize;
+        const overlapY = newPos.y >= y - shellSize && newPos.y <= y + shellSize;
         return overlapX && overlapY;
       });
     }
 
-    const newPositions = history[history.length - 1]
-      .reduce((acc, cur) => {
-        const shell = Object.assign({}, cur);
-        let newPos = generateNewPosition(shell);
+    const newPositions = history[history.length - 1].reduce((acc, cur) => {
+      const shell = Object.assign({}, cur);
+      let newPos = generateNewPosition(shell);
 
-        while(isShellOverlap(acc, newPos)) {
-          newPos = generateNewPosition(shell);
-        }
+      while (isShellOverlap(acc, newPos)) {
+        newPos = generateNewPosition(shell);
+      }
 
-        acc.push(newPos);
-        return acc;
-      }, []);
+      acc.push(newPos);
+      return acc;
+    }, []);
 
     return newPositions;
   }
@@ -111,7 +113,7 @@ function App() {
   function finalShuffle(shells) {
     const avalablePositions = shells.map(({ x }) => x);
 
-    const shuffledShells = shells.map(shell => {
+    const shuffledShells = shells.map((shell) => {
       const randomIndex = Math.floor(Math.random() * avalablePositions.length);
       shell.x = avalablePositions[randomIndex];
       avalablePositions.splice(randomIndex, 1);
@@ -122,39 +124,38 @@ function App() {
   }
 
   function getBallClassNames() {
-    const ballClassNames = ['ball'];
+    const ballClassNames = ["ball"];
 
     if (isBallVisible()) {
-      ballClassNames.push('ball--start');
+      ballClassNames.push("ball--start");
     }
 
     if (shellChoice && shellChoice.hasBall) {
-      ballClassNames.push('ball--win');
+      ballClassNames.push("ball--win");
     }
 
-    return ballClassNames.join(' ');
+    return ballClassNames.join(" ");
   }
 
   function Ball() {
-    return <div
-      className={getBallClassNames()}
-      onAnimationEnd={shuffleShells}>
-    </div>
+    return (
+      <div className={getBallClassNames()} onAnimationEnd={shuffleShells}></div>
+    );
   }
 
-  const shellElements = history[history.length - 1]
-    .map((shell, index) =>
-      <div
-        role="button"
-        key={index}
-        className="shell"
-        onClick={() => setShellChoice(shell)}
-        onTransitionEnd={handleTransitionEnd}
-        style={{transform: `translate(${shell.x}px, ${shell.y}px)`}}
-        disabled={!isFinished()}>
-        { shell.hasBall && <Ball/> }
-      </div>
-    );
+  const shellElements = history[history.length - 1].map((shell, index) => (
+    <div
+      role="button"
+      key={index}
+      className="shell"
+      onClick={() => setShellChoice(shell)}
+      onTransitionEnd={handleTransitionEnd}
+      style={{ transform: `translate(${shell.x}px, ${shell.y}px)` }}
+      disabled={!isFinished()}
+    >
+      {shell.hasBall && <Ball />}
+    </div>
+  ));
 
   return (
     <div className="App" style={{ width: boardWidth }}>
@@ -165,7 +166,8 @@ function App() {
           <button
             type="submit"
             className="form__btn"
-            disabled={isStarted() && numMovesDone() < numMovesLimitLocked}>
+            disabled={isStarted() && numMovesDone() < numMovesLimitLocked}
+          >
             START
           </button>
         </div>
@@ -173,12 +175,12 @@ function App() {
 
       <div className="board" style={{ height: boardHeight }}>
         <div className="board__result">
-          { shellChoice && (shellChoice.hasBall ? 'FOUND IT!' : 'TRY ANOTHER') }
+          {shellChoice && (shellChoice.hasBall ? "FOUND IT!" : "TRY AGAIN!")}
         </div>
         {shellElements}
       </div>
     </div>
-  )
+  );
 }
 
 export default App;

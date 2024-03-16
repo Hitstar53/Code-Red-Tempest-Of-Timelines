@@ -30,7 +30,8 @@
     "react-router-dom": "^6.22.0",
     "react-spring": "^9.7.3",
     "react-terminal": "^1.4.4",
-    "three": "^0.162.0"
+    "three": "^0.162.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -43,6 +44,8 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.1.6"
+    "vite": "^5.1.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "typescript": "3.8.3"
   }
 }
