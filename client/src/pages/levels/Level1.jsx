@@ -1,5 +1,7 @@
 import { useDebugValue, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { nextLevel } from '../../contexts/store'
 import CodeRainVid from '../../assets/animations/stock-footage-computer-binary-matrix-digital-rain-information-flow-high-tech-digital-matrix-binary-code-falling (online-video-cutter.com).mp4'
 import Layout from './Layout'
 import styles from './Level1.module.css'
@@ -13,7 +15,8 @@ const Level1 = () => {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
-        if (search === 'TP$') {
+        if (search === 'TR$') {
+          dispatch(nextLevel({ level: 2 }))
           navigate('/levels/prelevel2')
         }
       }

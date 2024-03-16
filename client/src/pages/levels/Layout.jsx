@@ -1,8 +1,8 @@
+import React from 'react'
 import styles from './Layout.module.css'
 import Leaderboard from '../../components/Leaderboard'
 import Hint from '../../components/Hint'
 import { FiTarget } from 'react-icons/fi'
-import { Padding } from '@mui/icons-material'
 import { loginUser, logoutUser } from '../../contexts/store'
 import { scoreUpdate } from '../../contexts/store'
 import { nextLevel } from '../../contexts/store'
@@ -13,6 +13,9 @@ const Layout = (props) => {
   const currentLevel = useSelector((state) => state.level.value.level)
   const currentScore = useSelector((state) => state.score.value.score)
   const isLoggedIn = useSelector((state) => state.login.value.login)
+  // console.log("currentLevel", currentLevel);
+  // console.log("currentScore", currentScore);
+  // console.log("isLoggedIn", isLoggedIn);
 
   /*colors={
     textColor-> color of normal text, level, time
@@ -25,12 +28,9 @@ const Layout = (props) => {
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
   } */
   const { level, name, time, score, backgroundPicURL, colors, hintText } = props
-  const logInValidator = () => {
-    return isLoggedIn ? true : false
-  }
-  const levelValidator = () => {
-    return
-  }
+  // const levelValidator = () => {
+  //   return currentLevel > level ? true : false
+  // }
   const Display = () => {
     const levelStyle = styles.level + ' ' + styles.infoBox
     const scoreStyle = styles.score + ' ' + styles.infoBox
@@ -134,7 +134,9 @@ const Layout = (props) => {
     )
   }
 
-  return <>{isLoggedIn ? <Display {...props} /> : <ErrorPage />}</>
+  return (
+    <>{isLoggedIn && currentLevel >= level ? <Display /> : <ErrorPage />}</>
+  )
 }
 
 export default Layout

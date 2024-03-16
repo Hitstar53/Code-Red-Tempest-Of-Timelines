@@ -10,6 +10,7 @@ import Prelevel3 from './pages/prelevels/Prelevel3'
 import Prelevel3b from './pages/prelevels/Prelevel3b'
 import Prelevel4 from './pages/prelevels/Prelevel4'
 import Prelevel4b from './pages/prelevels/Prelevel4b'
+import Backstory from './pages/Backstory'
 import Prelevel5 from './pages/prelevels/Prelevel5'
 import Prelevel6 from './pages/prelevels/Prelevel6'
 import Prelevel7 from './pages/prelevels/Prelevel7'
@@ -22,7 +23,6 @@ import Level4b from './pages/levels/Level4b'
 import Level5 from './pages/levels/Level5'
 import Level6 from './pages/levels/Level6'
 import Level7 from './pages/levels/Level7'
-// import Level8 from './pages/levels/Level8'
 import Level8_1 from './pages/levels/Level8_1'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
@@ -63,6 +63,7 @@ const router = createBrowserRouter([
           { path: 'level4-1', element: <Level4a /> },
           { path: 'prelevel4-2', element: <Prelevel4b /> },
           { path: 'level4-2', element: <Level4b /> },
+          { path: 'backstory', element: <Backstory /> },
           { path: 'prelevel5', element: <Prelevel5 /> },
           { path: 'level5', element: <Level5 /> },
           { path: 'prelevel6', element: <Prelevel6 /> },
@@ -109,7 +110,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
 const App = () => {
   return (
@@ -118,7 +119,7 @@ const App = () => {
         <RouterProvider router={router} />
       </Provider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
