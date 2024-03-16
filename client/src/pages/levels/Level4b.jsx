@@ -1,18 +1,12 @@
-import React, { useEffect, useRef, Suspense } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Layout from './Layout'
-// import background from '../../assets/images/bastille.jpg'
 import background from '../../assets/images/bastillePrison.jpg'
-
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
-import { Environment } from '@react-three/drei'
-// import Bomb from '../../../public/Bomb'
-import './Level4b.css'
-import { BoxGeometry } from 'three'
 import Helper4b from './Helper4b'
 import Configurator from './Configurator'
 import Display from './Display'
 import { CustomizationProvider } from '../../contexts/Customization'
+import './Level4b.css'
 
 //Changing color
 const Level4b = () => {

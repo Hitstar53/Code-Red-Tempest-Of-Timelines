@@ -1,11 +1,17 @@
 import { useCustomization, wireColors } from "../../contexts/Customization";
+import { useNavigate } from "react-router-dom";
+
 const Display = () => {
     const { password, wire1Color, wire2Color, wire3Color, sideWire } = useCustomization();
+    const navigate = useNavigate();
 
     function handleDefuse(e) {
         if (password.join('') === '1769' && !sideWire && wire1Color.name === 'blue' && wire2Color.name === 'white' && wire3Color.name === 'red') {
             document.getElementById('successMessage').style.display = 'block';
             document.getElementById('errorMessage').style.display = 'none';
+            setTimeout(() => {
+                navigate('/levels/backstory');
+            }, 2000);
         }
         else {
             document.getElementById('errorMessage').style.display = 'block';
