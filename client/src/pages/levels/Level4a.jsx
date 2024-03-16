@@ -76,7 +76,7 @@ const Level4a = () => {
           />
           <div
             style={{
-              marginTop: '26vh',
+              marginTop: '21vh',
               display: 'flex',
               justifyContent: 'space-between',
               width: '100%',
@@ -84,8 +84,8 @@ const Level4a = () => {
           >
             <div
               style={{
-                border: '4px solid #c3a077',
-                borderRadius: '5px',
+                // border: '4px solid #c3a077',
+                // borderRadius: '5px',
                 padding: '10px',
               }}
             >
@@ -96,7 +96,7 @@ const Level4a = () => {
                     fontFamily: 'monospace',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
-                    width: '7vw',
+                    width: '9vw',
                     border: '2px solid #c3a077',
                     borderRadius: '5px',
                     padding: '5px',
@@ -131,8 +131,8 @@ const Level4a = () => {
             </div>
             <div
               style={{
-                border: '4px solid #c3a077',
-                borderRadius: '5px',
+                // border: '4px solid #c3a077',
+                // borderRadius: '5px',
                 padding: '10px',
               }}
             >
@@ -145,7 +145,7 @@ const Level4a = () => {
                     borderRadius: '5px',
                     padding: '5px',
                     marginLeft: '10px',
-                    width: '15vw',
+                    width: '13vw',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
                     textShadow: '1px 1px #b87333',
@@ -161,7 +161,7 @@ const Level4a = () => {
                     fontFamily: 'monospace',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
-                    width: '15vw',
+                    width: '13vw',
                     border: '2px solid #c3a077',
                     borderRadius: '5px',
                     padding: '5px',
