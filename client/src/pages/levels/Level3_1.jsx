@@ -8,51 +8,108 @@ function Level3_1() {
   const check = async (e) => {
     e.preventDefault()
     const ans = ansRef.current.value
+    const a = ansRef.current
+    a.classList.remove(styles.wrong)
+    const wrongAnswerElement = <a href="" className="nextSibling"></a>
     var answer = ans.toUpperCase()
     const res = await  Level3_1Sol(answer)
     if (res) {
       navigate('/levels/level3-2')
     }
     else{
-      document.querySelector(`.${styles.wrongAnswer}`).style.display = 'block'
+      input.classList.add(styles.wrong);
+      wrongAnswerElement.style.display = "inline";
+      setShowWrongAnswer(true);
     }
   }
   const navigate = useNavigate()
+  const [answer, setAnswer] = useState("");
   const [score, setScore] = useState(0)
+  const lp0Ref = useRef("");
+  const lp1Ref = useRef("");
+  const lp2Ref = useRef("");
+  const lp3Ref = useRef("");
   const ansRef = useRef(null)
+  const [showWrongAnswer, setShowWrongAnswer] = useState(false);
   useEffect(() => {
-
     getCurrentLevel()
-    getScore().then((res) => {
-      setScore(res)
-    })
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    getScore().then((res) => {setScore(res)})
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    // console.log(document.querySelectorAll(`.${styles.movingEffect}`));
     setInterval(() => {
       document.querySelector(`.${styles.lp0}`).innerText = document
         .querySelector(`.${styles.lp0}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-
+        .join("");
+    }, 100);
+    setInterval(() => {
+      if (lp0Ref.current.classList.length == 0) {
+        lp0Ref.current.innerText =
+          "https://www.youtube.com/watch?v=V-_O7nl0Ii0";
+      }
+    }, 100);
+    setInterval(() => {
+      if (lp1Ref.current.classList.length == 0) {
+        lp1Ref.current.innerText =
+          "https://www.youtube.com/watch?v=EE-xtCF3T94";
+      }
+    }, 100);
+    setInterval(() => {
+      if (lp2Ref.current.classList.length == 0) {
+        lp2Ref.current.innerText = "https://youtu.be/68HrmbZiwaI";
+      }
+    }, 100);
+    setInterval(() => {
+      if (lp3Ref.current.classList.length == 0) {
+        lp3Ref.current.innerText =
+          "https://youtu.be/UtPZcwPnvkw?feature=shared";
+      }
+    }, 100);
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp1}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval();
+      }
       document.querySelector(`.${styles.lp1}`).innerText = document
         .querySelector(`.${styles.lp1}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-
+        .join("");
+    }, 100);
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp2}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval();
+      }
       document.querySelector(`.${styles.lp2}`).innerText = document
         .querySelector(`.${styles.lp2}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-
+        .join("");
+    }, 100);
+    setInterval(() => {
+      if (
+        !document
+          .querySelector(`.${styles.lp3}`)
+          .classList.contains(`.${styles.movingEffect}`)
+      ) {
+        clearInterval();
+      }
       document.querySelector(`.${styles.lp3}`).innerText = document
         .querySelector(`.${styles.lp3}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-    }, 100)
-  }, [])
+        .join("");
+    }, 100);
+  }, []);
+
 
   return (
     <Layout
@@ -75,7 +132,7 @@ Click away on the right path, and look behind the scenes to find more than just 
 "
       backgroundPicURL={backgroundURL}
     >
-      <div className={styles.body}>
+    <div className={styles.body}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link
@@ -84,27 +141,41 @@ Click away on the right path, and look behind the scenes to find more than just 
         ></link>
         <div className={styles.container}>
           <div className={styles.innerContainer}>
-            <p className={styles.q1 + ' ' + styles.p}>
-              <span className={styles.lp0}>
+            <p className={styles.q1 + " " + styles.p}>
+              <span
+                className={styles.lp0 + " " + styles.movingEffect}
+                ref={lp0Ref}
+              >
                 youtube.com/watch?v=Sag7hLly0qg
               </span>
             </p>
-            <p className={styles.q2 + ' ' + styles.p}>
-              <span className={styles.lp1}>
+            <p className={styles.q2 + " " + styles.p}>
+              <span
+                className={styles.lp1 + " " + styles.movingEffect}
+                ref={lp1Ref}
+              >
                 youtube.com/watch?v=A9dPtRFSfjg
               </span>
             </p>
-            <p className={styles.q3 + ' ' + styles.p}>
-              <span className={styles.lp2}>https://youtu.be/68HrmbZiwaI</span>
+            <p className={styles.q3 + " " + styles.p}>
+              <span
+                className={styles.lp2 + " " + styles.movingEffect}
+                ref={lp2Ref}
+              >
+                https://youtu.be/68HrmbZiwaI
+              </span>
             </p>
-            <p className={styles.q4 + ' ' + styles.p}>
-              <span className={styles.lp3}>
+            <p className={styles.q4 + " " + styles.p}>
+              <span
+                className={styles.lp3 + " " + styles.movingEffect}
+                ref={lp3Ref}
+              >
                 youtube.com/watch?v=iEmIJ3b-hvI
               </span>
             </p>
             <span
-              className={styles.entry + ' ' + styles.span}
-              style={{ display: 'inline' }}
+              className={styles.entry + " " + styles.span}
+              style={{ display: "inline" }}
             >
               <b>Enter your answer:</b>
             </span>
@@ -112,11 +183,15 @@ Click away on the right path, and look behind the scenes to find more than just 
               placeholder="Enter your answer"
               className={styles.answerTextbox}
               type="text"
+              value={answer}
               ref={ansRef}
+              onChange={(e) => setAnswer(e.target.value)}
             />
-            <span className={styles.wrongAnswer + ' ' + styles.span}>
-              Wrong answer. Retry
-            </span>
+            {showWrongAnswer && (
+              <p className={styles.wrongAnswer + " " + styles.span}>
+                Wrong answer!
+              </p>
+            )}
             <button className={styles.btn} type="button" onClick={check}>
               ENTER
             </button>

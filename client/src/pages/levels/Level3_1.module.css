@@ -5,6 +5,7 @@
   display: inline-block;
   font-size: 19px;
 }
+
 .body {
   position: absolute;
   top: 0;
@@ -19,6 +20,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.movingEffect {}
+
 .lp0,
 .lp1,
 .lp2,
@@ -26,6 +30,7 @@
   flex: 1;
   color: white;
 }
+
 .container {
   background-color: rgb(31, 31, 31);
   width: 80vw;
@@ -39,6 +44,7 @@
   border: 3px solid rgb(156, 116, 14);
   padding: 1rem;
 }
+
 .innerContainer {
   width: 70vw;
   height: 65vh;
@@ -49,42 +55,53 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .q2 {
   margin-left: 25%;
 }
+
 .q4 {
   margin-left: 29%;
 }
+
 .answerTextbox {
   width: 30%;
-  height: 5%;
+  height: 10%;
   font-family: 'Space Mono', monospace;
   border-radius: 0.5rem;
+  border: 3px solid #b18d09;
+  background-color: rgb(53, 48, 48);
+  color: white;
 }
+
 .answerTextbox,
 .entry,
 .wrongAnswer {
   align-self: flex-end;
   margin-bottom: 3%;
   margin-left: 3%;
+  padding: 0.5rem 1rem;
 }
+
 .answerTextbox.wrong {
   border: 2px solid red;
 }
+
 .wrongAnswer {
   color: red;
   font-size: 15px;
   margin-right: 0.5rem;
-  display: none;
 }
+
 .btn {
   margin-left: 1rem !important;
   margin-bottom: 3%;
-  height: 5%;
-  align-self: flex-end !important;
+  border-radius: 0.5rem;
+  border: 3px solid #b18d09;
+  padding: 0.3rem 1rem;
+  align-self: flex-end;
   font-size: 20px !important;
   font-family: 'Space Mono', monospace;
-  padding-bottom: 3% !important;
   background-color: rgb(53, 48, 48) !important;
   text-align: center;
   color: #b18d09;
