@@ -33,6 +33,7 @@
     "react-terminal": "^1.4.4",
     "react-type-animation": "^3.2.0",
     "react-typed": "^2.0.12",
+    "redux-persist": "^6.0.0",
     "three": "^0.162.0"
   },
   "devDependencies": {
