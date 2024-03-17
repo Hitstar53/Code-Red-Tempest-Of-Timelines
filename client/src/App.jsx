@@ -27,7 +27,7 @@ import Level8_1 from "./pages/levels/Level8_1";
 import Level8_2 from "./pages/levels/Level8_2";
 import Prelevel8_1 from "./pages/prelevels/Prelevel8a";
 import Prelevel8_2 from "./pages/prelevels/Prelevel8b";
-import Prelevel8_3 from "./pages/prelevels/Prelevel6b";
+import Prelevel6_2 from "./pages/prelevels/Prelevel6b";
 import Prelose1 from "./pages/prelevels/Prelose1";
 import Prelose2 from "./pages/prelevels/Prelose2";
 import Wrong_choice_ending from "./pages/Endings/Wrong_choice_ending";
