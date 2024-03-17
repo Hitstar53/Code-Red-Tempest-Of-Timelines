@@ -11,14 +11,7 @@ function Level3_1() {
     var answer = ans.toUpperCase()
     const res = await  Level3_1Sol(answer)
     if (res) {
-     if (await checkisLooped()){
-        await incrementLevel()
-        navigate('/levels/level3b')
-      }else{
-        await updateLevel()
-        navigate('/levels/level3b')
-      
-      }
+      navigate('/levels/level3b')
     }
     else{
       document.querySelector(`.${styles.wrongAnswer}`).style.display = 'block'

@@ -26,16 +26,7 @@ const Level4a = () => {
 
   const handleProceed = async () => {
     if (message === 'Success') {
-      if (await checkisLooped()){
-        await incrementLevel()
-        window.location.href = 'level4-2'
-
-      }else{
-        await updateLevel()
-        window.location.href = 'level4-2'
-
-
-      }
+      navigate('/levels/level4-2')
     } else {
       setMessage('Error')
     }

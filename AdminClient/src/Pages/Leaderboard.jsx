@@ -9,8 +9,8 @@ const Leaderboard = () => {
         const fetchLeaderboard = async () => {
             try {
                 const response = await axios.get(`${base_url}/team/getLeaderboard`);
-                setSortedTeams(response.data.teams);
-                var teamsWithScore = sortedTeams.map((team) => {
+                console.log(response.data.teams);
+                var teamsWithScore = response.data.teams.map((team) => {
                     team.score = team.level_score.reduce((a, b) => a + b, 0);
                     return team;
                 });
@@ -20,6 +20,7 @@ const Leaderboard = () => {
                     }
                     return b.currentLevel - a.currentLevel;
                 });
+                console.log(teamsWithScore);
                 setSortedTeams(teamsWithScore);
             } catch (error) {
                 console.log(error);

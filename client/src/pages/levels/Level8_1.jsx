@@ -8,7 +8,7 @@ const Keypad = () => {
   const [score, setScore] = useState(0)
 
   useEffect(() => {
-    // getCurrentLevel()
+    getCurrentLevel()
     getScore().then((res) => {
       setScore(res)
     })

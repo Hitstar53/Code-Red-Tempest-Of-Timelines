@@ -9,7 +9,7 @@ const Level8_2 = () => {
     const [score, setScore] = useState(0)
 
     useEffect(() => {
-        // getCurrentLevel()
+        getCurrentLevel()
         getScore().then((res) => {
             setScore(res)
         })

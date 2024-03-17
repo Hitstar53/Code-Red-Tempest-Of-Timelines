@@ -5,6 +5,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import background from '../../assets/images/tm.jpg'
 import styles from './Level5.module.css'
 import { getCurrentLevel,getScore,Level5Sol,checkisLooped,updateLevel,incrementLevel } from '../../api/General'
+import { setBoardLock } from '../../api/Leaderboard'
 
 const Level5 = () => {
   const navigate = useNavigate()
@@ -32,12 +33,11 @@ const Level5 = () => {
       const isLooped = await checkisLooped()
       console.log("Islooped",isLooped)
       if (isLooped){
-        console.log("Incrementing level")
         await incrementLevel()
-        console.log("Level incremented")
         window.location.href = 'prelevel6'
       }else{
         await updateLevel()
+        await setBoardLock()
         window.location.href = 'prelevel6'
       }
 

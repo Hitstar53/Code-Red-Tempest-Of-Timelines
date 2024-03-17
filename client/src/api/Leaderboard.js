@@ -18,4 +18,14 @@ const getLeaderboard = async () => {
     return teamsWithScore;
 }
 
-export {getLeaderboard}
+const getBoardLock = async () => {
+    const response = await axios.get(`${base_url}/boardlock`)
+    return response.data;
+}
+
+const setBoardLock = async () => {
+    const response = await axios.post(`${base_url}/boardlock`)
+    return response.data;
+}
+
+export {getLeaderboard,getBoardLock,setBoardLock}

@@ -9,7 +9,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Podium from "./Podium";
 import styles from "./Leaderboard.module.css";
 import { useState,useEffect } from "react";
-import { getLeaderboard } from "../api/Leaderboard";
+import { getLeaderboard,getBoardLock } from "../api/Leaderboard";
 
 const drawerWidth = 400;
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -47,13 +47,17 @@ export default function Leaderboard(props) {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      try {
-        const response = await getLeaderboard();
-        setTeams(response.slice(3));
-        setTop3(response.slice(0, 3));
+      const lock = await getBoardLock();
+      if (lock===false){
+        try {
+          const response = await getLeaderboard();
+          setTeams(response.slice(3));
+          setTop3(response.slice(0, 3));
+  
+        } catch (error) {
+          console.log(error);
+        }
 
-      } catch (error) {
-        console.log(error);
       }
     };
     fetchLeaderboard();
@@ -163,6 +167,17 @@ export default function Leaderboard(props) {
                 ></Team>
               );
             })}
+
+            {
+              (teams.length===0) && <h1 
+               style={{
+                color: "white",
+                textAlign: "center",
+                fontSize: "20px",
+               }}
+              >Sad..you have to wait for your fate...</h1>
+            }
+
           </div>
         </Drawer>
       </div>
