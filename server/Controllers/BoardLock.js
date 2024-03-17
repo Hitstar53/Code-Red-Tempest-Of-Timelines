@@ -15,6 +15,7 @@ const setBoardLock = async (req, res) => {
     try {
         const boardLock = await BoardLock.findOne({id:'1'});
         boardLock.isLocked = true;
+        await boardLock.save();
         return res.status(200).json({message:"Lock status updated"});
     } catch (error) {
         
