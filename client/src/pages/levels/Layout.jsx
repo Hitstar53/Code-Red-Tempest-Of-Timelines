@@ -8,7 +8,7 @@ import { setCountupTime, setCountdownTime } from '../../contexts/store'
 
 const Layout = (props) => {
   const dispatch = useDispatch()
-  dispatch(setCountupTime(0))
+
   const timeUp = useSelector((state) => state.countup.time)
   const timeDown = useSelector((state) => state.countdown.time)
 
@@ -37,6 +37,7 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
+    dispatch(setCountupTime(0))
     // Start countdown
     timerDown.current = setInterval(() => {
       dispatch(setCountdownTime(countdownState - 1))
