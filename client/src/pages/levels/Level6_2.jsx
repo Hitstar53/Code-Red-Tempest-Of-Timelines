@@ -55,12 +55,12 @@ const Level6_2 = () => {
         if (counter >= 4) {
           console.log("Move to next level");
           if (await checkisLooped()){
-            incrementLevel()
+            await incrementLevel()
             navigate("/levels/prelevel7");
           }
           else{
-            updateLevel()
-            navigate("/levels/level7");
+            await updateLevel()
+            navigate("/levels/prelevel7");
           }
           return;
         }

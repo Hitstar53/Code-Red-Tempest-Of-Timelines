@@ -1,6 +1,7 @@
 import React from "react";
 import "./Con4_game.css";
 import _ from "lodash";
+import { updateLevel } from "../../../api/General";
 // import ToggleButtonWrapper from "./C4_Button";
 
 // If you want to give choices to the player of switching between naive ai and minimax ai
@@ -490,6 +491,11 @@ class c4_game extends React.Component {
     return this.setState({ mode: !this.state.mode });
   }
 
+  handleWin = async (e) => {
+    e.preventDefault();
+    await updateLevel();
+  }
+  
   render() {
     return (
       <div>
@@ -514,9 +520,7 @@ class c4_game extends React.Component {
                 }}>{"Yay, You WON!!!"}</h1>
                 <div
                   className="button__connect4"
-                  onClick={() => {
-                    window.location.href = 'prelevel8_3';
-                  }}
+                  onClick={this.handleWin}
                 >
 
                   Proceed

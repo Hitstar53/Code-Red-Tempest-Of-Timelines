@@ -13,6 +13,8 @@ const Keypad = () => {
       setScore(res)
     })
 
+    console.log("Enter All the destinations you have been to in chronological order")
+
   }, []) 
 
   const navigate = useNavigate()

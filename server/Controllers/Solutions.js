@@ -2,7 +2,7 @@ import Team from "../Models/Team.js"
 
 const Level1 = async (req, res) => {
     const {answer,id} = req.body;
-    if(answer === 'TR$'){
+    if(answer === 'pit'){
         return res.status(200).json({data:true});
     }
     return res.status(400).json({data:false});
@@ -43,7 +43,10 @@ const Level4a = async (req, res) => {
 const Level5 = async (req, res) => {
     const {timePeriod,destination} = req.body;
     var dest = destination.replace(/\s/g, '').toLowerCase()
-    if (timePeriod === '1968' && dest === 'area51nevada'){
+    // replace comma 
+    dest = dest.replace(/,/g, '')
+    console.log(dest)
+    if (timePeriod === '1971' && dest === 'area51nevada'){
         return res.status(200).json({data:true});
     }
     return res.status(400).json({data:false});

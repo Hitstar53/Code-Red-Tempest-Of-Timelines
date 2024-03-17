@@ -7,8 +7,8 @@ const Display = () => {
     const navigate = useNavigate();
 
     async function handleDefuse(e) {
-        const isDate = new Date().getDate() === 14 && new Date().getMonth() === 6 && new Date().getFullYear() === 1789;
-        if (password.join('') === '1769' && !sideWire && wire1Color.name === 'blue' && wire2Color.name === 'white' && wire3Color.name === 'red' && isDate) {
+        // const isDate = new Date().getDate() === 14 && new Date().getMonth() === 7 && new Date().getFullYear() === 1789;
+        if (password.join('') === '1769' && !sideWire && wire1Color.name === 'blue' && wire2Color.name === 'white' && wire3Color.name === 'red') {
             document.getElementById('successMessage').style.display = 'block';
             document.getElementById('errorMessage').style.display = 'none';
            

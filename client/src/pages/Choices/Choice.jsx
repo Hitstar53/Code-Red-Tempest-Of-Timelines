@@ -11,7 +11,7 @@ function Choice() {
     if (selectedOption != null) {
       if (selectedOption == 0) {
         //help TPA path redirect
-        navigate('/levels/prelevel8-1')
+        navigate('/levels/prelevel8_1')
         console.log('Selected path 1')
       } else if (selectedOption == 1) {
         await setLooped()
