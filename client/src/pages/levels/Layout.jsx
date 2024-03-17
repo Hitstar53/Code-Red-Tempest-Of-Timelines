@@ -6,6 +6,7 @@ import { CountertopsOutlined, Padding } from '@mui/icons-material'
 import { useDispatch, useSelector } from 'react-redux'
 import ErrorPage from '../ErrorPage'
 import { useEffect, useRef, useState } from 'react'
+import { countdown, countup } from '../../contexts/store'
 const Layout = (props) => {
   /*colors={
     textColor-> color of normal text, level, time
@@ -17,12 +18,15 @@ const Layout = (props) => {
     leaderboardColor-> color of the leaderboard background
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
   } */
-  const [countup, setCountup] = useState(0)
-  const [countdown, setCountdown] = useState(7200)
+  const dispatch = useDispatch()
+  const timeUp = useSelector((state) => state.countup.value.time)
+  const timeDown = useSelector((state) => state.countdown.value.time)
+  const [countupState, setCountupState] = useState(timeUp)
+  const [countdownState, setCountdownState] = useState(timeDown)
   let timerUp = useRef()
   let timerDown = useRef()
   let { level, name, time, score, backgroundPicURL, colors, hintText } = props
-  time = countdown
+  time = countdownState
   const levelStyle = styles.level + ' ' + styles.infoBox
   const scoreStyle = styles.score + ' ' + styles.infoBox
   const infoTimeStyle = styles.timeBox + ' ' + styles.timeRemaining
@@ -41,12 +45,16 @@ const Layout = (props) => {
   useEffect(() => {
     // Start countdown
     timerDown.current = setInterval(() => {
-      setCountdown((prevCountdown) => prevCountdown - 1)
+      dispatch(countdown({ time: countdownState }))
+      console.log(timeDown)
+      setCountdownState((prevCountdown) => prevCountdown - 1)
     }, 1000)
 
     // Start countup
     timerUp.current = setInterval(() => {
-      setCountup((prevCountup) => prevCountup + 1)
+      dispatch(countup({ time: countupState }))
+      console.log(timeUp)
+      setCountupState((prevCountup) => prevCountup + 1)
     }, 1000)
 
     // Clean up intervals on component unmount
@@ -54,7 +62,7 @@ const Layout = (props) => {
       clearInterval(timerDown.current)
       clearInterval(timerUp.current)
     }
-  }, [])
+  }, [countdownState, countupState])
   return (
     <div
       className={styles.outer}
@@ -101,18 +109,18 @@ const Layout = (props) => {
         >
           <span
             style={
-              countup > 480 && countup < 600
+              countupState > 480 && countupState < 600
                 ? { color: 'yellow' }
-                : countup > 600
+                : countupState > 600
                 ? { color: 'red' }
                 : { color: `${colors.textColor}` }
             }
           >
             {' '}
-            {format(countup)}
+            {format(countupState)}
           </span>
 
-          {format(countdown)}
+          {format(countdownState)}
         </div>
         <div
           className={teamNameStyle}
