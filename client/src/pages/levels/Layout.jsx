@@ -8,7 +8,7 @@ import { setCountupTime, setCountdownTime } from '../../contexts/store'
 
 const Layout = (props) => {
   const dispatch = useDispatch()
-
+  dispatch(setCountupTime(0))
   const timeUp = useSelector((state) => state.countup.time)
   const timeDown = useSelector((state) => state.countdown.time)
 
@@ -143,13 +143,17 @@ const Layout = (props) => {
             />
           </div>
           <div
-            style={{
-              backgroundColor: colors.boxBackgroundColor,
-              padding: '1rem',
-              borderRadius: '100vw',
-              boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
-              zIndex: 10,
-            }}
+            style={
+              countupState < 480
+                ? { display: 'none' }
+                : {
+                    backgroundColor: colors.boxBackgroundColor,
+                    padding: '1rem',
+                    borderRadius: '100vw',
+                    boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
+                    zIndex: 10,
+                  }
+            }
           >
             <Hint
               bgColor={colors.boxBackgroundColor}
