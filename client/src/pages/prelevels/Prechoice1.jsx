@@ -3,8 +3,7 @@ import Layout2 from './Layout2'
 
 const Prechoice1 = () => {
   const text = [
-    'Oh, traveler! We met at last! \nThe one who has been thwarting all my plans. ',
-    "If you managed to make it here, I presume you must know why I am on this quest. There's just something about love, and especially more so for scientists. ",
+    "Oh, traveler! We met at last! \nThe one who has been thwarting all my plans. If you managed to make it here, I presume you must know why I am on this quest. There's just something about love, and especially more so for scientists. ",
     'Scientists are weird creatures… spending their entire lives chasing answers. I am sort of the same, because all I want is to meet the most special person to me once again. I am ready to do whatever it takes. ',
     'You see, all my life I spent so much time in theory that people gave up on understanding and talking to me. I… never had anyone close I could share moments with… anyone who would bring me happiness… I was just alone. ',
     'Every day left me with more loneliness, a constant growing void in my heart. The isolation hurt, and I nearly gave up on the world… before… before Gertrude came. ',
