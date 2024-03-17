@@ -38,7 +38,7 @@ import Choice from './pages/Choices/Choice'
 import Prechoice1 from './pages/prelevels/Prechoice1'
 import Prechoice2 from './pages/prelevels/Prechoice2'
 import Prechoice3 from './pages/prelevels/Prechoice3'
-
+import Prebackstory from './pages/prelevels/Prebackstory'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -103,6 +103,7 @@ const router = createBrowserRouter([
             ),
           },
           { path: 'win', element: <Win /> },
+          { path: 'prebackstory', element: <Prebackstory /> },
         ],
       },
     ],
