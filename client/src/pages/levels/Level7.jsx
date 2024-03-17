@@ -18,7 +18,7 @@ const Level7 = () => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
         if (inputValue === 'Sunan') {
-          navigate('/levels/prelevel8')
+          navigate('/levels/prechoice1')
         }
       }
     }
@@ -30,7 +30,7 @@ const Level7 = () => {
 
   const handleChange = (e) => {
     if (inputValue === 'Sunan') {
-      navigate('/levels/prelevel8')
+      navigate('/levels/prechoice1')
     }
     setInputValue(e.target.value)
     console.log(inputValue)

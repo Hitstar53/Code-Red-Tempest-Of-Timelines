@@ -15,6 +15,7 @@ function Choice() {
         console.log('Selected path 1')
       } else if (selectedOption == 1) {
         //help Andwyn path redirect
+        navigate('/levels/levelwrong')
         console.log('Selected path 2')
       }
     }
