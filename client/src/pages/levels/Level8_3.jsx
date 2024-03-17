@@ -2,7 +2,7 @@
 import Layout from "./Layout";
 import { ReactTerminal } from "react-terminal";
 
-import background from "../../assets/images/hacking-background.jpg";
+import background from "../../assets/images/hacking-background.webp";
 import styles from "./Level8_3.module.css";
 import { useEffect, useState } from "react";
 

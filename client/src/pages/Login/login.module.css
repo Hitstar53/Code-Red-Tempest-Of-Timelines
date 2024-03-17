@@ -7,14 +7,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../assets/images/hacking-background.jpg") no-repeat center center/cover;
+  background: url("../../assets/images/hacking-background.webp") no-repeat center center/cover;
 }
 
 .container {
   position: relative;
   height: 95%;
   width: 80%;
-  background: url("../../assets/images/laptop-with-hand.png") no-repeat center center/cover;
+  background: url("../../assets/images/laptop-with-hand.webp") no-repeat center center/cover;
   transition: all 0.3s ease-in;
 }
 
