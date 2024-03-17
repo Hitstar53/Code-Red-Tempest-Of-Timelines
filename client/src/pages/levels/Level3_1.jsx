@@ -1,102 +1,111 @@
-import Layout from './Layout'
-import { useEffect, useRef } from 'react'
-import styles from './Level3_1.module.css'
-import backgroundURL from '../../assets/images/3_1-background.jpg'
+import Layout from "./Layout";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./Level3_1.module.css";
+import backgroundURL from "../../assets/images/3_1-background.jpg";
 
 function Level3_1() {
-  const lp0Ref = useRef('')
-  const lp1Ref = useRef('')
-  const lp2Ref = useRef('')
-  const lp3Ref = useRef('')
+  const lp0Ref = useRef("");
+  const lp1Ref = useRef("");
+  const lp2Ref = useRef("");
+  const lp3Ref = useRef("");
+  const [answer, setAnswer] = useState("");
+  const [showWrongAnswer, setShowWrongAnswer] = useState(false);
+  const answerTextboxRef = useRef(null);
+  const navigate = useNavigate();
+
   const check = () => {
-    document
-      .querySelector(`.${styles.answerTextbox}`)
-      .classList.remove(`.${styles.wrong}`)
-    document.querySelector(`.${styles.wrongAnswer}`).style.display = 'none'
-    console.log(document.querySelector(`.${styles.answerTextbox}`).value)
-    var x = document.querySelector(`.${styles.answerTextbox}`).value
-    if (x.toUpperCase() != 'HTML') {
-      document
-        .querySelector(`.${styles.answerTextbox}`)
-        .classList.add(`.${styles.wrong}`)
-      document.querySelector(`.${styles.wrongAnswer}`).style.display = 'inline'
+    const input = answerTextboxRef.current;
+    input.classList.remove(styles.wrong);
+    const wrongAnswerElement = input.nextSibling;
+    const x = input.value.toUpperCase();
+    if (x === "HTML") {
+      navigate("/levels/prelevel3-2");
+      return;
     }
-  }
+    if (x !== "HTML") {
+      input.classList.add(styles.wrong);
+      wrongAnswerElement.style.display = "inline";
+      setShowWrongAnswer(true);
+    }
+  };
 
   useEffect(() => {
-    console.log(lp0Ref)
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-    console.log(document.querySelectorAll(`.${styles.movingEffect}`))
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    // console.log(document.querySelectorAll(`.${styles.movingEffect}`));
     setInterval(() => {
       document.querySelector(`.${styles.lp0}`).innerText = document
         .querySelector(`.${styles.lp0}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-    }, 100)
+        .join("");
+    }, 100);
     setInterval(() => {
       if (lp0Ref.current.classList.length == 0) {
-        lp0Ref.current.innerText = 'https://www.youtube.com/watch?v=V-_O7nl0Ii0'
+        lp0Ref.current.innerText =
+          "https://www.youtube.com/watch?v=V-_O7nl0Ii0";
       }
-    }, 100)
+    }, 100);
     setInterval(() => {
       if (lp1Ref.current.classList.length == 0) {
-        lp1Ref.current.innerText = 'https://www.youtube.com/watch?v=EE-xtCF3T94'
+        lp1Ref.current.innerText =
+          "https://www.youtube.com/watch?v=EE-xtCF3T94";
       }
-    }, 100)
+    }, 100);
     setInterval(() => {
       if (lp2Ref.current.classList.length == 0) {
-        lp2Ref.current.innerText = 'https://youtu.be/68HrmbZiwaI'
+        lp2Ref.current.innerText = "https://youtu.be/68HrmbZiwaI";
       }
-    }, 100)
+    }, 100);
     setInterval(() => {
       if (lp3Ref.current.classList.length == 0) {
-        lp3Ref.current.innerText = 'https://youtu.be/UtPZcwPnvkw?feature=shared'
+        lp3Ref.current.innerText =
+          "https://youtu.be/UtPZcwPnvkw?feature=shared";
       }
-    }, 100)
+    }, 100);
     setInterval(() => {
       if (
         !document
           .querySelector(`.${styles.lp1}`)
           .classList.contains(`.${styles.movingEffect}`)
       ) {
-        clearInterval()
+        clearInterval();
       }
       document.querySelector(`.${styles.lp1}`).innerText = document
         .querySelector(`.${styles.lp1}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-    }, 100)
+        .join("");
+    }, 100);
     setInterval(() => {
       if (
         !document
           .querySelector(`.${styles.lp2}`)
           .classList.contains(`.${styles.movingEffect}`)
       ) {
-        clearInterval()
+        clearInterval();
       }
       document.querySelector(`.${styles.lp2}`).innerText = document
         .querySelector(`.${styles.lp2}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-    }, 100)
+        .join("");
+    }, 100);
     setInterval(() => {
       if (
         !document
           .querySelector(`.${styles.lp3}`)
           .classList.contains(`.${styles.movingEffect}`)
       ) {
-        clearInterval()
+        clearInterval();
       }
       document.querySelector(`.${styles.lp3}`).innerText = document
         .querySelector(`.${styles.lp3}`)
-        .innerText.split('')
+        .innerText.split("")
         .map((letter) => letters[Math.floor(Math.random() * 52)])
-        .join('')
-    }, 100)
-  }, [])
+        .join("");
+    }, 100);
+  }, []);
 
   return (
     <Layout
@@ -105,14 +114,14 @@ function Level3_1() {
       time="2:29:59"
       score="12345"
       colors={{
-        textColor: 'white',
-        boxBackgroundColor: '#975E2C',
-        leaderboardHeaderColor: 'white',
-        iconColor: 'white',
-        leaderboardPositionColor: '#CCD3CA',
-        hintTextColor: 'white',
-        leaderboardColor: '#F6C499',
-        leaderboardTextColor: 'black',
+        textColor: "white",
+        boxBackgroundColor: "#975E2C",
+        leaderboardHeaderColor: "white",
+        iconColor: "white",
+        leaderboardPositionColor: "#CCD3CA",
+        hintTextColor: "white",
+        leaderboardColor: "#F6C499",
+        leaderboardTextColor: "black",
       }}
       hintText="Four scrambled phrases, simply a bunch of nonsense… or not? 
 Click away on the right path, and look behind the scenes to find more than just text.
@@ -128,41 +137,41 @@ Click away on the right path, and look behind the scenes to find more than just 
         ></link>
         <div className={styles.container}>
           <div className={styles.innerContainer}>
-            <p className={styles.q1 + ' ' + styles.p}>
+            <p className={styles.q1 + " " + styles.p}>
               <span
-                className={styles.lp0 + ' ' + styles.movingEffect}
+                className={styles.lp0 + " " + styles.movingEffect}
                 ref={lp0Ref}
               >
                 youtube.com/watch?v=Sag7hLly0qg
               </span>
             </p>
-            <p className={styles.q2 + ' ' + styles.p}>
+            <p className={styles.q2 + " " + styles.p}>
               <span
-                className={styles.lp1 + ' ' + styles.movingEffect}
+                className={styles.lp1 + " " + styles.movingEffect}
                 ref={lp1Ref}
               >
                 youtube.com/watch?v=A9dPtRFSfjg
               </span>
             </p>
-            <p className={styles.q3 + ' ' + styles.p}>
+            <p className={styles.q3 + " " + styles.p}>
               <span
-                className={styles.lp2 + ' ' + styles.movingEffect}
+                className={styles.lp2 + " " + styles.movingEffect}
                 ref={lp2Ref}
               >
                 https://youtu.be/68HrmbZiwaI
               </span>
             </p>
-            <p className={styles.q4 + ' ' + styles.p}>
+            <p className={styles.q4 + " " + styles.p}>
               <span
-                className={styles.lp3 + ' ' + styles.movingEffect}
+                className={styles.lp3 + " " + styles.movingEffect}
                 ref={lp3Ref}
               >
                 youtube.com/watch?v=iEmIJ3b-hvI
               </span>
             </p>
             <span
-              className={styles.entry + ' ' + styles.span}
-              style={{ display: 'inline' }}
+              className={styles.entry + " " + styles.span}
+              style={{ display: "inline" }}
             >
               <b>Enter your answer:</b>
             </span>
@@ -170,10 +179,15 @@ Click away on the right path, and look behind the scenes to find more than just 
               placeholder="Enter your answer"
               className={styles.answerTextbox}
               type="text"
+              value={answer}
+              ref={answerTextboxRef}
+              onChange={(e) => setAnswer(e.target.value)}
             />
-            <span className={styles.wrongAnswer + ' ' + styles.span}>
-              Wrong answer. Retry
-            </span>
+            {showWrongAnswer && (
+              <p className={styles.wrongAnswer + " " + styles.span}>
+                Wrong answer!
+              </p>
+            )}
             <button className={styles.btn} type="button" onClick={check}>
               ENTER
             </button>
@@ -181,7 +195,7 @@ Click away on the right path, and look behind the scenes to find more than just 
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
-export default Level3_1
+export default Level3_1;

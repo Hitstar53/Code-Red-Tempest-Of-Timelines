@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.headingPath {
+  font-family: 'Monomaniac One', sans-serif !important;
+  font-size: 3rem;
+  margin-bottom: 0.8rem !important;
+  margin-top: 0;
+}
+.body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../../assets/images/code-shit.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  gap: 2rem;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  width: 80vw;
+  justify-content: space-evenly;
+}
+
+.chooseImg {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+  border-radius: 5%;
+}
+.option {
+  cursor: pointer;
+  outline: 2px transparent white;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: rgba(124, 194, 228, 0.6);
+  transition: transform 300ms ease-in-out, filter 300ms ease-in-out,
+    background 300ms ease-in-out;
+}
+.option:hover {
+  filter: brightness(0.8);
+  background-color: rgba(124, 194, 228, 0.8);
+  transform: translateY(-4px);
+  outline: 2px dashed white;
+}
+
+.option > h1 {
+  font-family: 'Monomaniac One', sans-serif;
+  font-weight: 400 !important;
+  font-style: normal;
+  font-size: 2.3rem !important;
+}
+
+.continue {
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Monomaniac One', sans-serif;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  transform: translateX(-7%);
+  background-color: white;
+  color: #08507d;
+  transition: all 300ms ease-in-out;
+}
+.continue:hover {
+  background-color: rgba(255, 255, 255, 0.747);
+  outline: 2px rgb(124, 193, 228) solid;
+}
+
+.selected {
+  outline: 2.5px solid white !important;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: rgba(255, 255, 255, 0.747) !important;
+}
