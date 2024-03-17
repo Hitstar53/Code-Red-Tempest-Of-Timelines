@@ -2,9 +2,11 @@ import styles from './Layout.module.css'
 import Leaderboard from '../../components/Leaderboard'
 import Hint from '../../components/Hint'
 import { FiTarget } from 'react-icons/fi'
-import { Padding } from '@mui/icons-material'
+import { CountertopsOutlined, Padding } from '@mui/icons-material'
 import { useDispatch, useSelector } from 'react-redux'
 import ErrorPage from '../ErrorPage'
+import { useEffect, useRef, useState } from 'react'
+import { countdown, countup } from '../../contexts/store'
 const Layout = (props) => {
   /*colors={
     textColor-> color of normal text, level, time
@@ -16,12 +18,51 @@ const Layout = (props) => {
     leaderboardColor-> color of the leaderboard background
     leaderboardTextColor -> color of the text of the leaderboard positions outside top 3
   } */
-  const { level, name, time, score, backgroundPicURL, colors, hintText } = props
-
+  const dispatch = useDispatch()
+  const timeUp = useSelector((state) => state.countup.value.time)
+  const timeDown = useSelector((state) => state.countdown.value.time)
+  const [countupState, setCountupState] = useState(timeUp)
+  const [countdownState, setCountdownState] = useState(timeDown)
+  let timerUp = useRef()
+  let timerDown = useRef()
+  let { level, name, time, score, backgroundPicURL, colors, hintText } = props
+  time = countdownState
   const levelStyle = styles.level + ' ' + styles.infoBox
   const scoreStyle = styles.score + ' ' + styles.infoBox
   const infoTimeStyle = styles.timeBox + ' ' + styles.timeRemaining
   const teamNameStyle = styles.infoBox + ' ' + styles.teamName
+
+  const format = (time) => {
+    let hours = Math.floor((time / 60 / 60) % 24)
+    let minutes = Math.floor((time / 60) % 60)
+    let seconds = time % 60
+
+    hours = hours > 9 ? hours : '0' + hours
+    minutes = minutes > 9 ? minutes : '0' + minutes
+    seconds = seconds > 9 ? seconds : '0' + seconds
+    return hours + ':' + minutes + ':' + seconds
+  }
+  useEffect(() => {
+    // Start countdown
+    timerDown.current = setInterval(() => {
+      dispatch(countdown({ time: countdownState }))
+      console.log(timeDown)
+      setCountdownState((prevCountdown) => prevCountdown - 1)
+    }, 1000)
+
+    // Start countup
+    timerUp.current = setInterval(() => {
+      dispatch(countup({ time: countupState }))
+      console.log(timeUp)
+      setCountupState((prevCountup) => prevCountup + 1)
+    }, 1000)
+
+    // Clean up intervals on component unmount
+    return () => {
+      clearInterval(timerDown.current)
+      clearInterval(timerUp.current)
+    }
+  }, [countdownState, countupState])
   return (
     <div
       className={styles.outer}
@@ -66,8 +107,20 @@ const Layout = (props) => {
             zIndex: 5,
           }}
         >
-          <span>Time Remaining</span>
-          {time}
+          <span
+            style={
+              countupState > 480 && countupState < 600
+                ? { color: 'yellow' }
+                : countupState > 600
+                ? { color: 'red' }
+                : { color: `${colors.textColor}` }
+            }
+          >
+            {' '}
+            {format(countupState)}
+          </span>
+
+          {format(countdownState)}
         </div>
         <div
           className={teamNameStyle}

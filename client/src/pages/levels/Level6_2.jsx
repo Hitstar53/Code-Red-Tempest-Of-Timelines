@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import Layout from "./Layout";
 import { ReactTerminal } from "react-terminal";
-
+import { useNavigate } from "react-router-dom";
 import background from "../../assets/images/hacking-background.webp";
-import styles from "./Level8_3.module.css";
 import { useEffect, useState } from "react";
+import styles from "./Level6_2.module.css";
 
 const CommandOutput = ({
   title = undefined,
@@ -21,19 +21,22 @@ const CommandOutput = ({
 
 const listOfCommands = [
   /netstat -anp|netstat -ano/i,
+  /netstat -ano \| findstr "5173"|netstat -ano \| findstr "5400"/i,
   /netstat --verbose|netstat \//i,
   /netstat -s|netstat -s -p icmpv6/i,
 ];
 
 const questions = [
   "Now that we are in the human life database server, we need to check all the active TCP and UDP ports on the system with their IP addresses and process IDs and port numbers expressed numerically. Please enter a command to check all ports.",
-  "You have forgotten netstat documentation and need to find a command. Enter a command which lets you see all the netstat commands and their description.",
+  "We find that Andwyn of T2 is in port 5400, please enter a command to check all services using port 5400",
+  "Write a netstat command which displays details about unconfigured address families.",
   "We need to check the statistics of the protocol ICMPv6. Enter a command which lets us do that",
 ];
 
-const Level8_3 = () => {
+const Level6_2 = () => {
   const [counter, setCounter] = useState(0);
   const [command, setCommand] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleKeyPress(e) {
@@ -43,8 +46,9 @@ const Level8_3 = () => {
           console.log("Counter", counter);
         }
 
-        if (counter >= 3) {
+        if (counter >= 4) {
           console.log("Move to next level");
+          navigate("/levels/prelevel7");
           return;
         }
       }
@@ -59,7 +63,16 @@ const Level8_3 = () => {
   const commands = {
     netstat: (cmd) => {
       const currentCommand = String(cmd).trim();
-      if (currentCommand.match(/-anp|-ano/i)) {
+      if (currentCommand.match(/-ano \| findstr "5173"/i)) {
+        setCommand(`netstat ${currentCommand}`);
+        return (
+          <div>
+            <h6>TCP [::1]:5173 [::]:0 LISTENING 6740</h6>
+            <h6>TCP [::1]:5173 [::1]:59831 ESTABLISHED 6740</h6>
+            <h6>TCP [::1]:59831 [::1]:5173 ESTABLISHED 12312</h6>
+          </div>
+        );
+      } else if (currentCommand.match(/-anp|-ano/i)) {
         setCommand(`netstat ${currentCommand}`);
         return (
           <div>
@@ -185,7 +198,7 @@ const Level8_3 = () => {
       }}
     >
       <Layout
-        level={8}
+        level={6}
         name="Team Gods"
         time="00:00:00"
         score="69420"
@@ -236,4 +249,4 @@ const Level8_3 = () => {
   );
 };
 
-export default Level8_3;
+export default Level6_2;

@@ -21,24 +21,26 @@ import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'
 import Level5 from './pages/levels/Level5'
 import Level6 from './pages/levels/Level6'
+import Level6_2 from './pages/levels/Level6_2'
 import Level7 from './pages/levels/Level7'
 import Level8_1 from './pages/levels/Level8_1'
 import Level8_2 from './pages/levels/Level8_2'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
-import Prelevel8_3 from './pages/prelevels/Prelevel8c'
-import Level8_3 from './pages/levels/Level8_3'
+import Prelevel6_2 from './pages/prelevels/Prelevel6b'
 import Prelose1 from './pages/prelevels/Prelose1'
 import Prelose2 from './pages/prelevels/Prelose2'
 import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
 import Win from './pages/Endings/Win'
-import './App.css'
 import Level3_2 from './pages/levels/Level3_2'
 import Choice from './pages/Choices/Choice'
 import Prechoice1 from './pages/prelevels/Prechoice1'
 import Prechoice2 from './pages/prelevels/Prechoice2'
 import Prechoice3 from './pages/prelevels/Prechoice3'
 import Prebackstory from './pages/prelevels/Prebackstory'
+import './App.css'
+import { Provider } from 'react-redux'
+import { store } from './contexts/store'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -73,10 +75,19 @@ const router = createBrowserRouter([
           { path: 'level5', element: <Level5 /> },
           { path: 'prelevel6', element: <Prelevel6 /> },
           {
-            path: 'level6',
+            path: 'level6-1',
             element: (
               <TerminalContextProvider>
                 <Level6 />
+              </TerminalContextProvider>
+            ),
+          },
+          { path: 'prelevel6-2', element: <Prelevel6_2 /> },
+          {
+            path: 'level6-2',
+            element: (
+              <TerminalContextProvider>
+                <Level6_2 />
               </TerminalContextProvider>
             ),
           },
@@ -93,15 +104,6 @@ const router = createBrowserRouter([
           { path: 'level8-1', element: <Level8_1 /> },
           { path: 'prelevel8-2', element: <Prelevel8_2 /> },
           { path: 'level8-2', element: <Level8_2 /> },
-          { path: 'prelevel8-3', element: <Prelevel8_3 /> },
-          {
-            path: 'level8-3',
-            element: (
-              <TerminalContextProvider>
-                <Level8_3 />
-              </TerminalContextProvider>
-            ),
-          },
           { path: 'win', element: <Win /> },
           { path: 'prebackstory', element: <Prebackstory /> },
         ],
@@ -112,9 +114,11 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
+    <Provider store={store}>
+      <div>
+        <RouterProvider router={router} />
+      </div>
+    </Provider>
   )
 }
 
