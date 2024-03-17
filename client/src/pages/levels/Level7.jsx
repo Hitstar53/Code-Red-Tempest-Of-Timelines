@@ -63,8 +63,8 @@ const Level7 = () => {
           title="North Korea Map"
           className="map-iframe"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247001.83511170897!2d125.8878247156738!3d39.0392194675874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3578e8d97b663933%3A0x56a514e48a07a16a!2sNorth%20Korea!5e0!3m2!1sen!2sus!4v1636967776966!5m2!1sen!2sus"
-          width="800"
-          height="400"
+          width="300"
+          height="500"
           allowFullScreen=""
           loading="lazy"
         ></iframe>

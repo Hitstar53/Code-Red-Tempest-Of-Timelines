@@ -24,6 +24,63 @@ const dirPermission = `d---------`;
 
 const initialFolderStructure = [
   {
+    driveName: "A",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "B",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "C",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
     driveName: "D",
     type: "folder",
     permission: dirPermission,
@@ -32,13 +89,13 @@ const initialFolderStructure = [
         filename: "file.txt",
         type: "file",
         permission: noPermission,
-        content: "This is a file.",
+        content: "This is the wrong file lol",
       },
       {
         filename: "unknown.txt",
         type: "file",
         permission: readPermission,
-        content: "This is another file.",
+        content: "This is the wrong file lol",
       },
     ],
   },
@@ -48,10 +105,415 @@ const initialFolderStructure = [
     permission: dirPermission,
     files: [
       {
-        filename: "gdsc.txt",
+        filename: "file.txt",
         type: "file",
         permission: noPermission,
-        content: "This is a GDSC file.",
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "F",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "G",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "H",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "I",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "J",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "QW5kd3luIGhlcmUsIEhhaGEgZ29vZCBvbmUgc28gZmFyLCBidXQgeW91IHdvbnQgY2F0Y2ggbWUK",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "K",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "L",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "M",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "N",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "O",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "P",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "Q",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "R",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "S",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "T",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "U",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "V",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "W",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "X",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "Y",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
+      },
+    ],
+  },
+  {
+    driveName: "Z",
+    type: "folder",
+    permission: dirPermission,
+    files: [
+      {
+        filename: "file.txt",
+        type: "file",
+        permission: noPermission,
+        content: "This is the wrong file lol",
+      },
+      {
+        filename: "unknown.txt",
+        type: "file",
+        permission: readPermission,
+        content: "This is the wrong file lol",
       },
     ],
   },
