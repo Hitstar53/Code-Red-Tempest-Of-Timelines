@@ -198,7 +198,7 @@ const Level6_2 = () => {
       }}
     >
       <Layout
-        level={8}
+        level={6}
         name="Team Gods"
         time="00:00:00"
         score="69420"
