@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios'
+import { base_url } from '../constants'
 
 const TeamReg = () => {
     const [teamName, setTeamName] = useState('')
@@ -26,7 +27,7 @@ const TeamReg = () => {
             agentName:agentName
         }
         try {
-            const res = await axios.post('http://localhost:5000/api/team/createTeam',data)
+            const res = await axios.post(`${base_url}/team/createTeam`,data)
             console.log(res.data);
         } catch (error) {
             console.log(error);

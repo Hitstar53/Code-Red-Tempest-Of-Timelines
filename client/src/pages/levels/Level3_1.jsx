@@ -1,24 +1,38 @@
 import Layout from './Layout'
-import { useEffect } from 'react'
+import { useEffect,useState,useRef } from 'react'
 import styles from './Level3_1.module.css'
 import backgroundURL from '../../assets/images/3_1-background.jpg'
+import { useNavigate } from 'react-router-dom'
+import { getScore,getCurrentLevel,updateLevel,checkisLooped,incrementLevel,Level3_1Sol } from '../../api/General'
 function Level3_1() {
-  const check = () => {
-    document
-      .querySelector(`.${styles.answerTextbox}`)
-      .classList.remove(`.${styles.wrong}`)
-    document.querySelector(`.${styles.wrongAnswer}`).style.display = 'none'
-    console.log(document.querySelector(`.${styles.answerTextbox}`).value)
-    var x = document.querySelector(`.${styles.answerTextbox}`).value
-    if (x.toUpperCase() != 'HTML') {
-      document
-        .querySelector(`.${styles.answerTextbox}`)
-        .classList.add(`.${styles.wrong}`)
-      document.querySelector(`.${styles.wrongAnswer}`).style.display = 'inline'
+  const check = async (e) => {
+    e.preventDefault()
+    const ans = ansRef.current.value
+    var answer = ans.toUpperCase()
+    const res = await  Level3_1Sol(answer)
+    if (res) {
+     if (await checkisLooped()){
+        await incrementLevel()
+        navigate('/levels/level3b')
+      }else{
+        await updateLevel()
+        navigate('/levels/level3b')
+      
+      }
+    }
+    else{
+      document.querySelector(`.${styles.wrongAnswer}`).style.display = 'block'
     }
   }
-
+  const navigate = useNavigate()
+  const [score, setScore] = useState(0)
+  const ansRef = useRef(null)
   useEffect(() => {
+
+    getCurrentLevel()
+    getScore().then((res) => {
+      setScore(res)
+    })
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     setInterval(() => {
       document.querySelector(`.${styles.lp0}`).innerText = document
@@ -50,9 +64,9 @@ function Level3_1() {
   return (
     <Layout
       level={3}
-      name="Team Gods"
+      name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
       time="2:29:59"
-      score="12345"
+      score={score}
       colors={{
         textColor: 'white',
         boxBackgroundColor: '#975E2C',
@@ -105,6 +119,7 @@ Click away on the right path, and look behind the scenes to find more than just 
               placeholder="Enter your answer"
               className={styles.answerTextbox}
               type="text"
+              ref={ansRef}
             />
             <span className={styles.wrongAnswer + ' ' + styles.span}>
               Wrong answer. Retry

@@ -1,5 +1,5 @@
 import express from "express";
-import { createTeam,getTeam,activateTeam,deactivateTeam,updateLevelTime,calculateLevelScore,getTeamScore,getCurrentLevel } from "../Controllers/Team.js";
+import { createTeam,getTeam,activateTeam,deactivateTeam,updateLevelTime,calculateLevelScore,getTeamScore,getCurrentLevel,getIsLooped,incrementLevel,uploaTeamsBulk,getNoOfTeams,getLeaderboard } from "../Controllers/Team.js";
 
 const router = express.Router();
 
@@ -11,6 +11,11 @@ router.put("/updateLevelTime/:id", updateLevelTime);
 router.put("/calculateLevelScore/:id", calculateLevelScore);
 router.get("/getTeamScore/:id", getTeamScore);
 router.get("/getCurrentLevel/:id", getCurrentLevel);
+router.get("/getIsLooped/:id", getIsLooped);
+router.put("/incrementLevel/:id", incrementLevel);
+router.post("/uploadTeamsBulk", uploaTeamsBulk);
+router.get("/getNoOfTeams", getNoOfTeams);
+router.get("/getLeaderboard", getLeaderboard);
 
 
 export default router;

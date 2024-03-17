@@ -1,11 +1,11 @@
 import Team from "../Models/Team.js";
 
 const createTeam = async (req, res) => {
-    const {name,teamMembers,teamLeaderName,agentName} = req.body;
+    const {name,teamMembers,teamLeaderName} = req.body;
     try {
         const id = (await Team.find()).length + 1;
         console.log(id);
-        const team = await Team.create({id, name, teamMembers,teamLeaderName,agentName});
+        const team = await Team.create({id, name, teamMembers,teamLeaderName});
         return res.status(201).json({team,message: "Team created successfully"});
 
         
@@ -161,6 +161,70 @@ const getCurrentLevel = async (req, res) => {
     }
 }
 
+const getIsLooped = async (req, res) => {
+    const {id} = req.params;
+    try {
+        const team = await Team.findOne({id});
+        if(!team){
+            return res.status(404).json({message: "Team not found"});
+        }
+        return res.status(200).json({looped: team.looped});
+    }
+    catch (error) {
+        return res.status(500).json({message: "Internal server error"});
+    }
+};
+
+const incrementLevel = async (req, res) => {
+    const {id} = req.params;
+    try {
+        const team = await Team.findOne({id});
+        if(!team){
+            return res.status(404).json({message: "Team not found"});
+        }
+        team.currentLevel += 1;
+        await team.save();
+        
+    } catch (error) {
+        return res.status(500).json({message: "Internal server error"});
+        
+    }
+};
+
+const getNoOfTeams = async (req, res) => {
+    try {
+        const teams = await Team.find();
+        return res.status(200).json({noOfTeams: teams.length});
+    } catch (error) {
+        return res.status(500).json({message: "Internal server error"});
+    }
+ };
+
+const uploaTeamsBulk = async (req, res) => {
+    const {teams} = req.body;
+    try {
+        const team = await Team.create(teams);
+        return res.status(201).json({team,message: "Teams created successfully"});
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({message: "Internal server error"});
+    }
+};
+
+const getLeaderboard = async (req, res) => {
+    try {
+        const  teams = await Team.find();
+
+        return res.status(200).json({teams});
+
+        
+    } catch (error) {
+
+        return res.status(500).json({message: "Internal server error"});
+        
+    }
+};
+
 export {
     createTeam,
     getTeam,
@@ -169,5 +233,10 @@ export {
     updateLevelTime,
     calculateLevelScore,
     getTeamScore,
-    getCurrentLevel
+    getCurrentLevel,
+    getIsLooped,
+    incrementLevel,
+    uploaTeamsBulk,
+    getNoOfTeams,
+    getLeaderboard
 }

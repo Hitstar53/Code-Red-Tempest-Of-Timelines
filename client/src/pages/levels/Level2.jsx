@@ -1,10 +1,48 @@
 import * as React from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from './Layout'
 import background from '../../assets/images/egypt.jpg'
 import styles from './Level2.module.css'
+import { getScore,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel } from '../../api/General'
+import { useEffect } from 'react'
+import { useRef } from 'react'
 
 const Level2 = () => {
+  const [score, setScore] = useState(0)
+  const coRef = useRef(null)
+  const yearRef = useRef(null)
+
+  useEffect(() => {
+    getCurrentLevel()
+    getScore().then((res) => {
+      setScore(res)
+    })
+  }, [])
+
+  const handleSubmission = async (e) => {
+    e.preventDefault()
+    // remove all . and , from coordinates and also N ,E and spaces and degree symbol
+    var coordinates = coRef.current.value.replace(/[.,NE°\s]/g, '')
+    var year = yearRef.current.value
+
+    const res = await Level2Sol(coordinates,year)
+
+    if (res) {
+      if (await checkisLooped()){
+        await incrementLevel()
+        navigate('/levels/prelevel3')
+         
+      }
+      else{
+        await updateLevel()
+        navigate('/levels/prelevel3')
+      }
+    }
+
+
+  }
+
   const text =
     "Pyramid of Giza, 2550 BCE Conspiracies surround this structure, by means of beings superior or beings inferior, a monolith it seems, but built by much smaller things. The next mystery, a 'morse'l of food perhaps, for your hunger to reach the end."
 
@@ -19,9 +57,9 @@ const Level2 = () => {
       <Layout
         level={2}
         hintText={text}
-        name="Team Gods"
+        name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score="69420"
+        score={score}
         backgroundPicURL={background}
         colors={{
           textColor: '#3b2a1a',
@@ -37,10 +75,15 @@ const Level2 = () => {
         <div className={styles.loginForm}>
           {/* <h1>Glass</h1> */}
           <form action="#" className={styles.loginFormContainer}>
-            <input type="text" placeholder="Enter Co-ordinates" />
-            <input type="password" placeholder="Enter Year" />
+            <input type="text" placeholder="Enter Co-ordinates" 
+             ref = {coRef}
+             
+            />
+            <input type="password" placeholder="Enter Year" 
+              ref = {yearRef}
+            />
             <button
-              onClick={() => navigate('/levels/prelevel3')}
+              onClick={(e) => handleSubmission(e)}
               className={styles.level2btn}
               type="submit"
             >

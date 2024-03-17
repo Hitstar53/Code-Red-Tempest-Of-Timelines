@@ -1,29 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect,useRef } from 'react'
 import Layout from './Layout'
 import OldComputer from '../../assets/images/old_computer.png'
 import './Level4a.css'
+import { getScore,getCurrentLevel,Level4aSol,checkisLooped,updateLevel,incrementLevel } from '../../api/General.js'
+import { useNavigate } from 'react-router-dom'
 
 const Level4a = () => {
-  const [inputValue, setInputValue] = useState('')
+  const inputValue = useRef(null)
   const [message, setMessage] = useState('')
+  const [score, setScore] = useState(0)
+  const navigate = useNavigate()
 
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value)
-  }
+  useEffect(() => {
+    getCurrentLevel()
+    getScore().then((res) => {
+      setScore(res)
+    })
 
-  const handleProceed = () => {
+  
+
+
+  }, [])
+
+  
+
+  const handleProceed = async () => {
     if (message === 'Success') {
-      window.location.href = 'level4-2'
+      if (await checkisLooped()){
+        await incrementLevel()
+        window.location.href = 'level4-2'
+
+      }else{
+        await updateLevel()
+        window.location.href = 'level4-2'
+
+
+      }
     } else {
       setMessage('Error')
     }
   }
-  const handleCheck = () => {
-    if (inputValue.trim() === 'Storming of Bastille') {
+  const handleCheck = async() => {
+    const res = await Level4aSol(inputValue.current.value)
+    console.log(res)
+    if (res) {
       setMessage('Success')
     } else {
       setMessage('Error')
     }
+
+
   }
   const hintText =
     "The clue is to move back a few, or move forward a lot, and maybe the sum of the steps you'll take gets you to an important number in the Language."
@@ -36,9 +62,9 @@ const Level4a = () => {
     >
       <Layout
         level={4}
-        name="Team Gods"
+        name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score="69420"
+        score= {parseInt(score)}
         backgroundPicURL={OldComputer}
         colors={{
           textColor: '#3b2a1a',
@@ -55,7 +81,7 @@ const Level4a = () => {
         <div className="container__outer">
           <input
             type="text"
-            onChange={handleInputChange}
+            ref={inputValue}
             style={{
               width: '100%',
               fontFamily: 'monospace',

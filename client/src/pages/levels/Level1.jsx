@@ -4,7 +4,7 @@ import CodeRainVid from '../../assets/animations/stock-footage-computer-binary-m
 import Layout from './Layout'
 import styles from './Level1.module.css'
 import axios from 'axios'
-import { getScore,Level1Sol,getCurrentLevel,updateLevel } from '../../api/General.js'
+import { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,incrementLevel } from '../../api/General.js'
 
 const Level1 = () => {
   const navigate = useNavigate()
@@ -12,13 +12,20 @@ const Level1 = () => {
   const [score, setScore] = useState(0)
 
   useEffect(() => {
+
     getCurrentLevel()
     const handleKeyPress = async (e) => {
       if (e.key === 'Enter') {
         const res = await Level1Sol(searchRef.current.value)
     if (res) {
-      await updateLevel()
-      navigate('/levels/prelevel2')
+      if (await checkisLooped()) {
+        await incrementLevel()
+        navigate('/levels/prelevel2')
+      }
+      else{
+        await updateLevel()
+        navigate('/levels/prelevel2')
+      }
     }
     else{
       alert("Wrong Answer")

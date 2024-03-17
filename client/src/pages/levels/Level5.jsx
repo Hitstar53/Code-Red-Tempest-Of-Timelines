@@ -1,12 +1,50 @@
-import React from 'react'
+import React,{useRef,useEffect,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from './Layout'
 import LockIcon from '@mui/icons-material/Lock'
 import background from '../../assets/images/tm.jpg'
 import styles from './Level5.module.css'
+import { getCurrentLevel,getScore,Level5Sol,checkisLooped,updateLevel,incrementLevel } from '../../api/General'
 
 const Level5 = () => {
   const navigate = useNavigate()
+  const [score, setScore] = useState(0)
+  const time = useRef(null)
+  const destination = useRef(null)
+
+  useEffect(() => {
+    getCurrentLevel()
+    getScore().then((res) => {
+      setScore(res)
+    })
+  }, [])
+
+  const handlecheck = async (e) => {
+    e.preventDefault()
+    //convert time-period to string
+    const timePeriod = String(time.current.value)
+    const dest = destination.current.value
+    console.log(timePeriod,dest)
+    const res = await Level5Sol(timePeriod,dest);
+
+
+    if (res){
+      if (await checkisLooped()){
+        await incrementLevel()
+        window.location.href = 'prelevel6'
+      }else{
+        await updateLevel()
+        window.location.href = 'prelevel6'
+      }
+
+    }else{
+      alert("Wrong Answer")
+    }
+
+
+
+  }
+
   return (
     <div
       style={
@@ -18,9 +56,9 @@ const Level5 = () => {
     >
       <Layout
         level={5}
-        name="Team Gods"
+        name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score="69420"
+        score= {parseInt(score)}
         backgroundPicURL={background}
         colors={{
           textColor: '#fce35d',
@@ -84,6 +122,7 @@ Also, inversion is a common ploy used by tricksters ‘round the world. Un-inver
                 color: '#fce35d',
                 textAlign: 'center',
               }}
+              ref = {time}
             />
             <input
               type="text"
@@ -99,9 +138,10 @@ Also, inversion is a common ploy used by tricksters ‘round the world. Un-inver
                 color: '#fce35d',
                 textAlign: 'center',
               }}
+              ref = {destination}
             />
             <button
-              onClick={() => navigate('/levels/prelevel6')}
+              onClick={(e) => handlecheck(e)}
               className={styles.travelbtn}
             >
               Travel to Destination

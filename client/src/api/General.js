@@ -18,9 +18,10 @@ const getCurrentLevel = async () => {
     const team = JSON.parse(localStorage.getItem('team'))
     try {
       const res = await axios.get(`${base_url}/team/getCurrentLevel/${team.id}`)
-      if (window.location.pathname !== `/levels/prelevel${res.data.level}` &&  window.location.pathname !== `/levels/level${res.data.level}`) {
+      if (window.location.pathname !== `/levels/prelevel${res.data.level}` &&  window.location.pathname !== `/levels/level${res.data.level}` && window.location.pathname !== `/levels/level${res.data.level}b` && window.location.pathname!==`/levels/level${res.data.level}_1` && window.location.pathname !== `/levels/level${res.data.level}a` && window.location.pathname !== `/levels/level${res.data.level}-1` && window.location.pathname !== `/levels/level${res.data.level}-2` ) {
         window.location.href = `/levels/prelevel${res.data.level}`
       }
+
     } catch (error) {
       console.log(error)
     }
@@ -36,12 +37,53 @@ const Level1Sol = async (answer,teamId) => {
     }
 }
 
+const Level2Sol = async (coordinates,year) => {
+    try {
+      const res = await axios.post(`${base_url}/solutions/level2`, {coordinates,year})
+      return res.data.data
+    } catch (error) {
+      console.log(error)
+    }
+
+}
+
+const Level3_1Sol = async (answer) => {
+    try {
+      const res = await axios.post(`${base_url}/solutions/level3_1`, {answer})
+      return res.data.data
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+const Level4aSol = async (answer) => {
+  try {
+    // remove the space and convert to uppercase
+    const ans = answer.replace(/\s/g, '').toUpperCase()
+    const res = await axios.post(`${base_url}/solutions/level4a`, {answer:ans})
+
+    return res.data.data
+    
+  } catch (error) {
+    console.log(error)
+    
+  }
+}
+
+const Level5Sol = async (timePeriod,destination) => {
+  try {
+    const res = await axios.post(`${base_url}/solutions/level5`, {timePeriod,destination})
+    return res.data.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 const updateLevel = async ()=>{
   const id = JSON.parse(localStorage.getItem('team')).id
   console.log(id)
   try {
     await axios.put(`${base_url}/team/updateLevelTime/${id}`).then((res) => {
-      console.log("HIII")
       axios.put(`${base_url}/team/calculateLevelScore/${id}`).then((res) => {
         console.log(res)
       })
@@ -53,6 +95,28 @@ const updateLevel = async ()=>{
 
 }
 
-export { getScore,Level1Sol,getCurrentLevel,updateLevel }
+const checkisLooped = async () => {
+  const team = JSON.parse(localStorage.getItem('team'))
+  try {
+    const res = await axios.get(`${base_url}/team/getIsLooped/${team.id}`)
+    return res.data.looped
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const incrementLevel = async () => {
+  const id = JSON.parse(localStorage.getItem('team')).id
+  try {
+    await axios.put(`${base_url}/team/incrementLevel/${id}`)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
+
+export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol }
 
 

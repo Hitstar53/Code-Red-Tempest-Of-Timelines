@@ -36,9 +36,10 @@ const teamSchema = new mongoose.Schema({
         type: [Number],
         default: []
     },
-    agent_name:{
-        type: String,
-    }
+    looped:{
+        type: Boolean,
+        default: false,
+    },
 });
 
 
