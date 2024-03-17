@@ -17,7 +17,7 @@ import Prelevel7 from './pages/prelevels/Prelevel7'
 import Level1 from './pages/levels/Level1'
 import Level2 from './pages/levels/Level2'
 import Level3_1 from './pages/levels/Level3_1'
-import Level3b from './pages/levels/Level3b'
+import Level3_2 from './pages/levels/Level3_2'
 import Level4a from './pages/levels/Level4a'
 import Level4b from './pages/levels/Level4b'
 import Level5 from './pages/levels/Level5'
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
           { path: 'level2', element: <Level2 /> },
           { path: 'prelevel3', element: <Prelevel3 /> },
           {
-            path: 'level3_1',
+            path: 'level3-1',
             element: <Level3_1 />,
           },
           // {
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
           //   element: <Level3_1 />,
           // },
           { path: 'prelevel3-2', element: <Prelevel3b /> },
-          { path: 'level3-2', element: <Level3b /> },
+          { path: 'level3-2', element: <Level3_2 /> },
           { path: 'prelevel4', element: <Prelevel4 /> },
           { path: 'level4-1', element: <Level4a /> },
           { path: 'prelevel4-2', element: <Prelevel4b /> },

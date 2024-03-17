@@ -11,7 +11,7 @@ function Level3_1() {
     var answer = ans.toUpperCase()
     const res = await  Level3_1Sol(answer)
     if (res) {
-      navigate('/levels/level3b')
+      navigate('/levels/level3-2')
     }
     else{
       document.querySelector(`.${styles.wrongAnswer}`).style.display = 'block'

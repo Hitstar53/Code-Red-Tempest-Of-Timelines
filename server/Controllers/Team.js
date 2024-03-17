@@ -1,4 +1,5 @@
 import Team from "../Models/Team.js";
+import times from "./level_time.js";
 
 const createTeam = async (req, res) => {
     const {name,teamMembers,teamLeaderName} = req.body;
@@ -68,7 +69,6 @@ const deactivateTeam = async (req, res) => {
 
 
 const updateLevelTime = async (req, res) => {
-    console.log("updateLevelTime");
     try {
         const {id} = req.params;
     const team = await Team.findOne({id});
@@ -135,7 +135,7 @@ const calculateLevelScore = async (req, res) => {
     }
     const level = team.currentLevel;
     const time = team.levels_time[level-1];
-    const score = 100 + 10*(900-time);
+    const score =  50+(times[level-1]["time"]-time)/12;
     team.level_score.push(score);
     team.currentLevel += 1;
     await team.save();

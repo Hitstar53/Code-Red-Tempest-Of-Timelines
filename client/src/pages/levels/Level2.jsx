@@ -59,7 +59,7 @@ const Level2 = () => {
         hintText={text}
         name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score={score}
+        score={parseInt(score)}
         backgroundPicURL={background}
         colors={{
           textColor: '#3b2a1a',

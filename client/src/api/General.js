@@ -148,8 +148,14 @@ const setLooped = async () => {
 
 }
 
+const Level3_2Sol = async (answer) => {
+  var ans = answer.toLowerCase()
+  const res = await axios.post(`${base_url}/solutions/level3_2`, {answer:ans})
+  return res.data.data
+}
 
 
-export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol,Level8_1Sol,Level7Sol,setLooped }
+
+export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol,Level8_1Sol,Level7Sol,setLooped,Level3_2Sol }
 
 

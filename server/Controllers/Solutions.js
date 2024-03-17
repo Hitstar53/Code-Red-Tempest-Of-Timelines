@@ -24,6 +24,14 @@ const Level3_1 = async (req, res) => {
     return res.status(400).json({data:false});
 }
 
+const Level3_2 = async (req, res) => {
+    const {answer} = req.body;
+    if (answer === 'andwyn'){
+        return res.status(200).json({data:true});
+    }
+    return res.status(400).json({data:false});
+}
+
 const Level4a = async (req, res) => {
     const {answer} = req.body;
     if (answer==="STORMINGOFBASTILLE"){
@@ -73,4 +81,4 @@ const setLooped = async (req, res) => {
 }
 
 
-export { Level1,Level2,Level3_1,Level4a ,Level5,Level8_1,Level7,setLooped}
+export { Level1,Level2,Level3_1,Level4a ,Level5,Level8_1,Level7,setLooped,Level3_2}
