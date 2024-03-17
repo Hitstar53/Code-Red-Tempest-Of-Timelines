@@ -184,6 +184,7 @@ const incrementLevel = async (req, res) => {
         }
         team.currentLevel += 1;
         await team.save();
+        return res.status(200).json({message:"Level Incremented"})
         
     } catch (error) {
         return res.status(500).json({message: "Internal server error"});

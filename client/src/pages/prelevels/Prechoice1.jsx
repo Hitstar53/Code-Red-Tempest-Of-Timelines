@@ -16,7 +16,7 @@ const Prechoice1 = () => {
   ]
   return (
     <div>
-      <Layout2 text={text} speed={70} lvl={'C1'} />
+      <Layout2 text={text} speed={70} lvl={'prechoice2'} />
     </div>
   )
 }

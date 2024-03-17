@@ -29,8 +29,12 @@ const Level5 = () => {
 
 
     if (res){
-      if (await checkisLooped()){
+      const isLooped = await checkisLooped()
+      console.log("Islooped",isLooped)
+      if (isLooped){
+        console.log("Incrementing level")
         await incrementLevel()
+        console.log("Level incremented")
         window.location.href = 'prelevel6'
       }else{
         await updateLevel()

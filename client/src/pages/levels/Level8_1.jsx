@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from './Level8_1.module.css' // Assuming you have your CSS module file in the same directory
 import Layout from './Layout'
 import background from '../../assets/images/wepik-export-20240309064031UdkG.png'
+import { useNavigate } from 'react-router-dom'
+import { getCurrentLevel,getScore,Level8_1Sol} from '../../api/General'
 const Keypad = () => {
+  const [score, setScore] = useState(0)
+
+  useEffect(() => {
+    // getCurrentLevel()
+    getScore().then((res) => {
+      setScore(res)
+    })
+
+  }, []) 
+
+  const navigate = useNavigate()
   const [inputs, setInputs] = useState([])
   const [message, setMessage] = useState('ENTER A VALID CODE')
 
@@ -16,10 +29,13 @@ const Keypad = () => {
     }
   }
 
-  const checkCode = () => {
+  const checkCode = async () => {
     const reversedInputs = [...inputs].reverse().join('')
-    if (reversedInputs === '25501789196820303170') {
+    if (await Level8_1Sol(reversedInputs)) {
       displaySuccess()
+      setTimeout(() => {
+        navigate('/levels/prelevel8_2')
+      }, 4000)
     } else {
       displayIncorrect()
     }
@@ -53,11 +69,11 @@ const Keypad = () => {
     setMessage(formattedString)
   }
 
-  const handleKeyClick = (key) => {
+  const handleKeyClick = async (key) => {
     addInput(key)
     updateScreen()
     if (inputs.length === 20) {
-      checkCode()
+      await checkCode()
       setInputs([])
     }
   }
@@ -106,9 +122,9 @@ const Keypad = () => {
   return (
     <Layout
       level={7}
-      name="Team Gods"
+      name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
       time="00:00:00"
-      score="69420"
+      score= {parseInt(score)}
       backgroundPicURL={background}
       colors={{
         textColor: 'white',

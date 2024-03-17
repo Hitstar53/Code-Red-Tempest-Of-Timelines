@@ -118,7 +118,7 @@ export default function Leaderboard(props) {
                 <Podium
                   position={index + 1}
                   name={team.name}
-                  score={team.score}
+                  score={parseInt(team.score)}
                   textColor={textColor}
                   positionColor={positionColor}
                 ></Podium>
@@ -157,7 +157,7 @@ export default function Leaderboard(props) {
                 <Team
                   position={index + 4}
                   name={team.name}
-                  score={team.score}
+                  score={parseInt(team.score)}
                   textColor={textColor}
                   positionColor={positionColor}
                 ></Team>

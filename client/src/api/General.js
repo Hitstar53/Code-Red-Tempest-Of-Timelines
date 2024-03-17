@@ -50,6 +50,7 @@ const Level2Sol = async (coordinates,year) => {
 const Level3_1Sol = async (answer) => {
     try {
       const res = await axios.post(`${base_url}/solutions/level3_1`, {answer})
+      console.log(res.data.data)
       return res.data.data
     } catch (error) {
       console.log(error)
@@ -114,9 +115,41 @@ const incrementLevel = async () => {
   }
 }
 
+const Level7Sol = async (answer) => {
+  try {
+    const res = await axios.post(`${base_url}/solutions/level7`, {answer})
+    return res.data.data
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+const Level8_1Sol = async (answer) => {
+  try {
+    const res = await axios.post(`${base_url}/solutions/level8_1`, {answer})
+    return res.data.data
+  } catch (error) {
+    console.log(error)
+  }
 
 
 
-export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol }
+}
+
+
+const setLooped = async () => {
+  const id = JSON.parse(localStorage.getItem('team')).id
+  try {
+    await axios.post(`${base_url}/solutions/setlooped`, {id})
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+
+
+export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol,Level8_1Sol,Level7Sol,setLooped }
 
 

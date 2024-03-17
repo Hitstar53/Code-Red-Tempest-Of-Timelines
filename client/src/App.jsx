@@ -34,6 +34,11 @@ import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
 import Win from './pages/Endings/Win'
 import { store } from './contexts/store'
 import './App.css'
+import Level8_2 from './pages/levels/Level8_2'
+import Prechoice1 from './pages/prelevels/Prechoice1'
+import Prechoice2 from './pages/prelevels/Prechoice2'
+import Prechoice3 from './pages/prelevels/Prechoice3'
+import Choice from "./pages/Choices/Choice"
 
 const router = createBrowserRouter([
   {
@@ -78,7 +83,12 @@ const router = createBrowserRouter([
           },
           { path: 'prelevel7', element: <Prelevel7 /> },
           { path: 'level7', element: <Level7 /> },
+          { path: 'levelprechoice1', element: <Prechoice1 /> },
+          { path: 'levelprechoice2', element: <Prechoice2 /> },
+          { path: 'levelPrechoice3', element: <Prechoice3 /> },
           { path: 'level8_1', element: <Level8_1 /> },
+          { path: 'level8-2', element: <Level8_2 /> },
+          { path: 'levelchoice', element: <Choice /> },
           {
             path: 'prelevel8_1',
             element: <Prelevel8_1 />,
