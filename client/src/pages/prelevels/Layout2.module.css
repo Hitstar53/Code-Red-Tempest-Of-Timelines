@@ -1,0 +1,127 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/images/lab.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 0%;
+}
+
+.card {
+    width: 90vw;
+    height: 80vh;
+    margin: 10vh auto;
+    display: flex;
+    border-radius: 30px;
+}
+
+.image {
+    width: 40%;
+    height: 80%;
+    margin: auto 5vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('../../assets/images/scientist.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 20px 10px #00527A;
+}
+
+.textBox {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    margin-right: 5vw;
+    background-color: #7CC2E4;
+    box-shadow: 0 0 20px 10px #00527A;
+    opacity: 85%;
+    border-radius: 20px;
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.textBox:hover, .image:hover {
+    box-shadow: 0 0 30px 15px #00527A;
+}
+
+.typedtext {
+    color: #0F4B59; 
+    margin: 5vh 2vw;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.typedtext::after {
+    content: '';
+    width: 13px;
+    height: 2px;
+    left: 0px;
+    background: #0F4B59;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: baseline;
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+
+    from,
+    to {
+        background: transparent;
+    }
+
+    50% {
+        background: #0F4B59;
+    }
+}
+
+.caption {
+    color: #7CC2E4;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0 0 5px #00537D;
+    -webkit-text-stroke: 1.5px #00537D;
+}
+
+.buttons {
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.buttons button {
+    margin: 2vh 2vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+    color: #0F4B59;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: thin;
+    font-size: 1.25rem;
+    border: none;
+}
+
+.buttons button:hover {
+    color: #00008B;
+    background-color: transparent;
+    font-weight: bolder;
+}
+
+.buttons i {
+    padding: 5px;
+    transition: transform 450ms ease-in-out;
+}
+
+.replay:hover i {
+    transform: rotate(-60deg);
+}

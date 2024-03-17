@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.terminal {
+  height: 60vh;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.terminal p {
+  display: block;
+}
+
+.terminal span {
+  display: inline !important;
+}
+
+.level6input{
+  width: 65%;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #77aac3;
+  border-radius: 10px;
+  outline: none;
+  margin: 20px 20px !important;
+}
+
+.outerContainer{
+  margin-top: -40px;
+}
+
+.inputContainer{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.level6btn{
+  width: 25%;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid #77aac3;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 20px;
+  background-color: #04364A;
+  color: #77aac3;
+  cursor: pointer;
+  margin: 20px auto !important;
+}
+
+.level6btn:hover{
+  background-color: #04364A;
+  color: #77aac3;
+}

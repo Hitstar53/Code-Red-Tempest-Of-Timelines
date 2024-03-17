@@ -1,0 +1,82 @@
+.loginForm {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 50px;
+  border-radius: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: grid;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  position: relative;
+}
+
+.loginForm h1 {
+  color: white;
+  letter-spacing: 2px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.loginForm input,
+.loginForm button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 20px auto;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 13px 21px rgba(0, 0, 0, 0.05);
+  color: white;
+}
+
+.loginForm input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.loginForm input:focus {
+  outline: none;
+}
+
+.loginForm a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.signup:hover {
+  color: #f29492;
+}
+
+.forgot-signup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.level2btn {
+  cursor: pointer;
+  background: #f29492;
+  color: white;
+  transition: 0.5s;
+}
+
+.level2btn:hover {
+  background: #072633;
+}
+
+.blob {
+  position: absolute;
+  top: 30vh;
+  left: calc(50% - 300px);
+}

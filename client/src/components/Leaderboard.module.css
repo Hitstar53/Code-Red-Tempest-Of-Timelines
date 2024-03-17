@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+.header {
+  /* display: none; */
+
+  font-weight: 600 !important;
+  font-style: normal;
+  text-align: center !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 1.5px;
+}
+.ranks {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  color: black !important;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter Tight', sans-serif !important;
+}
+.team {
+  font-size: 1.5rem !important;
+  display: grid;
+  grid-template-columns: 18% 67% 15%;
+  align-items: center;
+  padding: 0.7rem 0.5rem;
+  border-radius: 25px;
+  width: 325px;
+  font-weight: 600;
+}
+.team span {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}

@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+/*bubblegum sans*/
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap");
+
+/*freckle*/
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Freckle+Face&display=swap");
+
+.welcomeContainer {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: black;
+    margin: 0rem;
+    overflow: hidden;
+    background: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.3) 25%), url("../../assets/images/welcomescreen.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.openMsg h1 {
+    font-family: "Freckle Face", system-ui;
+    font-size: 250%;
+    font-weight: 100;
+    color: aliceblue;
+    padding: 0rem clamp(1rem, 2vw, 5rem);
+    border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+.glow {
+    color: #fff;
+    text-shadow: 0 0 5px #ff0800, 0 0 10px #ff0800, 0 0 20px #ff0800,
+        0 0 30px #ff0800, 0 0 40px #ff0800, 0 0 50px #ff0800, 0 0 60px #ff0800;
+}
+
+.openMsg {
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.25rem;
+    font-family: Karla;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0px 0px;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(7, 208, 71, 0.691);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(7, 208, 71, 0.691);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(7, 208, 71, 0.691);
+    }
+}
+
+.startBtn {
+    position: relative;
+    top: 28%;
+    display: inline-block;
+    padding: 18px 30px;
+    font-size: 250%;
+    color: white;
+    background: none;
+    border: 3px solid white;
+    border-radius: 2vmin;
+    font-weight: 400;
+    overflow: hidden;
+    font-family: "Bubblegum Sans", sans-serif;
+    transition: color 1s linear;
+    animation: glow 1.4s linear infinite;
+    z-index: 1;
+}
+
+.startBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ff0800;
+    /* Color on hover */
+    transition: left 0.75s ease;
+    /* Slide effect */
+    font-weight: 400;
+    z-index: -1;
+}
+
+.startBtn:hover::before {
+    left: 0;
+    /* Slide in on hover */
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+}
+
+.startBtn:hover {
+    cursor: pointer;
+    font-weight: 800;
+    color: black;
+    font-style: italic;
+}

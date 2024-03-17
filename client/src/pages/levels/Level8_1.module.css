@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --keypad-background: #642d2c;
+  --keypad-buttons: #4d1d1b;
+  --keypad-text: #b09695;
+  --screen-background: #e699ba;
+  --screen-text: #ff558f;
+}
+
+.keypad {
+  position: relative;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--keypad-background);
+  width: max(24vw, 300px);
+  height: max(70vh, 470px);
+  border-radius: 0.5rem;
+}
+
+.screen {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: var(--screen-background);
+  border: 2px solid var(--screen-text);
+  border-radius: 0.3rem;
+  color: var(--screen-text);
+  font-weight: 900;
+  width: 90%;
+  height: 10%;
+  margin: 30px;
+  font-size: 150%;
+  text-align: center;
+  letter-spacing: 2px;
+  box-shadow: 0 0 30px 5px #ff558f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 90%;
+  height: 75%;
+}
+
+.key {
+  user-select: none;
+  line-height: 80px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--keypad-buttons);
+  width: 70%;
+  height: 80%;
+  font-size: 3rem;
+  border-radius: 7px;
+  color: var(--keypad-text);
+  cursor: pointer;
+  transition: color 300ms ease-in-out, background 300ms ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.key:hover {
+  color: var(--keypad-buttons);
+  background-color: var(--keypad-text);
+}
+.key:active {
+  transform: translateY(3px);
+}
+.keyClear {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+.keyBackspace {
+  font-size: 1.8rem;
+}

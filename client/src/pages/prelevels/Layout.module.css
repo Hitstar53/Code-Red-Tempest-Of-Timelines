@@ -1,0 +1,157 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/images/code.jpg');
+    animation: bg-move 7.5s infinite;
+    background-position: 0% 0%;
+}
+
+.card {
+    width: 70vw;
+    height: 80vh;
+    margin: 10vh auto;
+    display: flex;
+    border-radius: 30px;
+    background-color: #436850;
+    box-shadow: 0 0 20px 10px #39ff14;
+    /* background-color: #b42828; */
+    /* box-shadow: 0 0 30px 15px #ff6e14; */
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 0 30px 15px #39ff14;
+    /* box-shadow: 0 0 40px 20px #ac4302; */
+}
+
+.image {
+    width: 40%;
+    height: 80%;
+    margin: auto 5vw;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('../../assets/images/detective.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes bg-size {
+    0% {
+        background-size: 100% 200%;
+    }
+
+    50% {
+        background-size: 100% 150%;
+    }
+
+    100% {
+        background-size: 100% 200%;
+    }
+}
+
+.textBox {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    margin: auto;
+    margin-right: 5vw;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.typedtext {
+    /* color: #ffb514; */
+    color: #11c7e3;
+    margin: 5vh 2vw;
+    width: 80%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.typedtext::after {
+    content: '';
+    width: 13px;
+    height: 2px;
+    left: 0px;
+    background: #11c7e3;
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: baseline;
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+
+    from,
+    to {
+        background: transparent;
+    }
+
+    50% {
+        background: #11c7e3;
+    }
+}
+
+.caption {
+    color: #39ff14;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #000;
+}
+
+.buttons {
+    position: absolute;
+    display: none;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.next,
+.replay {
+    margin: 2vh 2vw;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+    color: #39ff14;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: thin;
+    font-size: 1.25rem;
+    border: none;
+}
+
+.next:hover,
+.replay:hover {
+    color: #11c7e3;
+    font-weight: bold;
+}
+
+.buttons i {
+    padding: 5px;
+    transition: transform 450ms ease-in-out;
+}
+
+.replay:hover i {
+    transform: rotate(-60deg);
+}
