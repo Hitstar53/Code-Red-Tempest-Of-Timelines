@@ -20,6 +20,10 @@ const Level3_2 = () => {
         if (search.toLowerCase() === 'andwyn') {
           navigate('/levels/prelevel4')
         }
+        else{
+          //reset the input
+          setSearch('')
+        }
       }
     }
     window.addEventListener('keydown', handleKeyPress)
@@ -32,6 +36,9 @@ const Level3_2 = () => {
     console.log('here')
     if (search.toLowerCase() === 'andwyn') {
       navigate('/levels/prelevel4')
+    }
+    else{
+      setSearch('')
     }
   }
   const hintText = "Seperate the odd one, divide the length quarterly, and give 'you'rself to each. It's a unique code…"
@@ -95,7 +102,7 @@ const Level3_2 = () => {
       {text}
       </div>
       <div className={styles.inputContainer}>
-        <input className={styles.level2input} type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
+        <input className={styles.level2input} value={search} type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
         <button className={styles.level2btn} type="submit" onClick={handleCheck}>
           Login
         </button>
