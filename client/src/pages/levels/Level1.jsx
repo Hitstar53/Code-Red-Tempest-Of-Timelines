@@ -4,15 +4,17 @@ import { useNavigate } from 'react-router-dom'
 import CodeRainVid from '../../assets/animations/stock-footage-computer-binary-matrix-digital-rain-information-flow-high-tech-digital-matrix-binary-code-falling (online-video-cutter.com).mp4'
 import Layout from './Layout'
 import styles from './Level1.module.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCountupTime } from '../../contexts/store'
 const Level1 = () => {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
-
+  const dispatch = useDispatch()
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
         if (search === 'pit') {
+          dispatch(setCountupTime(0))
           navigate('/levels/prelevel2')
         }
       }
@@ -21,10 +23,11 @@ const Level1 = () => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress)
     }
-  }, [search, navigate])
+  }, [search, navigate, dispatch])
 
   const handleSearch = () => {
     if (search === 'pit') {
+      dispatch(setCountupTime(0))
       navigate('/levels/prelevel2')
     }
   }

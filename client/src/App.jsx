@@ -114,11 +114,9 @@ const router = createBrowserRouter([
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <div>
-        <RouterProvider router={router} />
-      </div>
-    </Provider>
+    <div>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 
