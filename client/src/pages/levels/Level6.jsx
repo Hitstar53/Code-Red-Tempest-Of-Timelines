@@ -715,7 +715,8 @@ const Level6 = () => {
           leaderboardColor: "#04364A",
           leaderboardTextColor: "black",
         }}
-        hintText="A bunch of random misleading sentences which make no sense? Worry not, because all you have to do is to gather the underlying details from each sentence and construct a filepath. Use terminal commands to help you reach the final destination."
+        hintText="The focal letter of the tongue twister is the drive you seek. Within that, the one which is harder to crack is the one which will cause your brain to whack. 
+        Lastly, to convert the string from an unreadable format to a readable one, come down by 64 bases."
       >
         <div className={styles.outerContainer}>
           <div className={styles.terminal}>

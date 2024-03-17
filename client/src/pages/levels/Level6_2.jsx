@@ -226,7 +226,9 @@ const Level6_2 = () => {
           leaderboardColor: "#04364A",
           leaderboardTextColor: "black",
         }}
-        hintText="A bunch of random misleading sentences which make no sense? Worry not, because all you have to do is to gather the underlying details from each sentence and construct a filepath. Use terminal commands to help you reach the final destination."
+        hintText="Use this link for the official netstat documentation: https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/ff961504(v=ws.11)
+        An introductory video: 
+        https://youtu.be/8UZFpCQeXnM?si=VJndZDaU0iU2zdjg "
       >
         <div className={styles.instructionBox}>
           <p className={styles.instruction}>{questions[counter]}</p>

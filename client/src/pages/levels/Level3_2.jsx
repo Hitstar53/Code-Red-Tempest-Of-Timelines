@@ -74,7 +74,7 @@ const Level3_2 = () => {
       setSearch('')
     }
   }
-  const hintText = "Seperate the odd one, divide the length quarterly, and give 'you'rself to each. It's a unique code…"
+  const hintText = "Capture each flash one after the other. Take the advantage by accessing a search engine. Every location has a hidden clue. Gather them one by one."
   
   // useEffect(() => {
   //   const textArray = [

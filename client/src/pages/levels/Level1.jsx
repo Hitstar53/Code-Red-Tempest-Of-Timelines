@@ -55,7 +55,7 @@ const Level1 = () => {
     
   }
   const hintText =
-    "Seperate the odd one, divide the length quarterly, and give 'you'rself to each. It's a unique code…"
+    "Separate the capitals, convert them into numbers using the most obvious technique. Then give ‘you’rself and 2 empty slots before each number and speak the phrase “Unique code” super quick."
 
   return (
     <div className={styles.level1}>

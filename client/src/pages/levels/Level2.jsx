@@ -44,7 +44,7 @@ const Level2 = () => {
   }
 
   const text =
-    "Pyramid of Giza, 2550 BCE Conspiracies surround this structure, by means of beings superior or beings inferior, a monolith it seems, but built by much smaller things. The next mystery, a 'morse'l of food perhaps, for your hunger to reach the end."
+    "Conspiracies surround this famous structure, by means of beings superior or beings inferior, a monolith it seems, but built by much smaller things. Khufu sleeps here with his gilded tomb. Get the coordinates for you need them and do not forget when it was built, for that’s when you need to go to."
 
   const navigate = useNavigate()
   return (

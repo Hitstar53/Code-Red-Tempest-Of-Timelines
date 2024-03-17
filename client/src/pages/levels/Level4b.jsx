@@ -13,7 +13,7 @@ import { getCurrentLevel,getScore } from '../../api/General.js'
 const Level4b = () => {
   const ref = useRef()
   const hintText =
-    'It requires a password, perhaps try the one number that changed the history of the land. An icon was born, mayhaps short in stature, but his accomplishments lengthy.The colors that represent the land, can they be the answer?'
+    'Three wires, and three colors on the flag…. Coincidence? Perhaps not. Cut the shortest one. The bomb also requires a password, perhaps try the one number that changed the history of the land. An icon was born, mayhaps short in stature, but his achievements lengthy.'
   const [score, setScore] = useState(0)
   useEffect(() => {
     getCurrentLevel()

@@ -128,8 +128,7 @@ function Level3_1() {
         leaderboardTextColor: 'black',
       }}
       hintText="Four scrambled phrases, simply a bunch of nonsense… or not? 
-Click away on the right path, and look behind the scenes to find more than just text.
-"
+      Inspect away on the 'right' path, and look behind the scenes to find more than just text. Get as deep and accurate as you can, and gently degrade your class to ascend even higher."
       backgroundPicURL={backgroundURL}
     >
     <div className={styles.body}>

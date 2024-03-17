@@ -74,10 +74,7 @@ const Level5 = () => {
           leaderboardColor: '#04364A',
           leaderboardTextColor: 'black',
         }}
-        hintText="Go to the year when scientists no longer called MOS LSI chips by that name anymore. The year when the term ‘microprocessor’ was officially coined.
-
-Also, inversion is a common ploy used by tricksters ‘round the world. Un-invert the phrase, use all the ciphers in your arsenal, and move on to the next level.
-"
+        hintText="Go to the year when scientists no longer called MOS LSI chips by that name anymore. The year when the term 'microprocessor' was officially coined. Also, inversion is a common ploy used by tricksters around the world. N’th from the start becomes N’th from the end. Did I ring any bells?"
       >
         <div
           style={{

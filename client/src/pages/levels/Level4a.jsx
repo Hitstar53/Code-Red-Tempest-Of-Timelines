@@ -43,7 +43,7 @@ const Level4a = () => {
 
   }
   const hintText =
-    "The clue is to move back a few, or move forward a lot, and maybe the sum of the steps you'll take gets you to an important number in the Language."
+    "Get more information on the 'undefeated samurai' using a search engine. Add one day and one month to his day of demise. 'Liberty. Fraternity. Equality.' Haven’t you heard this phrase before?"
   return (
     <div
       style={{
