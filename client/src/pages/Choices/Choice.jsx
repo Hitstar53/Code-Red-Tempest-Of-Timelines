@@ -2,21 +2,23 @@ import AppCSS from './App.module.css'
 import Option from './Option.jsx'
 import options from './options'
 import { getSelectedOption } from './selectOptionDOM.js'
-import { useNavigate } from 'react-router-dom'
-function redirect() {
-  const selectedOption = getSelectedOption()
-  if (selectedOption != null) {
-    if (selectedOption == 0) {
-      //help TPA path redirect
+import { Navigate, useNavigate } from 'react-router-dom'
 
-      console.log('Selected path 1')
-    } else if (selectedOption == 1) {
-      //help Andwyn path redirect
-      console.log('Selected path 2')
+function Choice() {
+  const navigate = useNavigate()
+  const redirect = () => {
+    const selectedOption = getSelectedOption()
+    if (selectedOption != null) {
+      if (selectedOption == 0) {
+        //help TPA path redirect
+        navigate('/levels/prelevel8-1')
+        console.log('Selected path 1')
+      } else if (selectedOption == 1) {
+        //help Andwyn path redirect
+        console.log('Selected path 2')
+      }
     }
   }
-}
-function Choice() {
   return (
     <div className={AppCSS.body}>
       <h1 className={AppCSS.headingPath}>Choose your path</h1>

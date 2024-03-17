@@ -35,6 +35,9 @@ import Win from './pages/Endings/Win'
 import './App.css'
 import Level3_2 from './pages/levels/Level3_2'
 import Choice from './pages/Choices/Choice'
+import Prechoice1 from './pages/prelevels/Prechoice1'
+import Prechoice2 from './pages/prelevels/Prechoice2'
+import Prechoice3 from './pages/prelevels/Prechoice3'
 
 const router = createBrowserRouter([
   {
@@ -96,7 +99,10 @@ const router = createBrowserRouter([
           { path: 'prelose2', element: <Prelose2 /> },
           { path: 'win', element: <Win /> },
           { path: 'levelwrong', element: <Wrong_choice_ending /> },
-          { path: 'choice', element: <Choice /> },
+          { path: 'levelchoice', element: <Choice /> },
+          { path: 'levelprechoice1', element: <Prechoice1 /> },
+          { path: 'levelprechoice2', element: <Prechoice2 /> },
+          { path: 'levelPrechoice3', element: <Prechoice3 /> },
         ],
       },
     ],

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import styles from './Level8_1.module.css' // Assuming you have your CSS module file in the same directory
 import Layout from './Layout'
 import background from '../../assets/images/wepik-export-20240309064031UdkG.png'
+import { useNavigate } from 'react-router-dom'
 const Keypad = () => {
+  const navigate = useNavigate()
   const [inputs, setInputs] = useState([])
   const [message, setMessage] = useState('ENTER A VALID CODE')
 
@@ -20,6 +22,9 @@ const Keypad = () => {
     const reversedInputs = [...inputs].reverse().join('')
     if (reversedInputs === '25501789196820303170') {
       displaySuccess()
+      setTimeout(() => {
+        navigate('/levels/prelevel8-2')
+      }, 4000)
     } else {
       displayIncorrect()
     }
