@@ -3,7 +3,7 @@ import Layout from "./Layout";
 
 const Prelevel3b = () => {
   const text = [
-    "HTML? What does that even mean?. You might use it to create a website, but I don't think it's relevant here. I think it's a code name. This is what happens you search it on TPA Archives.",
+    "HTML? What does that even mean?. It's a 21st century website making language but what relevance does it have here?. Let's see what comes up when I search it on TPA archives...",
   ];
   return (
     <div>

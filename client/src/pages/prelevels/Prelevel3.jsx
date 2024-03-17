@@ -3,8 +3,8 @@ import Layout from "./Layout";
 
 const Prelevel3 = () => {
   const text = [
-    "Agent C: Good job! We have now been transported to the Pyramids of Giza. You see a device left on the floor. It looks like he was present here some time back, and might have dropped it while he was running awat from the guards.",
-    "Hmm.. The code looks like some sort of language, and honestly at first, the characters look like random marks scribbles at first.\nI am unable to decipher this, but remember, keep your head calm whenever in panic, and your body hydrated whenever in the desert.....",
+    "Agent C: Good job! We have now been transported to the Pyramids of Giza. I sense the temporal signature of a foreign futuristic device within the pyramid. It looks like he was present here some time back, and might have dropped it while he was in a hurry.",
+    "Hmm.. The code looks like some sort of language, and honestly at first, the characters look like random marks scribbles.\nI am unable to decipher this, but remember, keep your head calm whenever in panic, and your body hydrated whenever in the desert.....",
   ];
   return (
     <div>

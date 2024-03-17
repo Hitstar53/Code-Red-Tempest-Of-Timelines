@@ -3,8 +3,11 @@ import Layout from "./Layout";
 
 const Prelevel4 = () => {
   const text = [
-    "Andwyn. This is the first time I have heard this name. Let me find out more about this guy. While you were deciphering this, I was also trying to search something. Here is a USB that I found. I cannot physically give you that, so I'll load the contents on your screen.",
-    "Well, it talks about an important event in French history, but the message is so jumbled it makes no sense. I'll suggest you to create a decoder of your own, as you cannot trust any outsider, and I'll tell you this, the first 26 numbers are special, and that life is but a loop of peace and pain.......\"Vwruplqi ri Edvwlooh\" - An important event in the French history",
+    "Andwyn… it’s the first time I heard that name. Also, I have found some more stuff on the TPA archives. It’s bad…. Another code I know nothing about. Please solve this mystery and find the secrets behind ‘Andwyn’:",
+    "In the land of the rising sun, where swords dance in the breeze, A noble samurai, undefeated, whose victories never cease. One month and one day since his final stand, On what day does his legend expand?",
+    "The next one is: In the land where democracy's seed was sown, A new chapter in history was honed. Rights and freedoms, the people sought, In this year, a pivotal plot was wrought.",
+    "Monarchs trembled, as power shifted hands, In the hearts of the people, liberty stands. A year of change, where the old ways declined, Fraternity and equality ceased to stay behind. Can you name the year, etched in time's mind?",
+    "Well, it talks about an important event in French history, but the message is so jumbled it makes no sense. I think we have to find what that certain event was."
   ];
   return (
     <div>
