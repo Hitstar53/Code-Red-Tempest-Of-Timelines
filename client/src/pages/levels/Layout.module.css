@@ -29,6 +29,7 @@
   padding: 1rem 1.5rem;
   border-radius: 25px;
   text-align: center;
+  width: 185px;
 }
 
 .upperSection {
@@ -73,10 +74,8 @@
 .random {
   opacity: 0;
 }
-
 .bottomSection {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   align-items: flex-end;
