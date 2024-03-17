@@ -13,7 +13,7 @@ TODO:
 import { useState } from "react";
 import Layout from "./Layout";
 import { ReactTerminal } from "react-terminal";
-
+import { useNavigate } from 'react-router-dom'
 import background from "../../assets/images/area51.jpeg";
 import styles from "./Level6.module.css";
 
@@ -568,8 +568,28 @@ const DisplayFiles = ({ currentFolder }) => {
 };
 
 const Level6 = () => {
+  const navigate = useNavigate()
   const [files, setFiles] = useState(initialFolderStructure);
   const [currentFolder, setCurrentFolder] = useState("");
+  const [search, setSearch] = useState('')
+  const handleCheck = () => {
+    if (search === 'Andwyn here, Haha good one so far, but you wont catch me') {
+      navigate('/levels/prelevel6-2')
+    }
+    else{
+      setSearch('')
+    }
+  }
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      if (search === 'Andwyn here, Haha good one so far, but you wont catch me') {
+        navigate('/levels/prelevel6-2')
+      }
+      else{
+        setSearch('')
+      }
+    }
+  }
 
   const commands = {
     ls: () => {
@@ -699,34 +719,39 @@ const Level6 = () => {
         }}
         hintText="A bunch of random misleading sentences which make no sense? Worry not, because all you have to do is to gather the underlying details from each sentence and construct a filepath. Use terminal commands to help you reach the final destination."
       >
-        <div className={styles.instructionBox}>
-          {/* <p className={styles.instruction}>Hello World</p> */}
-        </div>
-        <div className={styles.terminal}>
-          <ReactTerminal
-            welcomeMessage={
-              <>
-                <p>Welcome to the Team Gods Terminal. Type help</p>
-                <br />
-              </>
-            }
-            commands={commands}
-            prompt={`${currentFolder}/ >`}
-            themes={{
-              myTheme: {
-                themeBGColor: "#282c34",
-                themeToolbarColor: "#323e4a",
-                themePromptColor: "#fff",
-                themeColor: "#FFFEFC",
-              },
-            }}
-            theme="myTheme"
-            errorMessage=<CommandOutput
-              title="Error"
-              description="Command not found!"
-              color="red"
+        <div className={styles.outerContainer}>
+          <div className={styles.terminal}>
+            <ReactTerminal
+              welcomeMessage={
+                <>
+                  <p>Welcome to the Team Gods Terminal. Type help</p>
+                  <br />
+                </>
+              }
+              commands={commands}
+              prompt={`${currentFolder}/ >`}
+              themes={{
+                myTheme: {
+                  themeBGColor: "#282c34",
+                  themeToolbarColor: "#323e4a",
+                  themePromptColor: "#fff",
+                  themeColor: "#FFFEFC",
+                },
+              }}
+              theme="myTheme"
+              errorMessage=<CommandOutput
+                title="Error"
+                description="Command not found!"
+                color="red"
+              />
             />
-          />
+          </div>
+          <div className={styles.inputContainer}>
+            <input className={styles.level6input} value={search} type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
+            <button className={styles.level6btn} type="submit" onClick={handleCheck}>
+              Login
+            </button>
+          </div>
         </div>
       </Layout>
     </div>
