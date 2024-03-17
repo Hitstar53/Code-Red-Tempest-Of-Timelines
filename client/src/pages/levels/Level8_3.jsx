@@ -21,13 +21,15 @@ const CommandOutput = ({
 
 const listOfCommands = [
   /netstat -anp|netstat -ano/i,
+  /netstat -ano \| findstr "5173"|netstat -ano \| findstr "5400"/i,
   /netstat --verbose|netstat \//i,
   /netstat -s|netstat -s -p icmpv6/i,
 ];
 
 const questions = [
   "Now that we are in the human life database server, we need to check all the active TCP and UDP ports on the system with their IP addresses and process IDs and port numbers expressed numerically. Please enter a command to check all ports.",
-  "You have forgotten netstat documentation and need to find a command. Enter a command which lets you see all the netstat commands and their description.",
+  "We find that Andwyn of T2 is in port 5400, please enter a command to check all services using port 5400",
+  "Write a netstat command which displays details about unconfigured address families.",
   "We need to check the statistics of the protocol ICMPv6. Enter a command which lets us do that",
 ];
 
@@ -59,7 +61,16 @@ const Level8_3 = () => {
   const commands = {
     netstat: (cmd) => {
       const currentCommand = String(cmd).trim();
-      if (currentCommand.match(/-anp|-ano/i)) {
+      if (currentCommand.match(/-ano \| findstr "5173"/i)) {
+        setCommand(`netstat ${currentCommand}`);
+        return (
+          <div>
+            <h6>TCP [::1]:5173 [::]:0 LISTENING 6740</h6>
+            <h6>TCP [::1]:5173 [::1]:59831 ESTABLISHED 6740</h6>
+            <h6>TCP [::1]:59831 [::1]:5173 ESTABLISHED 12312</h6>
+          </div>
+        );
+      } else if (currentCommand.match(/-anp|-ano/i)) {
         setCommand(`netstat ${currentCommand}`);
         return (
           <div>
