@@ -8,6 +8,8 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Podium from "./Podium";
 import styles from "./Leaderboard.module.css";
+import { useState,useEffect } from "react";
+import { getLeaderboard } from "../api/Leaderboard";
 
 const drawerWidth = 400;
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
@@ -39,6 +41,23 @@ export default function Leaderboard(props) {
   const { bgColor, headerColor, iconColor, textColor, positionColor } = props;
 
   const [open, setOpen] = React.useState(false);
+
+  const [teams, setTeams] = useState([]);
+  const [top3, setTop3] = useState([]);
+
+  useEffect(() => {
+    const fetchLeaderboard = async () => {
+      try {
+        const response = await getLeaderboard();
+        setTeams(response.slice(3));
+        setTop3(response.slice(0, 3));
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchLeaderboard();
+  }, []);
 
   const theme = useTheme();
   const handleDrawerOpen = () => {
@@ -91,10 +110,21 @@ export default function Leaderboard(props) {
           </div>
           <Divider />
           <div className={styles.ranks}>
-            <Podium position={1} name="Team gods" score={69}></Podium>
+            {/* <Podium position={1} name="Team gods" score={69}></Podium>
             <Podium position={2} name="Team gods" score={69}></Podium>
-            <Podium position={3} name="Team gods" score={69}></Podium>
-            <Team
+            <Podium position={3} name="Team gods" score={69}></Podium> */}
+            {top3.map((team, index) => {
+              return (
+                <Podium
+                  position={index + 1}
+                  name={team.name}
+                  score={team.score}
+                  textColor={textColor}
+                  positionColor={positionColor}
+                ></Podium>
+              );
+            })}
+            {/* <Team
               position={4}
               name="Team gods"
               score={69}
@@ -121,7 +151,18 @@ export default function Leaderboard(props) {
               score={69}
               textColor={textColor}
               positionColor={positionColor}
-            ></Team>
+            ></Team> */}
+            {teams.map((team, index) => {
+              return (
+                <Team
+                  position={index + 4}
+                  name={team.name}
+                  score={team.score}
+                  textColor={textColor}
+                  positionColor={positionColor}
+                ></Team>
+              );
+            })}
           </div>
         </Drawer>
       </div>
