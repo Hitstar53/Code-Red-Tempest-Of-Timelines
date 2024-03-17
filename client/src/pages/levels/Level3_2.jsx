@@ -143,9 +143,19 @@ const Level3_2 = () => {
 
           Login
         </button>
-        <button className={styles.level2btn} onClick={() => !typing && startTyping()}>
-          Flash Info
-        </button>
+        <div className={styles.level2btn} >
+          Shhhhhhh
+          <div style={{
+            display: 'none'
+          }}>
+      '-36.889889 145.184472',
+    '-37.993139 141.721556',
+    '-38.313389 145.140417',
+    '-37.897028 144.746028',
+    '-37.845139 144.995972',
+    '-37.993139 141.721556'
+          </div>
+        </div>
       </div>
     </Layout>
   )

@@ -40,7 +40,8 @@ import Level8_2 from './pages/levels/Level8_2'
 import Prechoice1 from './pages/prelevels/Prechoice1'
 import Prechoice2 from './pages/prelevels/Prechoice2'
 import Prechoice3 from './pages/prelevels/Prechoice3'
-import Choice from "./pages/Choices/Choice"
+import Choice from './pages/Choices/Choice'
+import ThanksPage from './pages/Endings/ThanksForPlaying'
 
 const router = createBrowserRouter([
   {
@@ -128,6 +129,7 @@ const router = createBrowserRouter([
             path: 'levelwrong',
             element: <Wrong_choice_ending />,
           },
+          { path: 'thanks', element: <ThanksPage /> },
         ],
       },
     ],

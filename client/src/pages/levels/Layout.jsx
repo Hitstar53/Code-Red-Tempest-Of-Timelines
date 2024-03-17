@@ -5,8 +5,10 @@ import { FiTarget } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
 import { setCountupTime, setCountdownTime } from '../../contexts/store'
+import { useNavigate } from 'react-router-dom'
 
 const Layout = (props) => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   dispatch(setCountupTime(0))
   const timeUp = useSelector((state) => state.countup.time)
@@ -41,6 +43,9 @@ const Layout = (props) => {
     timerDown.current = setInterval(() => {
       dispatch(setCountdownTime(countdownState - 1))
       setCountdownState((prevCountdown) => prevCountdown - 1)
+      if (countdownState === 0) {
+        navigate('/levels/thanks')
+      }
     }, 1000)
 
     // Start countup
