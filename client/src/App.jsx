@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { TerminalContextProvider } from 'react-terminal'
-import { Provider } from 'react-redux'
 import ErrorPage from './pages/ErrorPage'
 import Welcome from './pages/welcome/Welcome'
 import LoginPage from './pages/login/LoginPage'
@@ -28,6 +27,7 @@ import Level8_2 from './pages/levels/Level8_2'
 import Prelevel8_1 from './pages/prelevels/Prelevel8a'
 import Prelevel8_2 from './pages/prelevels/Prelevel8b'
 import Prelevel8_3 from './pages/prelevels/Prelevel8c'
+import Level8_3 from './pages/levels/Level8_3'
 import Prelose1 from './pages/prelevels/Prelose1'
 import Prelose2 from './pages/prelevels/Prelose2'
 import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
@@ -84,6 +84,14 @@ const router = createBrowserRouter([
           { path: 'prelevel8-2', element: <Prelevel8_2 /> },
           { path: 'level8-2', element: <Level8_2 /> },
           { path: 'prelevel8-3', element: <Prelevel8_3 /> },
+          {
+            path: 'level8-3',
+            element: (
+              <TerminalContextProvider>
+                <Level8_3 />
+              </TerminalContextProvider>
+            ),
+          },
           { path: 'prelose1', element: <Prelose1 /> },
           { path: 'prelose2', element: <Prelose2 /> },
           { path: 'win', element: <Win /> },
