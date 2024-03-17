@@ -15,13 +15,13 @@ const Display = () => {
             if (await checkisLooped()) {
                 await incrementLevel()
                 setTimeout(() => {
-                    navigate('/levels/backstory');
+                    navigate('/levels/prebackstory');
                 }, 2000);
               }
               else{
                 await updateLevel()
                 setTimeout(() => {
-                    navigate('/levels/backstory');
+                    navigate('/levels/prebackstory');
                 }, 2000);
               }
         }

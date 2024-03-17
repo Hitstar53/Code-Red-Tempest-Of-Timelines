@@ -10,6 +10,7 @@ import Prelevel3 from './pages/prelevels/Prelevel3'
 import Prelevel3b from './pages/prelevels/Prelevel3b'
 import Prelevel4 from './pages/prelevels/Prelevel4'
 import Prelevel4b from './pages/prelevels/Prelevel4b'
+import PreBackstory from './pages/prelevels/Prebackstory'
 import Backstory from './pages/Backstory'
 import Prelevel5 from './pages/prelevels/Prelevel5'
 import Prelevel6 from './pages/prelevels/Prelevel6'
@@ -72,7 +73,8 @@ const router = createBrowserRouter([
           { path: 'level4-1', element: <Level4a /> },
           { path: 'prelevel4-2', element: <Prelevel4b /> },
           { path: 'level4-2', element: <Level4b /> },
-          { path: 'backstory', element: <Backstory /> },
+          { path: 'prebackstory', element: <PreBackstory /> },
+          { path: 'levelbackstory', element: <Backstory /> },
           { path: 'prelevel5', element: <Prelevel5 /> },
           { path: 'level5', element: <Level5 /> },
           { path: 'prelevel6', element: <Prelevel6 /> },
@@ -98,7 +100,7 @@ const router = createBrowserRouter([
           { path: 'levelprechoice1', element: <Prechoice1 /> },
           { path: 'levelprechoice2', element: <Prechoice2 /> },
           { path: 'levelPrechoice3', element: <Prechoice3 /> },
-          { path: 'level8_1', element: <Level8_1 /> },
+          { path: 'level8-1', element: <Level8_1 /> },
           { path: 'level8-2', element: <Level8_2 /> },
           { path: 'levelchoice', element: <Choice /> },
           {

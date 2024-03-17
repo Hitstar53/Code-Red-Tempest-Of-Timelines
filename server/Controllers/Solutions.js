@@ -46,7 +46,7 @@ const Level5 = async (req, res) => {
     // replace comma 
     dest = dest.replace(/,/g, '')
     console.log(dest)
-    if (timePeriod === '1971' && dest === 'area51nevada'){
+    if (timePeriod === '1968' && dest === 'area51nevada'){
         return res.status(200).json({data:true});
     }
     return res.status(400).json({data:false});

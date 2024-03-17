@@ -26,7 +26,7 @@ const Level4a = () => {
 
   const handleProceed = async () => {
     if (message === 'Success') {
-      navigate('/levels/level4-2')
+      navigate('/levels/prelevel4-2')
     } else {
       setMessage('Error')
     }

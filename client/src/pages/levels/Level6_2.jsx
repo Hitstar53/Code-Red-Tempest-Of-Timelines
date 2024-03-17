@@ -212,9 +212,9 @@ const Level6_2 = () => {
     >
       <Layout
         level={6}
-        name="Team Gods"
+        name={localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score="69420"
+        score={parseInt(score)}
         backgroundPicURL={background}
         colors={{
           textColor: "white",
@@ -237,7 +237,7 @@ const Level6_2 = () => {
           <ReactTerminal
             welcomeMessage={
               <>
-                <p>Welcome to the Team Gods Terminal. Type help</p>
+                <p>Welcome to the {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"} Terminal. Type help</p>
                 <br />
               </>
             }
