@@ -45,6 +45,8 @@ const flash = () => {
     '-37.993139 141.721556',
   ]
   let counter = 0
-  setInterval(() => {}, 1500)
+  setInterval(() => {
+    return 
+  }, 1500)
 }
 export default Level3_2

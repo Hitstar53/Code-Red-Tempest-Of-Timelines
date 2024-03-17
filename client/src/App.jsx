@@ -34,6 +34,7 @@ import Wrong_choice_ending from './pages/Endings/Wrong_choice_ending'
 import Win from './pages/Endings/Win'
 import './App.css'
 import Level3_2 from './pages/levels/Level3_2'
+import Choice from './pages/Choices/Choice'
 
 const router = createBrowserRouter([
   {
@@ -87,6 +88,7 @@ const router = createBrowserRouter([
           { path: 'prelose2', element: <Prelose2 /> },
           { path: 'win', element: <Win /> },
           { path: 'levelwrong', element: <Wrong_choice_ending /> },
+          { path: 'choice', element: <Choice /> },
         ],
       },
     ],
