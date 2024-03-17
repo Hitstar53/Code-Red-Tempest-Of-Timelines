@@ -7,14 +7,15 @@ import styles from './Level1.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCountupTime } from '../../contexts/store'
 const Level1 = () => {
+
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
   const dispatch = useDispatch()
+  
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
         if (search === 'pit') {
-          dispatch(setCountupTime(0))
           navigate('/levels/prelevel2')
         }
       }
@@ -27,7 +28,7 @@ const Level1 = () => {
 
   const handleSearch = () => {
     if (search === 'pit') {
-      dispatch(setCountupTime(0))
+      
       navigate('/levels/prelevel2')
     }
   }

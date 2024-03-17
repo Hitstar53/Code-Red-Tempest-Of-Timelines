@@ -11,6 +11,7 @@ const Level2 = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  
   return (
     <div
       style={{
@@ -44,7 +45,7 @@ const Level2 = () => {
             <input type="password" placeholder="Enter Year" />
             <button
               onClick={() => {
-                dispatch(setCountupTime(0))
+                
                 navigate('/levels/prelevel3')
               }}
               className={styles.level2btn}
