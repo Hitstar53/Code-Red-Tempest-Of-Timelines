@@ -95,7 +95,7 @@ const Level3_2 = () => {
       {text}
       </div>
       <div className={styles.inputContainer}>
-        <input type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
+        <input className={styles.level2input} type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
         <button className={styles.level2btn} type="submit" onClick={handleCheck}>
           Login
         </button>
