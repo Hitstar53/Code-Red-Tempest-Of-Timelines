@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "./Layout";
-import background from "../../assets/images/egypt.jpg";
+import background from "../../assets/images/level2tpa.png";
 import styles from "./Level2.module.css";
 
 const Level2 = () => {
