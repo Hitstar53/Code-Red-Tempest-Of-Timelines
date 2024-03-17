@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import Layout from "./Layout";
 import { ReactTerminal } from "react-terminal";
-
+import { useNavigate } from "react-router-dom";
 import background from "../../assets/images/hacking-background.webp";
-import styles from "./Level8_3.module.css";
 import { useEffect, useState } from "react";
+import styles from "./Level6_2.module.css";
 
 const CommandOutput = ({
   title = undefined,
@@ -33,9 +33,10 @@ const questions = [
   "We need to check the statistics of the protocol ICMPv6. Enter a command which lets us do that",
 ];
 
-const Level8_3 = () => {
+const Level6_2 = () => {
   const [counter, setCounter] = useState(0);
   const [command, setCommand] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     function handleKeyPress(e) {
@@ -45,8 +46,9 @@ const Level8_3 = () => {
           console.log("Counter", counter);
         }
 
-        if (counter >= 3) {
+        if (counter >= 4) {
           console.log("Move to next level");
+          navigate("/levels/prelevel7");
           return;
         }
       }
@@ -247,4 +249,4 @@ const Level8_3 = () => {
   );
 };
 
-export default Level8_3;
+export default Level6_2;
