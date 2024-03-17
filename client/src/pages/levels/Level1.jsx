@@ -12,7 +12,7 @@ const Level1 = () => {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
-        if (search === 'TR$') {
+        if (search === 'pit') {
           navigate('/levels/prelevel2')
         }
       }
@@ -24,7 +24,7 @@ const Level1 = () => {
   }, [search, navigate])
 
   const handleSearch = () => {
-    if (search === 'TR$') {
+    if (search === 'pit') {
       navigate('/levels/prelevel2')
     }
   }

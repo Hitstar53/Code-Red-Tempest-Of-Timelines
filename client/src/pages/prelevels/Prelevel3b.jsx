@@ -3,7 +3,7 @@ import Layout from "./Layout";
 
 const Prelevel3b = () => {
   const text = [
-    "Agent C: As you've been told, the secret lies in glass one. This should be a piece of cake for you,keep in mind the code you've deciphered, and that a little inspection hurts no one......",
+    "HTML? What does that even mean?. You might use it to create a website, but I don't think it's relevant here. I think it's a code name. This is what happens you search it on TPA Archives.",
   ];
   return (
     <div>
