@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.terminal {
+  height: 50vh;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.terminal p {
+  display: block;
+}
+
+.terminal span {
+  display: inline !important;
+}
+
+.instructionBox {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.instruction {
+  width: 80%;
+  margin: 0 auto 20px auto;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+

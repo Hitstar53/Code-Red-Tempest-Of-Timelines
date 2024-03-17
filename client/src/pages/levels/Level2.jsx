@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from './Layout'
-import background from '../../assets/images/egypt.jpg'
+import background from "../../assets/images/level2tpa.png";
 import styles from './Level2.module.css'
 import { getScore,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel } from '../../api/General'
 import { useEffect } from 'react'

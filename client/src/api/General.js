@@ -154,8 +154,13 @@ const Level3_2Sol = async (answer) => {
   return res.data.data
 }
 
+const Level6aSol = async (answer) => {
+  const res = await axios.post(`${base_url}/solutions/level6a`, {answer})
+  return res.data.data
+}
 
 
-export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol,Level8_1Sol,Level7Sol,setLooped,Level3_2Sol }
+
+export { getScore,Level1Sol,getCurrentLevel,updateLevel,checkisLooped,Level2Sol,incrementLevel,Level3_1Sol,Level4aSol,Level5Sol,Level8_1Sol,Level7Sol,setLooped,Level3_2Sol,Level6aSol }
 
 

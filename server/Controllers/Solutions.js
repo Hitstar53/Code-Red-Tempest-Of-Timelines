@@ -50,6 +50,15 @@ const Level5 = async (req, res) => {
 
 }
 
+const Level6a = async (req, res) => {
+    const {answer} = req.body;
+    if (answer === 'Andwyn here, Haha good one so far, but you wont catch me'){
+        return res.status(200).json({data:true});
+    }
+    return res.status(400).json({data:false});
+
+}
+
 const Level7 = async (req, res) => {
     const {answer} = req.body;
     if (answer === 'sunan'){
@@ -81,4 +90,4 @@ const setLooped = async (req, res) => {
 }
 
 
-export { Level1,Level2,Level3_1,Level4a ,Level5,Level8_1,Level7,setLooped,Level3_2}
+export { Level1,Level2,Level3_1,Level4a ,Level5,Level8_1,Level7,setLooped,Level3_2,Level6a}
