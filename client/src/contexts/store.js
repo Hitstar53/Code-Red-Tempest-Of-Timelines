@@ -36,7 +36,7 @@ const countupSlice = createSlice({
 })
 
 // Initial state for countdown
-const initialCountdownState = { time: 7200 }
+const initialCountdownState = { time: 15 }
 
 // Create countdown slice
 const countdownSlice = createSlice({
