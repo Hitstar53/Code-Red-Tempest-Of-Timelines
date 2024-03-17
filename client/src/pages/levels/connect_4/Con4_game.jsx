@@ -586,7 +586,7 @@ class c4_game extends React.Component {
           <table style={{
             margin: '0 auto',
             height: '30vh',
-            width: '25vw',
+            width: '23vw',
             borderSpacing: '0px 0px',
           }}>
             <tbody style={{
