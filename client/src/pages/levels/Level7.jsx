@@ -17,7 +17,7 @@ const Level7 = () => {
   useEffect(() => {
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
-        if (inputValue === 'Sunan') {
+        if (inputValue.toLowerCase() === 'Sunan') {
           navigate('/levels/prechoice1')
         }
       }
@@ -29,7 +29,7 @@ const Level7 = () => {
   }, [inputValue, navigate])
 
   const handleChange = (e) => {
-    if (inputValue === 'Sunan') {
+    if (inputValue.toLowerCase() === 'Sunan') {
       navigate('/levels/prechoice1')
     }
     setInputValue(e.target.value)
