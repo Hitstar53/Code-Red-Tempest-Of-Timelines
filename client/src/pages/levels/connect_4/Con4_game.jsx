@@ -494,6 +494,7 @@ class c4_game extends React.Component {
   handleWin = async (e) => {
     e.preventDefault();
     await updateLevel();
+    window.location.href = "/win";
   }
   
   render() {
