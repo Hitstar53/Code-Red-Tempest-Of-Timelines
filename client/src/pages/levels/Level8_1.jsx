@@ -36,7 +36,7 @@ const Keypad = () => {
     if (await Level8_1Sol(reversedInputs)) {
       displaySuccess()
       setTimeout(() => {
-        navigate('/levels/prelevel8_2')
+        navigate('/levels/prelevel8-2')
       }, 4000)
     } else {
       displayIncorrect()
