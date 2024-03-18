@@ -13,6 +13,7 @@ import {
   getScore,
 } from "../../api/General";
 
+
 const CommandOutput = ({
   title = undefined,
   description = undefined,
@@ -47,6 +48,23 @@ const Level6_2 = () => {
   const navigate = useNavigate();
   const [reached, setReached] = useState(false);
 
+  const handleWin = async (e)=>{
+    e.preventDefault()
+    if (!reached){
+      setReached(true)
+      if (await checkisLooped()) {
+        await incrementLevel()
+        navigate('/levels/prelevel7')
+      }
+      else{
+        await updateLevel()
+        navigate('/levels/prelevel7')
+      }
+
+    }
+   
+  }
+
   useEffect(() => {
     getCurrentLevel();
     getScore().then((data) => {
@@ -59,21 +77,8 @@ const Level6_2 = () => {
           console.log("Counter", counter);
         }
 
-        if (counter >= 4 && !reached) {
-          setReached(true);
-          checkisLooped().then((res) => {
-            if (res){
-              incrementLevel().then(() => {
-               
-              })
-            }
-            else{
-              updateLevel().then(() => {
-              })
-            }
-            navigate("/levels/prelevel7");
-          })
-
+        if (counter >= 4 ) {
+          
         }
       }
     }
@@ -279,6 +284,21 @@ const Level6_2 = () => {
               color="red"
             />
           />
+          {counter >=4 && (
+            <button
+              onClick={handleWin}
+              style={{
+                position: "absolute",
+                top: "80%",
+                left: "46%",
+                backgroundColor: "#fff",
+                padding: "10px 20px",
+                borderRadius: "5px",
+              }}
+            >
+              Proceed
+            </button>
+          )}
         </div>
       </Layout>
     </div>
