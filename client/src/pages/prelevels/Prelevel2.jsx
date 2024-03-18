@@ -9,7 +9,7 @@ const Prelevel2 = () => {
     "Beneath Orion's gaze, where Nile dreams unfold, Pharaoh Khufu slumbers, in sands of time, enfolded. Legacy guarded by structures, rising bold, Whispers of an empire's heartbeat, mystically told.",
     "Pyramids stand, celestial tokens of peace, Echoes in the desert, where secrets never cease. Sphinx, silent guardian in the shifting breeze, Whispers riddles, cryptic keys released.",
     "Sovereign of eternity, in eternal release, Khufu's rest, a cryptic dance that will never cease.",
-    "Now, the time machine awaits. Enter credentials cautiously. Choose wisely, for time itself hangs in the balance, awaiting your rescue...",
+    "Now, the time machine awaits. Enter credentials cautiously to go to the inception of this structure. Choose wisely, for time itself hangs in the balance, awaiting your rescue...",
   ];
   return (
     <div>
