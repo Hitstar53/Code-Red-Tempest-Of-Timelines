@@ -1,3 +1,3 @@
-const base_url = "http://localhost:5000/api"
+const base_url = "https://code-red-tempest-of-timelines.onrender.com/api"
 
 export {base_url}
