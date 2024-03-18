@@ -116,7 +116,7 @@ function Level3_1() {
       level={3}
       name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
       time="2:29:59"
-      score={score}
+      score={parseInt(score)}
       colors={{
         textColor: 'white',
         boxBackgroundColor: '#975E2C',

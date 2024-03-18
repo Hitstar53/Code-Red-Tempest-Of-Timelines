@@ -71,7 +71,7 @@ const Level1 = () => {
         level={1}
         name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
         time="00:00:00"
-        score= {score}
+        score= {parseInt(score)}
         colors={{
           textColor: 'white',
           boxBackgroundColor: '#04364A',
