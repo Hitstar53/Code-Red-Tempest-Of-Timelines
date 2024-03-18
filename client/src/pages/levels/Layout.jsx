@@ -42,6 +42,9 @@ const Layout = (props) => {
     timerDown.current = setInterval(() => {
       dispatch(setCountdownTime(countdownState - 1))
       setCountdownState((prevCountdown) => prevCountdown - 1)
+      if (countdownState < 0) {
+        navigate('/levels/thanks')
+      }
     }, 1000)
 
     // // Start countup
