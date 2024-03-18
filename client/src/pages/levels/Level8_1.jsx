@@ -36,7 +36,7 @@ const Keypad = () => {
     if (await Level8_1Sol(reversedInputs)) {
       displaySuccess()
       setTimeout(() => {
-        navigate('/levels/prelevel8_2')
+        navigate('/levels/prelevel8-2')
       }, 4000)
     } else {
       displayIncorrect()
@@ -123,7 +123,7 @@ const Keypad = () => {
 
   return (
     <Layout
-      level={7}
+      level={8}
       name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
       time="00:00:00"
       score= {parseInt(score)}
