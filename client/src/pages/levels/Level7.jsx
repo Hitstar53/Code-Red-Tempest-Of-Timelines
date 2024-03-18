@@ -52,7 +52,7 @@ const Level7 = () => {
   }
 
   const hintText =
-    "There is one file, there are two files, or however many there are… just observe the files and escape patterns carefully. Kim Jong Un's final destination lies in plain sight. Again, the menu on the 'right' is your saviour."
+    "Observe the files and escape patterns carefully using the map of North Korea. Kim Jong Un's final destination lies in plain sight."
 
   return (
     <Layout
