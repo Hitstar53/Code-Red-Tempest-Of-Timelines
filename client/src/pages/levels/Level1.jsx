@@ -10,6 +10,7 @@ const Level1 = () => {
   const navigate = useNavigate()
   const searchRef = useRef(null);
   const [score, setScore] = useState(0)
+  const [isReached,setIsReached] = useState(false)
 
   useEffect(() => {
 
@@ -17,7 +18,8 @@ const Level1 = () => {
     const handleKeyPress = async (e) => {
       if (e.key === 'Enter') {
         const res = await Level1Sol(searchRef.current.value)
-    if (res) {
+    if (res && !isReached) {
+      setIsReached(true)
       if (await checkisLooped()) {
         await incrementLevel()
         navigate('/levels/prelevel2')

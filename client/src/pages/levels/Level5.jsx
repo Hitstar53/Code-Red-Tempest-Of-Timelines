@@ -6,12 +6,14 @@ import background from '../../assets/images/tm.jpg'
 import styles from './Level5.module.css'
 import { getCurrentLevel,getScore,Level5Sol,checkisLooped,updateLevel,incrementLevel } from '../../api/General'
 import { setBoardLock } from '../../api/Leaderboard'
+import { set } from 'lodash'
 
 const Level5 = () => {
   const navigate = useNavigate()
   const [score, setScore] = useState(0)
   const time = useRef(null)
   const destination = useRef(null)
+  const [isReached,setIsReached] = useState(false)
 
   useEffect(() => {
     getCurrentLevel()
@@ -29,7 +31,8 @@ const Level5 = () => {
     const res = await Level5Sol(timePeriod,dest);
 
 
-    if (res){
+    if (res && !isReached){
+      setIsReached(true)
       const isLooped = await checkisLooped()
       console.log("Islooped",isLooped)
       if (isLooped){

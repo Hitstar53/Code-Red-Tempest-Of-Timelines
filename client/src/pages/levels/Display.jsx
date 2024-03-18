@@ -1,17 +1,19 @@
 import { useCustomization, wireColors } from "../../contexts/Customization";
 import { useNavigate } from "react-router-dom";
 import {updateLevel,checkisLooped,incrementLevel } from "../../api/General.js"
+import { useState } from "react";
 
 const Display = () => {
     const { password, wire1Color, wire2Color, wire3Color, sideWire } = useCustomization();
     const navigate = useNavigate();
-
+    const [isReached,setIsReached] = useState(false)
     async function handleDefuse(e) {
         // const isDate = new Date().getDate() === 14 && new Date().getMonth() === 7 && new Date().getFullYear() === 1789;
-        if (password.join('') === '1769' && !sideWire && wire1Color.name === 'blue' && wire2Color.name === 'white' && wire3Color.name === 'red') {
+        if (password.join('') === '1769' && !sideWire && wire1Color.name === 'blue' && wire2Color.name === 'white' && wire3Color.name === 'red' && !isReached) {
+            setIsReached(true)
             document.getElementById('successMessage').style.display = 'block';
             document.getElementById('errorMessage').style.display = 'none';
-           
+            
             if (await checkisLooped()) {
                 await incrementLevel()
                 setTimeout(() => {

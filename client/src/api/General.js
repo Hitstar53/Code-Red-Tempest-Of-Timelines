@@ -19,7 +19,13 @@ const getCurrentLevel = async () => {
     try {
       const res = await axios.get(`${base_url}/team/getCurrentLevel/${team.id}`)
       if (window.location.pathname !== `/levels/prelevel${res.data.level}` &&  window.location.pathname !== `/levels/level${res.data.level}` && window.location.pathname !== `/levels/level${res.data.level}b` && window.location.pathname!==`/levels/level${res.data.level}_1` && window.location.pathname !== `/levels/level${res.data.level}a` && window.location.pathname !== `/levels/level${res.data.level}-1` && window.location.pathname !== `/levels/level${res.data.level}-2` ) {
-        window.location.href = `/levels/prelevel${res.data.level}`
+        if (res.data.level ==3|| res.data.level ==  4 || res.data.level == 6 || res.data.level == 8){
+          window.location.href = `/levels/prelevel${res.data.level}-1`
+
+        }else{
+
+          window.location.href = `/levels/prelevel${res.data.level}`
+        }
       }
 
     } catch (error) {

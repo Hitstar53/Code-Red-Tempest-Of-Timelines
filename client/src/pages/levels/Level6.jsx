@@ -574,6 +574,7 @@ const Level6 = () => {
   const [currentFolder, setCurrentFolder] = useState("");
   const [search, setSearch] = useState('')
   const [score,setScore] = useState(0)
+  const [isReached,setIsReached] = useState(false)
 
   useEffect(() => {
     getCurrentLevel()
@@ -581,8 +582,9 @@ const Level6 = () => {
   }, [])
   const handleCheck = async () => {
 
-    if (await Level6aSol(search)) {
-      navigate('/levels/prelevel6-2')
+    if (await Level6aSol(search) && !isReached) 
+{      setIsReached(true)
+       navigate('/levels/prelevel6-2')
     }
     else{
       setSearch('')

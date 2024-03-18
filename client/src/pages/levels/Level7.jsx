@@ -15,6 +15,7 @@ const Level7 = () => {
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState('')
   const [score, setScore] = useState(0)
+  const [isReached,setIsReached] = useState(false)
 
   useEffect(() => {
     getCurrentLevel()
@@ -23,10 +24,11 @@ const Level7 = () => {
     })
 
     const handleKeyPress = async (e) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' ) {
         var inp = inputValue.toLowerCase()
         const res = await Level7Sol(inp)
-        if (res) {
+        if (res && !isReached) {
+          setIsReached(true)
           if (await checkisLooped()) {
             await incrementLevel()
             navigate('/levels/levelprechoice1')

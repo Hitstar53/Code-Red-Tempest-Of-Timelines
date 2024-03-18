@@ -10,6 +10,7 @@ const Level4a = () => {
   const [message, setMessage] = useState('')
   const [score, setScore] = useState(0)
   const navigate = useNavigate()
+  const [isReached,setIsReached] = useState(false)
 
   useEffect(() => {
     getCurrentLevel()
@@ -34,7 +35,8 @@ const Level4a = () => {
   const handleCheck = async() => {
     const res = await Level4aSol(inputValue.current.value)
     console.log(res)
-    if (res) {
+    if (res && !isReached) {
+      setIsReached(true)
       setMessage('Success')
     } else {
       setMessage('Error')
