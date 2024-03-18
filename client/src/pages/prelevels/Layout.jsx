@@ -6,7 +6,7 @@ import styles from "./Layout.module.css";
 const Layout = (props) => {
   const navigate = useNavigate();
   const [text, setText] = useState(props.text);
-  const speed = props.speed;
+  const speed = 3;
   var index = 0;
   var textPos = 0;
   var length = text[0].length;

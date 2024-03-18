@@ -84,7 +84,7 @@ const updateLevelTime = async (req, res) => {
     var time = new Date(current_time).getTime() - new Date(start_time).getTime();
 
     // convert time to seconds 
-    time = time/1000000;
+    time = time/1000;
     console.log(time);
     if(team.levels_time.length === 0){
         team.levels_time.push(time);

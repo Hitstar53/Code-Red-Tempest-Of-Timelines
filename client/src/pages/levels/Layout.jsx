@@ -8,12 +8,11 @@ import { setCountupTime, setCountdownTime } from '../../contexts/store'
 import { useNavigate } from 'react-router-dom'
 
 const Layout = (props) => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   dispatch(setCountupTime(0))
   const timeUp = useSelector((state) => state.countup.time)
   const timeDown = useSelector((state) => state.countdown.time)
-
+  const navigate = useNavigate()
   const [countupState, setCountupState] = useState(timeUp)
   const [countdownState, setCountdownState] = useState(timeDown)
 
@@ -43,12 +42,12 @@ const Layout = (props) => {
     timerDown.current = setInterval(() => {
       dispatch(setCountdownTime(countdownState - 1))
       setCountdownState((prevCountdown) => prevCountdown - 1)
-      if (countdownState === 0) {
+      if (countdownState < 0) {
         navigate('/levels/thanks')
       }
     }, 1000)
 
-    // Start countup
+    // // Start countup
     timerUp.current = setInterval(() => {
       dispatch(setCountupTime(countupState + 1))
       setCountupState((prevCountup) => prevCountup + 1)
@@ -103,6 +102,8 @@ const Layout = (props) => {
             color: colors.textColor,
             boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             zIndex: 5,
+            pointer: 'cursor',
+            border: 'none',
           }}
         >
           <span
@@ -118,6 +119,7 @@ const Layout = (props) => {
             {formatTime(countupState)}
           </span>
           {formatTime(countdownState)}
+          {/* <p>View Prologue</p> */}
         </div>
         <div
           className={teamNameStyle}
