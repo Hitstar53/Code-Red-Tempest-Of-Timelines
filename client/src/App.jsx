@@ -77,7 +77,7 @@ const router = createBrowserRouter([
           { path: 'levelbackstory', element: <Backstory /> },
           { path: 'prelevel5', element: <Prelevel5 /> },
           { path: 'level5', element: <Level5 /> },
-          { path: 'prelevel6', element: <Prelevel6 /> },
+          { path: 'prelevel6-1', element: <Prelevel6 /> },
           {
             path: 'level6-1',
             element: (
