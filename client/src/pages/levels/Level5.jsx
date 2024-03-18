@@ -37,11 +37,11 @@ const Level5 = () => {
       console.log("Islooped",isLooped)
       if (isLooped){
         await incrementLevel()
-        window.location.href = 'prelevel6'
+        window.location.href = 'prelevel6-1'
       }else{
         await updateLevel()
         await setBoardLock()
-        window.location.href = 'prelevel6'
+        window.location.href = 'prelevel6-1'
       }
 
     }else{
