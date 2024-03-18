@@ -6,7 +6,7 @@ const Prelevel1 = () => {
     "This is Agent C, reaching out from the depths of time. Our Temporal Protection Authority systems have been breached. It's a Code Red and the implications can be grave.",
     "This unknown force is weaving its own threads into the narrative, altering crucial junctures in history.",
     "We need to access TPA Archives to gather a highly classified file written by F ranklin, E lizabeth and J ohn. TPA file names are generally obtained after double encoding.",
-    "Help me find this file. It is a 3-letter long word, obtained after manipulating the initials into numbers in the most obvious way possible and converting them to a certain unique code.",
+    "Help me find this file. It is a 3-letter long word, obtained after manipulating the initials into numbers in the most obvious way possible and converting them to a certain uniquecode.",
     "The past, as you've known it...\nis fading...\nfading into obscurity before our very eyes.",
   ];
   return (

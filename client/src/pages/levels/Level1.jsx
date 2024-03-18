@@ -55,7 +55,7 @@ const Level1 = () => {
     
   }
   const hintText =
-    "Separate the capitals, convert them into numbers using the most obvious technique. Then give ‘you’rself and 2 empty slots before each number and speak the phrase “Unique code” super quick."
+    "Separate the capitals, convert them into numbers using the most obvious technique which is ASCII encoding. Then give 'you'rself and 2 empty slots before each number and speak the phrase “Unique code” super quick."
 
   return (
     <div className={styles.level1}>
