@@ -46,7 +46,7 @@ const Level6_2 = () => {
     getScore().then((data) => {
       setScore(data);
     })
-    async function handleKeyPress(e) {
+    function handleKeyPress(e) {
       if (e.key === "Enter") {
         if (command.match(listOfCommands[counter])) {
           setCounter((counter) => counter + 1);
@@ -55,15 +55,18 @@ const Level6_2 = () => {
 
         if (counter >= 4 && !reached) {
           setReached(true);
-          const isloop = await checkisLooped()
-          if (isloop){
-            await incrementLevel()
+          checkisLooped().then((res) => {
+            if (res){
+              incrementLevel().then(() => {
+               
+              })
+            }
+            else{
+              updateLevel().then(() => {
+              })
+            }
             navigate("/levels/prelevel7");
-          }
-          else{
-            await updateLevel()
-            navigate("/levels/prelevel7");
-          }
+          })
 
         }
       }
