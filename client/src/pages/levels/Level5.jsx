@@ -77,7 +77,7 @@ const Level5 = () => {
           leaderboardColor: '#04364A',
           leaderboardTextColor: 'black',
         }}
-        hintText="Go to the year when scientists no longer called MOS LSI chips by that name anymore. The year when the term 'microprocessor' was officially coined. Also, inversion is a common ploy used by tricksters around the world. N’th from the start becomes N’th from the end. Did I ring any bells?"
+        hintText="Do you remember old nokia keypads? If no, hit'em up on a search engine. Also, inversion is a common ploy used by tricksters around the world. N’th from the start becomes N’th from the end. Did I ring any bells?"
       >
         <div
           style={{

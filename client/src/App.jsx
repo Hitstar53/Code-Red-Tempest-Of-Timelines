@@ -104,15 +104,15 @@ const router = createBrowserRouter([
           { path: 'level8-2', element: <Level8_2 /> },
           { path: 'levelchoice', element: <Choice /> },
           {
-            path: 'prelevel8_1',
+            path: 'prelevel8-1',
             element: <Prelevel8_1 />,
           },
           {
-            path: 'prelevel8_2',
+            path: 'prelevel8-2',
             element: <Prelevel8_2 />,
           },
           {
-            path: 'prelevel8_3',
+            path: 'prelevel8-3',
             element: <Prelevel8_3 />,
           },
           {
