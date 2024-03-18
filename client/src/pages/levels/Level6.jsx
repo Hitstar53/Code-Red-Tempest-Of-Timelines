@@ -746,7 +746,7 @@ const Level6 = () => {
             />
           </div>
           <div className={styles.inputContainer}>
-            <input className={styles.level6input} value={search} type="text" placeholder="Enter Name" onChange={(e) => setSearch(e.target.value)}/>
+            <input className={styles.level6input} value={search} type="text" placeholder="Enter File Content" onChange={(e) => setSearch(e.target.value)}/>
             <button className={styles.level6btn} type="submit" onClick={handleCheck}>
               Login
             </button>
