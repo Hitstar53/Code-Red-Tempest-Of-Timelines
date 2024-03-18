@@ -5,7 +5,13 @@ import { useNavigate } from "react-router-dom";
 import background from "../../assets/images/hacking-background.webp";
 import { useEffect, useState } from "react";
 import styles from "./Level6_2.module.css";
-import { getCurrentLevel,updateLevel,checkisLooped,incrementLevel,getScore } from "../../api/General";
+import {
+  getCurrentLevel,
+  updateLevel,
+  checkisLooped,
+  incrementLevel,
+  getScore,
+} from "../../api/General";
 
 const CommandOutput = ({
   title = undefined,
@@ -22,14 +28,14 @@ const CommandOutput = ({
 
 const listOfCommands = [
   /netstat -anp|netstat -ano/i,
-  /netstat -ano \| findstr "5173"|netstat -ano \| findstr "5400"/i,
+  /netstat -ano \| findstr "5173"|netstat -ano \| findstr "5173"/i,
   /netstat --verbose|netstat \//i,
   /netstat -s|netstat -s -p icmpv6/i,
 ];
 
 const questions = [
-  "Now that we are in the human life database server, we need to check all the active TCP and UDP ports on the system with their IP addresses and process IDs and port numbers expressed numerically. Please enter a command to check all ports.",
-  "We find that Andwyn of T2 is in port 5400, please enter a command to check all services using port 5400",
+  "Now that we are in the Area 51 security base, we need to check all the active TCP and UDP ports on the system with their IP addresses and process IDs and port numbers expressed numerically. Please enter a command to check all ports.",
+  "We find that the virus is in port 5173, please enter a command to check all services using port 5173",
   "Write a netstat command which displays details about unconfigured address families.",
   "We need to check the statistics of the protocol ICMPv6. Enter a command which lets us do that",
 ];
@@ -42,10 +48,10 @@ const Level6_2 = () => {
   const [reached, setReached] = useState(false);
 
   useEffect(() => {
-    getCurrentLevel()
+    getCurrentLevel();
     getScore().then((data) => {
       setScore(data);
-    })
+    });
     async function handleKeyPress(e) {
       if (e.key === "Enter") {
         if (command.match(listOfCommands[counter])) {
@@ -56,12 +62,11 @@ const Level6_2 = () => {
         if (counter >= 4 && !reached) {
           setReached(true);
           console.log("Move to next level");
-          if (await checkisLooped()){
-            await incrementLevel()
+          if (await checkisLooped()) {
+            await incrementLevel();
             navigate("/levels/prelevel7");
-          }
-          else{
-            await updateLevel()
+          } else {
+            await updateLevel();
             navigate("/levels/prelevel7");
           }
           return;
@@ -73,7 +78,7 @@ const Level6_2 = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, [counter, command]);
+  }, [counter, command, reached, navigate]);
 
   const commands = {
     netstat: (cmd) => {
@@ -99,21 +104,6 @@ const Level6_2 = () => {
             <h6>
               tcp 0 0 172.29.202.91:39932 185.125.188.55:443 ESTABLISHED
               keepalive (14.21/0/0)
-            </h6>
-          </div>
-        );
-      } else if (currentCommand.match(/--verbose|\/|/i)) {
-        setCommand(`netstat ${currentCommand}`);
-        return (
-          <div>
-            <h6>Active UNIX domain sockets (w/o servers)</h6>
-            <h6>Proto RefCnt Flags Type State I-Node Path</h6>
-            <h6>
-              unix 2 [ ] DGRAM CONNECTED 132 /run/user/1000/systemd/notify
-              <br />
-              unix 3 [ ] DGRAM CONNECTED 29 /run/user/1000/systemd/notify
-              <br />
-              unix 4 [ ] DGRAM CONNECTED 45 /run/user/1000/systemd/notify
             </h6>
           </div>
         );
@@ -193,6 +183,21 @@ const Level6_2 = () => {
             </h6>
           </div>
         );
+      } else if (currentCommand.match(/--verbose|\/|/i)) {
+        setCommand(`netstat ${currentCommand}`);
+        return (
+          <div>
+            <h6>Active UNIX domain sockets (w/o servers)</h6>
+            <h6>Proto RefCnt Flags Type State I-Node Path</h6>
+            <h6>
+              unix 2 [ ] DGRAM CONNECTED 132 /run/user/1000/systemd/notify
+              <br />
+              unix 3 [ ] DGRAM CONNECTED 29 /run/user/1000/systemd/notify
+              <br />
+              unix 4 [ ] DGRAM CONNECTED 45 /run/user/1000/systemd/notify
+            </h6>
+          </div>
+        );
       }
     },
     help: (
@@ -214,7 +219,11 @@ const Level6_2 = () => {
     >
       <Layout
         level={6}
-        name={localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
+        name={
+          localStorage.getItem("team")
+            ? JSON.parse(localStorage.getItem("team")).name
+            : "Team Name"
+        }
         time="00:00:00"
         score={parseInt(score)}
         backgroundPicURL={background}
@@ -239,7 +248,13 @@ const Level6_2 = () => {
           <ReactTerminal
             welcomeMessage={
               <>
-                <p>Welcome to the {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"} Terminal. Type help</p>
+                <p>
+                  Welcome to the{" "}
+                  {localStorage.getItem("team")
+                    ? JSON.parse(localStorage.getItem("team")).name
+                    : "Team Name"}{" "}
+                  Terminal. Type help
+                </p>
                 <br />
               </>
             }
