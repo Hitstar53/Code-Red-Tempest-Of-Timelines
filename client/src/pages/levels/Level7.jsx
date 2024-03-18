@@ -7,8 +7,8 @@ import { useNavigate } from 'react-router-dom'
 
 import styles from './Level7.module.css'
 //import correct report and not correct report from documents from assets
-// import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
-import notCorrectReport from '../../assets/documents/thisisnotthecorrectreport.pdf'
+import correctReport from '../../assets/documents/thisisthecorrectreport.pdf'
+// import notCorrectReport from '../../assets/documents/thisisnotthecorrectreport.pdf'
 import { getScore,Level7Sol,getCurrentLevel,updateLevel,checkisLooped,incrementLevel } from '../../api/General.js'
 
 const Level7 = () => {
@@ -101,7 +101,7 @@ const Level7 = () => {
           fontSize: '1.2rem',
         }}
       >
-        <a href={notCorrectReport} download>
+        <a href={correctReport} download>
           <button
             style={{
               color: 'white',
