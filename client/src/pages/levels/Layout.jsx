@@ -5,15 +5,14 @@ import { FiTarget } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect, useRef, useState } from 'react'
 import { setCountupTime, setCountdownTime } from '../../contexts/store'
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from "react-router-dom"
 
 const Layout = (props) => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   dispatch(setCountupTime(0))
   const timeUp = useSelector((state) => state.countup.time)
   const timeDown = useSelector((state) => state.countdown.time)
-
+  const navigate = useNavigate()
   const [countupState, setCountupState] = useState(timeUp)
   const [countdownState, setCountdownState] = useState(timeDown)
 
@@ -40,26 +39,23 @@ const Layout = (props) => {
 
   useEffect(() => {
     // Start countdown
-    timerDown.current = setInterval(() => {
-      dispatch(setCountdownTime(countdownState - 1))
-      setCountdownState((prevCountdown) => prevCountdown - 1)
-      if (countdownState === 0) {
-        navigate('/levels/thanks')
-      }
-    }, 1000)
+    // timerDown.current = setInterval(() => {
+    //   dispatch(setCountdownTime(countdownState - 1))
+    //   setCountdownState((prevCountdown) => prevCountdown - 1)
+    // }, 1000)
 
-    // Start countup
-    timerUp.current = setInterval(() => {
-      dispatch(setCountupTime(countupState + 1))
-      setCountupState((prevCountup) => prevCountup + 1)
-    }, 1000)
+    // // Start countup
+    // timerUp.current = setInterval(() => {
+    //   dispatch(setCountupTime(countupState + 1))
+    //   setCountupState((prevCountup) => prevCountup + 1)
+    // }, 1000)
 
     // Clean up intervals on component unmount
-    return () => {
-      clearInterval(timerDown.current)
-      clearInterval(timerUp.current)
-    }
-  }, [countdownState, countupState, dispatch])
+    // return () => {
+    //   // clearInterval(timerDown.current)
+    //   // clearInterval(timerUp.current)
+    // }
+  }, [])
 
   return (
     <div
@@ -99,25 +95,28 @@ const Layout = (props) => {
         <div
           className={infoTimeStyle}
           style={{
-            backgroundColor: colors.boxBackgroundColor,
+            backgroundColor: "transparent",
             color: colors.textColor,
-            boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
+            // boxShadow: `0px 0px 6px 2px ${colors.textColor}`,
             zIndex: 5,
+            pointer: 'cursor',
+            border: "none"
           }}
         >
           <span
-            style={
-              countupState > 480 && countupState < 600
-                ? { color: 'yellow' }
-                : countupState > 600
-                ? { color: 'red' }
-                : { color: `${colors.textColor}` }
-            }
+            // style={
+            //   countupState > 480 && countupState < 600
+            //     ? { color: 'yellow' }
+            //     : countupState > 600
+            //     ? { color: 'red' }
+            //     : { color: `${colors.textColor}` }
+            // }
           >
-            {' '}
-            {formatTime(countupState)}
+            {/* {' '}
+            {formatTime(countupState)} */}
           </span>
-          {formatTime(countdownState)}
+          {/* {formatTime(countdownState)} */}
+          {/* <p>View Prologue</p> */}
         </div>
         <div
           className={teamNameStyle}
