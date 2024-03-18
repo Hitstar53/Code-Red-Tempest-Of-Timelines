@@ -123,7 +123,7 @@ const Keypad = () => {
 
   return (
     <Layout
-      level={7}
+      level={8}
       name= {localStorage.getItem("team")? JSON.parse(localStorage.getItem("team")).name : "Team Name"}
       time="00:00:00"
       score= {parseInt(score)}
