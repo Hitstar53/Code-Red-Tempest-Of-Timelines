@@ -18,6 +18,7 @@ const Level3_2 = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [search, setSearch] = useState('')
   const [score,setScore] = useState(0)
+  const [isReached,setIsReached] = useState(false)
 
   const textArray = [
     '-36.889889 145.184472',
@@ -60,7 +61,8 @@ const Level3_2 = () => {
 
   const handleCheck = async () => {
     console.log('here')
-    if (await Level3_2Sol(search)){
+    if (await Level3_2Sol(search) && !isReached) {
+      setIsReached(true)
       if (await checkisLooped()){
         await incrementLevel()
         navigate('/levels/prelevel4')

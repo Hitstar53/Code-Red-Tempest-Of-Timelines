@@ -10,6 +10,7 @@ import { useRef } from 'react'
 
 const Level2 = () => {
   const [score, setScore] = useState(0)
+  const [isReached,setIsReached] = useState(false)
   const coRef = useRef(null)
   const yearRef = useRef(null)
 
@@ -28,7 +29,8 @@ const Level2 = () => {
 
     const res = await Level2Sol(coordinates,year)
 
-    if (res) {
+    if (res && !isReached) {
+      setIsReached(true)
       if (await checkisLooped()){
         await incrementLevel()
         navigate('/levels/prelevel3')

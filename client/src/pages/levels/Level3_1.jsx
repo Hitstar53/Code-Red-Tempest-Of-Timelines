@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { getScore,getCurrentLevel,updateLevel,checkisLooped,incrementLevel,Level3_1Sol } from '../../api/General'
 function Level3_1() {
   const check = async (e) => {
+    const [isReached,setIsReached] = useState(false)
     e.preventDefault()
     const ans = ansRef.current.value
     const a = ansRef.current
@@ -13,7 +14,8 @@ function Level3_1() {
     const wrongAnswerElement = <a href="" className="nextSibling"></a>
     var answer = ans.toUpperCase()
     const res = await  Level3_1Sol(answer)
-    if (res) {
+    if (res && !isReached) {
+      setIsReached(true)
       navigate('/levels/prelevel3-2')
     }
     else{
