@@ -34,7 +34,7 @@ const Level3_2 = async (req, res) => {
 
 const Level4a = async (req, res) => {
     const {answer} = req.body;
-    if (answer==="STORMINGOFBASTILLE"){
+    if (answer==="STORMINGOFBASTILLE" || answer ==="STORMINGOFTHEBASTILLE" || answer==="BASTILLE"){
         return res.status(200).json({data:true});
     }
     return res.status(400).json({data:false});
@@ -72,7 +72,7 @@ const Level7 = async (req, res) => {
 
 const Level8_1 = async (req, res) => {
     const {answer} = req.body;
-    if (answer === '25501789196820303170'){
+    if (answer === '26001789196820303010'){
         return res.status(200).json({data:true});
     }
     return res.status(400).json({data:false});

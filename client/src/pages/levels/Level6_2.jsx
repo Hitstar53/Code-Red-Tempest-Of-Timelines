@@ -39,6 +39,7 @@ const Level6_2 = () => {
   const [command, setCommand] = useState("");
   const [score, setScore] = useState(0);
   const navigate = useNavigate();
+  const [reached, setReached] = useState(false);
 
   useEffect(() => {
     getCurrentLevel()
@@ -52,7 +53,8 @@ const Level6_2 = () => {
           console.log("Counter", counter);
         }
 
-        if (counter >= 4) {
+        if (counter >= 4 && !reached) {
+          setReached(true);
           console.log("Move to next level");
           if (await checkisLooped()){
             await incrementLevel()

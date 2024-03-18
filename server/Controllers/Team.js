@@ -135,7 +135,11 @@ const calculateLevelScore = async (req, res) => {
     }
     const level = team.currentLevel;
     const time = team.levels_time[level-1];
-    const score =  50+(times[level-1]["time"]-time)/12;
+    var divisor = 12
+    if (times[level-1]["time"] === 1200){
+        divisor = 8;
+    }
+    const score =  50+(times[level-1]["time"]-time)/divisor;
     team.level_score.push(score);
     team.currentLevel += 1;
     await team.save();

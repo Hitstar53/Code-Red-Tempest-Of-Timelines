@@ -74,7 +74,8 @@ const Level4a = () => {
             type="text"
             ref={inputValue}
             style={{
-              width: '100%',
+              marginTop: '1vh',
+              width: '90%',
               fontFamily: 'monospace',
               fontSize: '2em',
               fontWeight: 'bold',
@@ -101,8 +102,8 @@ const Level4a = () => {
           >
             <div
               style={{
-                border: '4px solid #c3a077',
-                borderRadius: '5px',
+                // border: '4px solid #c3a077',
+                // borderRadius: '5px',
                 padding: '10px',
               }}
             >
@@ -113,7 +114,7 @@ const Level4a = () => {
                     fontFamily: 'monospace',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
-                    width: '7vw',
+                    width: '9vw',
                     border: '2px solid #c3a077',
                     borderRadius: '5px',
                     padding: '5px',
@@ -135,7 +136,7 @@ const Level4a = () => {
                     padding: '5px',
                     marginLeft: '10px',
                     fontSize: '1.3em',
-                    width: '8vw',
+                    width: '9vw',
                     fontWeight: 'bold',
                     textShadow: '1px 1px #b87333',
                   }}
@@ -148,8 +149,8 @@ const Level4a = () => {
             </div>
             <div
               style={{
-                border: '4px solid #c3a077',
-                borderRadius: '5px',
+                // border: '4px solid #c3a077',
+                // borderRadius: '5px',
                 padding: '10px',
               }}
             >
@@ -161,11 +162,12 @@ const Level4a = () => {
                     border: '2px solid #c3a077',
                     borderRadius: '5px',
                     padding: '5px',
-                    marginLeft: '10px',
-                    width: '15vw',
+                    marginLeft: '5px',
+                    width: '13vw',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
                     textShadow: '1px 1px #b87333',
+                    textAlign: 'center',
                   }}
                   onClick={handleProceed}
                 >
@@ -178,11 +180,11 @@ const Level4a = () => {
                     fontFamily: 'monospace',
                     fontSize: '1.3em',
                     fontWeight: 'bold',
-                    width: '15vw',
+                    width: '13vw',
                     border: '2px solid #c3a077',
                     borderRadius: '5px',
                     padding: '5px',
-                    marginLeft: '10px',
+                    marginLeft: '5px',
                     textShadow: '1px 1px #b87333',
                     textAlign: 'center',
                   }}
