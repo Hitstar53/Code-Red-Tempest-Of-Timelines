@@ -76,7 +76,7 @@ const Level3_2 = () => {
       setSearch('')
     }
   }
-  const hintText = "Capture each flash one after the other. Take the advantage by accessing a search engine. Every location has a hidden clue. Gather them one by one."
+  const hintText = "Why should you stay silent when you are running out of time? Remove that 'Shhh' panel from the screen to see what you seek. Take the advantage by accessing a search engine. Every co-ordinate has a hidden clue. Gather them one by one."
   
   // useEffect(() => {
   //   const textArray = [
